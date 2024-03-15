@@ -118,7 +118,7 @@
                                     <span>Thu</span>
                                 </div>
                                 <div class="col-7">
-                                    <span>8:00 PM - 5:00 PM</span>
+                                    <span>8:00 AM - 5:00 PM</span>
                                 </div>
                             </div>
                             <div class="row <?= date('D') == "Fri" ? "fw-bold" : null ?>">

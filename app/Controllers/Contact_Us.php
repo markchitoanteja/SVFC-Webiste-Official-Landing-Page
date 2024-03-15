@@ -70,29 +70,24 @@ class Contact_Us extends BaseController
 
         $Contact_Us_Model->save($data);
 
-        $message = "<p>Hello, thanks for reaching out to 
-        St. Vincent de Ferrer College of Camarin, Inc.!
-        We have received your message, please wait for our
-        call within 24 hours to have your STUDENT NUMBER
-        together with our assistance.</p> 
-
-        <p>You can also feel free to contact us at:</p>
-        <p>SMART 0968-729-2593</p>
-        <p>SMART 0969-597-2577</p>
-        <p>SMART 0908-658-1680</p>
-        
-        <br>
-        
-        <p>*For OLD Student, you can also ask
-        your respective Facilitator for the
-        availability of your STUDENT NUMBER.</p>
-        <p>*If you have your STUDENT NUMBER, 
-        please click here to ENROLL:</p>
-        <p><a href='https://portal.svfc-edu.com/login'>https://portal.svfc-edu.com/login</p>
-        
-        <br>
-        
-        <p>Thank you!</p>";
+        $message = "
+            <p>SVFC'S ENROLLMENT IS NOW OPEN!!</p>
+            <p>Starting MARCH 15, 2024 - Friday A.Y. 2024-2025</p>
+            <p>You can click the link below if you have your STUDENT NUMBER for ONLINE ENROLLMENT:</p>
+            <p><a href='https://portal.svfc-edu.com/login'>Online Enrollment Portal</a></p>
+            <p>We also accept WALK-IN enrollment starting 8:00 A.M. to 5:00 P.M.</p>
+            <p>Just simply bring your REQUIREMENTS and yourself.</p>
+            <p>To get your STUDENT NUMBER contact us at:</p>
+            <ul>
+                <li>SMART 0968-729-2593</li>
+                <li>SMART 0969-597-2577</li>
+                <li>SMART 0908-658-1680</li>
+                <li>SMART 0969-597-2586</li>
+            </ul>
+            <p>You can message your respective Facilitators for the availability of your STUDENT NUMBER.</p>
+            <p>SVFC welcomes you to visit our website:</p>
+            <p><a href='https://svfc-edu.com'>SVFC Website</a></p>
+        ";
 
         if (send_email($name, $email, "Thanks for reaching us", $message, "St. Vincent de Ferrer College of Camarin, Inc.", "no-reply@svfc-edu.com", "svfc@2024")) {
             session()->set("notification", array(
