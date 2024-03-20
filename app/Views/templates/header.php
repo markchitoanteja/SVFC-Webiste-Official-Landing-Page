@@ -79,8 +79,11 @@ $current_sub_page = session()->get("current_sub_page");
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a class="nav-link no_function" href="javascript:void(0)">Academic</a></li>
-                            <li><a class="nav-link no_function" href="javascript:void(0)">Scholarship</a></li>
+                            <li><a class="nav-link no_function" href="javascript:void(0)">Preparatory</a></li>
+                            <li><a class="nav-link no_function" href="javascript:void(0)">Elementary</a></li>
+                            <li><a class="nav-link no_function" href="javascript:void(0)">Junior High</a></li>
+                            <li><a class="nav-link no_function" href="javascript:void(0)">Senior High</a></li>
+                            <li><a class="nav-link no_function" href="javascript:void(0)">College</a></li>
                         </ul>
                     </li>
                     <!-- Admissions -->
@@ -90,8 +93,8 @@ $current_sub_page = session()->get("current_sub_page");
                             <i class="bi bi-chevron-down"></i>
                         </a>
                         <ul>
-                            <li><a class="nav-link no_function" href="javascript:void(0)">Basic Education</a></li>
-                            <li><a class="nav-link no_function" href="javascript:void(0)">College</a></li>
+                            <li><a class="nav-link no_function" href="javascript:void(0)">Special Education Program Department (SEPD)</a></li>
+                            <li><a class="nav-link no_function" href="javascript:void(0)">Homeschooling</a></li>
                         </ul>
                     </li>
                     <!-- Contact Us -->
