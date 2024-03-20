@@ -14,7 +14,6 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
 
     <!-- Vendor CSS Files -->
     <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -23,9 +22,7 @@
     <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
     <link href="<?= base_url() ?>public/css/style.css" rel="stylesheet">
@@ -49,7 +46,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <!-- Home -->
-                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link active" href="#hero">Home</a></li>
                     <!-- About -->
                     <li class="dropdown"><a href="javascript:void(0)">
                             <span>About</span>
@@ -228,100 +225,112 @@
             </div>
         </section>
 
-        <!-- ======= Programs Offered ======= -->
+        <!-- ======= College Courses Offered ======= -->
         <section class="about bg-white">
             <div class="container">
                 <div class="section-title">
                     <h2>College Courses Offered</h2>
                 </div>
-                <div class="row">
-                    <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
-                        <div class="circle-picture mx-auto mb-3">
-                            <i class="bi bi-pencil" style="font-size: 48px; color: #FFFFFF;"></i>
+                
+                <div class="mb-5">
+                    <h4 class="text-center mb-4">INSTITUTE OF EDUCATION</h4>
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
+                            <div class="circle-picture mx-auto mb-3">
+                                <i class="bi bi-pencil" style="font-size: 48px; color: #FFFFFF;"></i>
+                            </div>
+                            <strong>
+                                <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
+                                    BSED English
+                                </a>
+                            </strong>
+                            <p>Bachelor of Secondary Education major in English</p>
                         </div>
-                        <strong>
-                            <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
-                                BSED English
-                            </a>
-                        </strong>
-                        <p>Bachelor of Secondary Education major in English</p>
+                        <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
+                            <div class="circle-picture mx-auto mb-3">
+                                <i class="bi bi-flag" style="font-size: 48px; color: #FFFFFF;"></i>
+                            </div>
+                            <strong>
+                                <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
+                                    BSED Filipino
+                                </a>
+                            </strong>
+                            <p>Bachelor of Secondary Education major in Filipino</p>
+                        </div>
+                        <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
+                            <div class="circle-picture mx-auto mb-3">
+                                <i class="bi bi-globe" style="font-size: 48px; color: #FFFFFF;"></i>
+                            </div>
+                            <strong>
+                                <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
+                                    BSED Social Studies
+                                </a>
+                            </strong>
+                            <p>Bachelor of Secondary Education major in Social Studies</p>
+                        </div>
+                        <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
+                            <div class="circle-picture mx-auto mb-3">
+                                <i class="bi bi-mortarboard" style="font-size: 48px; color: #FFFFFF;"></i>
+                            </div>
+                            <strong>
+                                <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
+                                    BEED GenEd
+                                </a>
+                            </strong>
+                            <p>Bachelor of Elementary Education major in General Education</p>
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
-                        <div class="circle-picture mx-auto mb-3">
-                            <i class="bi bi-flag" style="font-size: 48px; color: #FFFFFF;"></i>
+                </div>
+                <div class="mb-5">
+                    <h4 class="text-center mb-4">INSTITUTE OF INFORMATION TECHNOLOGY</h4>
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
+                            <div class="circle-picture mx-auto mb-3">
+                                <i class="bi bi-laptop" style="font-size: 48px; color: #FFFFFF;"></i>
+                            </div>
+                            <strong>
+                                <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
+                                    BSIT
+                                </a>
+                            </strong>
+                            <p>Bachelor of Science in Information Technology</p>
                         </div>
-                        <strong>
-                            <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
-                                BSED Filipino
-                            </a>
-                        </strong>
-                        <p>Bachelor of Secondary Education major in Filipino</p>
                     </div>
-                    <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
-                        <div class="circle-picture mx-auto mb-3">
-                            <i class="bi bi-globe" style="font-size: 48px; color: #FFFFFF;"></i>
+                </div>
+                <div class="mb-5">
+                    <h4 class="text-center mb-4">INSTITUTE OF HOSPITALITY MANAGEMENT AND TOURISM</h4>
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
+                            <div class="circle-picture mx-auto mb-3">
+                                <i class="bi bi-hospital" style="font-size: 48px; color: #FFFFFF;"></i>
+                            </div>
+                            <strong>
+                                <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
+                                    BSHM
+                                </a>
+                            </strong>
+                            <p>Bachelor of Science in Hospitality Management</p>
                         </div>
-                        <strong>
-                            <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
-                                BSED Social Studies
-                            </a>
-                        </strong>
-                        <p>Bachelor of Secondary Education major in Social Studies</p>
                     </div>
-                    <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
-                        <div class="circle-picture mx-auto mb-3">
-                            <i class="bi bi-mortarboard" style="font-size: 48px; color: #FFFFFF;"></i>
+                </div>
+                <div class="mb-5">
+                    <h4 class="text-center mb-4">INSTITUTE OF BUSINESS ADMINISTRATION AND ACCOUNTANCY</h4>
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
+                            <div class="circle-picture mx-auto mb-3">
+                                <i class="bi bi-briefcase" style="font-size: 48px; color: #FFFFFF;"></i>
+                            </div>
+                            <strong>
+                                <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
+                                    BSA
+                                </a>
+                            </strong>
+                            <p>Bachelor of Science in Accountancy</p>
                         </div>
-                        <strong>
-                            <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
-                                BEED GenEd
-                            </a>
-                        </strong>
-                        <p>Bachelor of Elementary Education major in General Education</p>
-                    </div>
-                    <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
-                        <div class="circle-picture mx-auto mb-3">
-                            <i class="bi bi-laptop" style="font-size: 48px; color: #FFFFFF;"></i>
-                        </div>
-                        <strong>
-                            <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
-                                BSIT
-                            </a>
-                        </strong>
-                        <p>Bachelor of Science in Information Technology</p>
-                    </div>
-                    <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
-                        <div class="circle-picture mx-auto mb-3">
-                            <i class="bi bi-hospital" style="font-size: 48px; color: #FFFFFF;"></i>
-                        </div>
-                        <strong>
-                            <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
-                                BSHM
-                            </a>
-                        </strong>
-                        <p>Bachelor of Science in Hospitality Management</p>
-                    </div>
-                    <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
-                        <div class="circle-picture mx-auto mb-3">
-                            <i class="bi bi-briefcase" style="font-size: 48px; color: #FFFFFF;"></i>
-                        </div>
-                        <strong>
-                            <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
-                                BSA
-                            </a>
-                        </strong>
-                        <p>Bachelor of Science in Accountancy</p>
-                    </div>
-                    <div class="col-lg-3 col-12 mb-lg-0 mb-3 text-center">
-                        <div class="circle-picture mx-auto mb-3">
-                            <i class="bi bi-clock" style="font-size: 48px; color: #FFFFFF;"></i>
-                        </div>
-                        <strong>
-                            <a href="javascript:void(0)" style="font-size: 18px;" class="text-secondary no_function">
-                                Coming Soon
-                            </a>
-                        </strong>
-                        <p>Additional courses will be offered soon</p>
                     </div>
                 </div>
             </div>
@@ -336,7 +345,8 @@
                 <div class="row mb-3">
                     <div class="col-lg-6 mb-lg-0 mb-3">
                         <div class="card">
-                            <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt="">
+                            <!-- <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt=""> -->
+                            <i class="bi bi-trophy card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
                                 <h5 class="card-title text-center">Varsity</h5>
@@ -350,7 +360,8 @@
                     </div>
                     <div class="col-lg-6 mb-lg-0">
                         <div class="card">
-                            <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt="">
+                            <!-- <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt=""> -->
+                            <i class="bi bi-palette card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
                                 <h5 class="card-title text-center">Languages / Arts</h5>
@@ -366,7 +377,8 @@
                 <div class="row">
                     <div class="col-lg-6 mb-lg-0 mb-3">
                         <div class="card">
-                            <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt="">
+                            <!-- <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt=""> -->
+                            <i class="bi bi-music-note card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
                                 <h5 class="card-title text-center">CESCCA</h5>
@@ -379,7 +391,8 @@
                     </div>
                     <div class="col-lg-6 mb-lg-0">
                         <div class="card">
-                            <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt="">
+                            <!-- <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt=""> -->
+                            <i class="bi bi-puzzle card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
                                 <h5 class="card-title text-center">Special Skills</h5>

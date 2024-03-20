@@ -20,8 +20,7 @@ $current_sub_page = session()->get("current_sub_page");
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
-
+    
     <!-- Vendor CSS Files -->
     <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,10 +28,8 @@ $current_sub_page = session()->get("current_sub_page");
     <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="<?= base_url() ?>public/vendor/datatables/css/dataTables.bootstrap5.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
     <link href="<?= base_url() ?>public/css/style.css" rel="stylesheet">

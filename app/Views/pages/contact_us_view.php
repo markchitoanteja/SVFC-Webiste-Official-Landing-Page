@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="contact_us_mobile_number" placeholder="test@email.com" required>
+                                        <input type="number" class="form-control" id="contact_us_mobile_number" placeholder="09123456789" required>
                                         <label for="contact_us_mobile_number">Mobile Number</label>
                                     </div>
                                 </div>
@@ -74,11 +74,13 @@
                             </div>
 
                             <p>SVFC Compound, San Vicente Ferrer Road, Area D, Brgy. 178, Camarin, Caloocan City</p>
-                            <a href="tel:+639687292593">0968-729-2593</a>
+                            <a href="tel:+639687292593">SMART 0968-729-2593</a>
                             <br>
-                            <a href="tel:+639695972577">0969-597-2577</a>
+                            <a href="tel:+639695972577">SMART 0969-597-2577</a>
                             <br>
-                            <a href="tel:+639086581680">0908-658-1680</a>
+                            <a href="tel:+639086581680">SMART 0908-658-1680</a>
+                            <br>
+                            <a href="tel:+639695972586">SMART 0969-597-2586</a>
                         </div>
                         <div class="col-lg-6">
                             <div style="height: 80px;" class="text-center">

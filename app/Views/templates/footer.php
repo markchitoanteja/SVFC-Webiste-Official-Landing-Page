@@ -12,25 +12,29 @@
                             <br><br>
                             <strong><u>Admission/Concierge Numbers</u></strong>
                             <br>
-                            0968-729-2593<br>
-                            0969-597-2577<br>
-                            0908-658-1680
+                            SMART 0968-729-2593<br>
+                            SMART 0969-597-2577<br>
+                            SMART 0908-658-1680<br>
+                            SMART 0969-597-2586
                         </p>
                     </div>
                     <!-- Programs -->
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Programs</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Academic</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Scholarship</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Preparatory</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Elementary</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Junior High</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Senior High</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">College</a></li>
                         </ul>
                     </div>
                     <!-- Admissions -->
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Admissions</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Basic Education</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">College</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Special Education Program Department (SEPD)</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Homeschooling</a></li>
                         </ul>
 
                         <p class="mt-5"><i>Follow Us:</i></p>
@@ -117,13 +121,12 @@
     <script src="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="<?= base_url() ?>public/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="<?= base_url() ?>public/vendor/jquery/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.min.js"></script>
-
+    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.js"></script>
+    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.bootstrap5.js"></script>
+    <script src="<?= base_url() ?>public/vendor/sweetalert/sweetalert2@11.js"></script>
+    
     <!-- Template Main JS File -->
     <script src="<?= base_url() ?>public/js/main.js"></script>
-
-    <!-- SweetAlert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Custom JavaScript -->
     <script>
@@ -149,7 +152,7 @@
             }
 
             $('#data_table').DataTable({
-                "paging": false,
+                "paging": true,
                 "lengthChange": false,
                 "searching": true,
                 "ordering": false,
@@ -162,7 +165,7 @@
                 var iframeSrc = $('#videoIframe').attr('src');
 
                 $('#videoIframe').attr('src', iframeSrc);
-            });
+            })
 
             $(".no_function").click(function() {
                 Swal.fire({
@@ -170,11 +173,11 @@
                     text: "This feature is under maintenance!",
                     icon: "error"
                 });
-            });
+            })
 
             $('#svfcHymnModal').on('hidend.bs.modal', function() {
                 $('#video_player').get(0).pause();
-            });
+            })
 
             $("#contact_us_message").on("focus", function() {
                 var contact_us_message = $(this).val();
@@ -182,7 +185,7 @@
                 if (contact_us_message == "Message") {
                     $(this).val("");
                 }
-            });
+            })
 
             $("#contact_us_message").on("blur", function() {
                 var contact_us_message = $(this).val();
@@ -190,7 +193,7 @@
                 if (contact_us_message == "") {
                     $(this).val("Message");
                 }
-            });
+            })
 
             $('#contact_us_email').on('blur', function() {
                 const email = $(this).val();
@@ -204,13 +207,13 @@
 
                     $(this).addClass("is-invalid");
                 }
-            });
+            })
 
             $('#contact_us_email').on('keydown', function() {
                 $('#error_contact_us_email').addClass("d-none");
 
                 $(this).removeClass("is-invalid");
-            });
+            })
 
             $('#contact_us_email').on('blur', function() {
                 const email = $(this).val();
@@ -224,13 +227,13 @@
 
                     $(this).addClass("is-invalid");
                 }
-            });
+            })
 
             $('#contact_us_email').on('keydown', function() {
                 $('#error_contact_us_email').addClass("d-none");
 
                 $(this).removeClass("is-invalid");
-            });
+            })
 
             $("#contact_us_form").submit(function() {
                 $("#contact_us_submit").text("Please Wait...");
@@ -272,7 +275,7 @@
                         console.error(error);
                     }
                 });
-            });
+            })
 
             $(".fullscreen-image").click(function() {
                 const src = $(this).attr("src");
@@ -280,7 +283,7 @@
                 $("#image_container").attr("src", src);
 
                 $("#view_image_modal").modal("show");
-            });
+            })
 
             function isValidEmail(email) {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
