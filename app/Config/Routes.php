@@ -34,10 +34,13 @@ $routes->get('/about/svfc_hymn', 'About::svfc_hymn');
 $routes->get('/contact_us', 'Contact_Us::index');
 
 $routes->post('/submit_message', 'Contact_Us::submit_message');
+$routes->post('/set_to_processed', 'Contact_Us::set_to_processed');
+$routes->post('/get_message_details', 'Contact_Us::get_message_details');
 /* ========== End Contact Us ========== */
 
 /* ========== Start Admin ========== */
 $routes->get('/admin/list_of_messages', 'Admin::list_of_messages');
 $routes->get('/admin/logout', 'Admin::logout');
+
 $routes->post('/admin/login', 'Admin::login');
 /* ========== End Admin ========== */

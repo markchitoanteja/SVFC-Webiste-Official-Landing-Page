@@ -13,7 +13,6 @@
                                     <th>Email</th>
                                     <th>Facebook Account</th>
                                     <th>Mobile Number</th>
-                                    <th>Status</th>
                                     <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
@@ -26,10 +25,9 @@
                                             <td><?= $message["email"] ?></td>
                                             <td><?= $message["facebook_account"] ?></td>
                                             <td><?= $message["mobile_number"] ?></td>
-                                            <td><?= ucfirst($message["status"]) ?></td>
                                             <td class="text-center">
-                                                <i role="button" class="fa fa-eye text-primary me-1" title="View Message"></i>
-                                                <i role="button" class="fa fa-thumbs-up text-success" title="Set status to Processed"></i>
+                                                <i role="button" class="fa fa-eye text-primary <?= $message["status"] == "unprocessed" ? "me-1" : null ?> view_message" message_id="<?= $message["id"] ?>" title="View Message"></i>
+                                                <i role="button" class="fa fa-thumbs-up text-success update_status <?= $message["status"] != "unprocessed" ? "d-none" : null ?>" message_id="<?= $message["id"] ?>" title="Set status to Processed"></i>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -41,7 +39,7 @@
             <?php else : ?>
                 <div class="text-center">
                     <h1 class="text-muted mb-5">You need an admin level access to view this page</h1>
-                    <button class="btn btn-success px-5 py-2">Login as Admin</button>
+                    <button class="btn btn-success px-5 py-2" data-bs-toggle="modal" data-bs-target="#login_modal">Login as Admin</button>
                 </div>
             <?php endif ?>
         </div>

@@ -86,8 +86,38 @@
         </div>
     <?php endif ?>
 
+    <?php if (session()->get("current_tab") == "admin/list_of_messages") : ?>
+        <!-- View Message Modal -->
+        <div class="modal fade" id="view_message_modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Message Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="message-details d-none">
+                            <p><strong>Name:</strong> <span id="view_message_name"></span></p>
+                            <p><strong>Date:</strong> <span id="view_message_date_created"></span></p>
+                            <p><strong>Email:</strong> <span id="view_message_email"></span></p>
+                            <p><strong>Facebook Account:</strong> <span id="view_message_facebook_account"></span></p>
+                            <p><strong>Mobile Number:</strong> <span id="view_message_mobile_number"></span></p>
+                            <p><strong>Message:</strong> <span id="view_message_message"></span></p>
+                        </div>
+                        <div class="d-flex justify-content-center py-5 loading">
+                            <img src="<?= base_url() ?>public/img/loading.gif" class="w-50" alt="Loading Image">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif ?>
+
     <!-- ======= View Profile Picture Modal ======= -->
-    <div class="modal fade" id="view_image_modal" tabindex="-1">
+    <div class="modal fade" id="view_image_modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <img id="image_container" alt="Full Screen Image">
@@ -307,7 +337,7 @@
                 $("#view_image_modal").modal("show");
             })
 
-            $("#login_modal").submit(function(){
+            $("#login_modal").submit(function() {
                 const username = $("#login_username").val();
                 const password = $("#login_password").val();
 
@@ -318,10 +348,10 @@
                 $("#login_submit").text("Processing...");
 
                 var formData = new FormData();
-                
+
                 formData.append('username', username);
                 formData.append('password', password);
-                
+
                 $.ajax({
                     url: base_url + 'admin/login',
                     data: formData,
@@ -331,6 +361,88 @@
                     contentType: false,
                     success: function(response) {
                         location.href = base_url + current_tab;
+                    },
+                    error: function(_, _, error) {
+                        console.error(error);
+                    }
+                });
+            })
+
+            $(document).on("click", ".update_status", function() {
+                const message_id = $(this).attr("message_id");
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "This means you already processed this message.",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, it's processed!"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        var formData = new FormData();
+
+                        formData.append('id', message_id);
+
+                        $.ajax({
+                            url: base_url + 'set_to_processed',
+                            data: formData,
+                            type: 'POST',
+                            dataType: 'JSON',
+                            processData: false,
+                            contentType: false,
+                            success: function(response) {
+                                location.href = base_url + current_tab;
+                            },
+                            error: function(_, _, error) {
+                                console.error(error);
+                            }
+                        });
+                    }
+                });
+            })
+
+            $(document).on("click", ".view_message", function() {
+                const message_id = $(this).attr("message_id");
+
+                $(".loading").removeClass("d-none");
+                $(".message-details").addClass("d-none");
+
+                $("#view_message_modal").modal("show");
+
+                var formData = new FormData();
+
+                formData.append('id', message_id);
+
+                $.ajax({
+                    url: base_url + 'get_message_details',
+                    data: formData,
+                    type: 'POST',
+                    dataType: 'JSON',
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        var dateString = response.date_created;
+                        var date = new Date(dateString);
+                        var date_created = date.toLocaleString('en-US', {
+                            month: 'long',
+                            day: 'numeric',
+                            year: 'numeric',
+                            hour: 'numeric',
+                            minute: 'numeric',
+                            hour12: true
+                        });
+
+                        $("#view_message_name").text(response.name);
+                        $("#view_message_date_created").text(date_created);
+                        $("#view_message_email").text(response.email);
+                        $("#view_message_facebook_account").text(response.facebook_account);
+                        $("#view_message_mobile_number").text(response.mobile_number);
+                        $("#view_message_message").text(response.message);
+
+                        $(".loading").addClass("d-none");
+                        $(".message-details").removeClass("d-none");
                     },
                     error: function(_, _, error) {
                         console.error(error);

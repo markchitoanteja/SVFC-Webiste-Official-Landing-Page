@@ -102,4 +102,42 @@ class Contact_Us extends BaseController
             echo json_encode(true);
         }
     }
+
+    public function set_to_processed()
+    {
+        $id = $this->request->getPost("id");
+
+        $Contact_Us_Model = new Contact_Us_Model();
+
+        $data = ["status" => "processed"];
+
+        $Contact_Us_Model->update($id, $data);
+
+        if ($Contact_Us_Model->affectedRows() > 0) {
+            session()->set("notification", array(
+                "title" => "Success!",
+                "message" => "A message has been processed!",
+                "icon" => "success",
+            ));
+        } else {
+            session()->set("notification", array(
+                "title" => "Oops...",
+                "message" => "There was an error while processing your request.",
+                "icon" => "error",
+            ));
+        }
+
+        echo json_encode(true);
+    }
+
+    public function get_message_details()
+    {
+        $id = $this->request->getPost("id");
+
+        $Contact_Us_Model = new Contact_Us_Model();
+
+        $message = $Contact_Us_Model->where('id', $id)->first();
+
+        echo json_encode($message);
+    }
 }
