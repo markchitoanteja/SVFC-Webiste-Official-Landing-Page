@@ -41,7 +41,6 @@
                         <div class="social-links mt-3">
                             <a href="https://www.facebook.com/SVFCofCamarinOfficialPage/" target="_blank" rel="noopener noreferrer" class="facebook"><i class="bx bxl-facebook"></i></a>
                             <a href="https://www.youtube.com/@svfcmultimedia" target="_blank" rel="noopener noreferrer" class="youtube"><i class="bx bxl-youtube"></i></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="twitter"><i class="bx bxl-twitter"></i></a>
                         </div>
                     </div>
                     <!-- Useful Links -->
@@ -144,7 +143,7 @@
                     backdrop_image = "url('" + img_3.src + "') left top no-repeat";
                 }
 
-                img_1.onload = img_2.onload = img_3.onload = function() {
+                window.onload = function() {
                     announcement(backdrop_image);
                 };
             }
@@ -318,7 +317,7 @@
 
                             @keyframes fall {
                                 0% {
-                                transform: translateY(-200px) rotateZ(0deg);
+                                transform: translateY(-100px) rotateZ(0deg);
                                 opacity: 1;
                                 }
                                 100% {

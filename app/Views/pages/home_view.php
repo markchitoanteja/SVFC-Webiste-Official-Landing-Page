@@ -33,7 +33,7 @@
     <header id="header" class="d-flex align-items-center mx-auto">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="logo" style="display: flex; align-items: center;">
-                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="" style="margin-right: 10px;">
+                <img src="<?= base_url() ?>public/img/logo.png" alt="" style="margin-right: 10px;">
                 <div class="logo-content" style="display: flex; flex-direction: column;">
                     <a href="#hero" class="scrollto">
                         <span class="school-name" style="font-size: 20px;" id="full_sn">St. Vincent de Ferrer College of Camarin, Inc.</span>
@@ -130,7 +130,7 @@
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <div class="home-wrapper">
-                                    <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Logo" class="mb-2" style="max-width: 150px;">
+                                    <img src="<?= base_url() ?>public/img/logo.png" alt="Logo" class="mb-2" style="max-width: 150px;">
                                     <h2 class="animate__animated animate__fadeInDown display-4 school-name" style="color: black;">St. Vincent de Ferrer College of Camarin, Inc.</h2>
                                     <p class="animate__animated animate__fadeInUp" style="color: black;">The Home of Quality and Innovative Education</p>
                                     <a href="#main" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="color: black;">Get Started</a>
@@ -195,7 +195,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <img loading="lazy" src="<?= base_url() ?>public/img/bg_with_logo.png" class="img-fluid" alt="">
+                        <img src="<?= base_url() ?>public/img/bg_with_logo.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content">
                         <h3><span class="school-name">St. Vincent de Ferrer College of Camarin, Inc.</span> objectives are as follows:</h3>
@@ -458,9 +458,9 @@
                                         <div class="col-md-4">
                                             <div style="position: relative;">
                                                 <a href="https://www.youtube.com/watch?v=B8gBq0k31S0" target="_blank">
-                                                    <img loading="lazy" src="https://img.youtube.com/vi/B8gBq0k31S0/hqdefault.jpg" width="100%" />
+                                                    <img src="https://img.youtube.com/vi/B8gBq0k31S0/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -472,9 +472,9 @@
                                         <div class="col-md-4">
                                             <div style="position: relative;">
                                                 <a href="https://www.youtube.com/watch?v=nyglb4l-bYI" target="_blank">
-                                                    <img loading="lazy" src="https://img.youtube.com/vi/nyglb4l-bYI/hqdefault.jpg" width="100%" />
+                                                    <img src="https://img.youtube.com/vi/nyglb4l-bYI/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -486,9 +486,9 @@
                                         <div class="col-md-4">
                                             <div style="position: relative;">
                                                 <a href="https://www.youtube.com/watch?v=7ToPoNaUNHE" target="_blank">
-                                                    <img loading="lazy" src="https://img.youtube.com/vi/7ToPoNaUNHE/hqdefault.jpg" width="100%" />
+                                                    <img src="https://img.youtube.com/vi/7ToPoNaUNHE/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -504,9 +504,9 @@
                                         <div class="col-md-4">
                                             <div style="position: relative;">
                                                 <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs" target="_blank">
-                                                    <img loading="lazy" src="https://img.youtube.com/vi/uTpRy4ySaCs/hqdefault.jpg" width="100%" />
+                                                    <img src="https://img.youtube.com/vi/uTpRy4ySaCs/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -518,9 +518,9 @@
                                         <div class="col-md-4">
                                             <div style="position: relative;">
                                                 <a href="https://www.youtube.com/watch?v=CZh4bI5doYE" target="_blank">
-                                                    <img loading="lazy" src="https://img.youtube.com/vi/CZh4bI5doYE/hqdefault.jpg" width="100%" />
+                                                    <img src="https://img.youtube.com/vi/CZh4bI5doYE/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -532,9 +532,9 @@
                                         <div class="col-md-4">
                                             <div style="position: relative;">
                                                 <a href="https://www.youtube.com/watch?v=5hwCij6bZoU" target="_blank">
-                                                    <img loading="lazy" src="https://img.youtube.com/vi/5hwCij6bZoU/hqdefault.jpg" width="100%" />
+                                                    <img src="https://img.youtube.com/vi/5hwCij6bZoU/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -575,9 +575,9 @@
                         <div class="youtube-video">
                             <div style="position: relative;">
                                 <a href="https://www.youtube.com/watch?v=B8gBq0k31S0" target="_blank">
-                                    <img loading="lazy" src="https://img.youtube.com/vi/B8gBq0k31S0/hqdefault.jpg" width="100%" />
+                                    <img src="https://img.youtube.com/vi/B8gBq0k31S0/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -590,9 +590,9 @@
                         <div class="youtube-video">
                             <div style="position: relative;">
                                 <a href="https://www.youtube.com/watch?v=nyglb4l-bYI" target="_blank">
-                                    <img loading="lazy" src="https://img.youtube.com/vi/nyglb4l-bYI/hqdefault.jpg" width="100%" />
+                                    <img src="https://img.youtube.com/vi/nyglb4l-bYI/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -605,9 +605,9 @@
                         <div class="youtube-video">
                             <div style="position: relative;">
                                 <a href="https://www.youtube.com/watch?v=7ToPoNaUNHE" target="_blank">
-                                    <img loading="lazy" src="https://img.youtube.com/vi/7ToPoNaUNHE/hqdefault.jpg" width="100%" />
+                                    <img src="https://img.youtube.com/vi/7ToPoNaUNHE/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -620,9 +620,9 @@
                         <div class="youtube-video">
                             <div style="position: relative;">
                                 <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs" target="_blank">
-                                    <img loading="lazy" src="https://img.youtube.com/vi/uTpRy4ySaCs/hqdefault.jpg" width="100%" />
+                                    <img src="https://img.youtube.com/vi/uTpRy4ySaCs/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -635,9 +635,9 @@
                         <div class="youtube-video">
                             <div style="position: relative;">
                                 <a href="https://www.youtube.com/watch?v=CZh4bI5doYE" target="_blank">
-                                    <img loading="lazy" src="https://img.youtube.com/vi/CZh4bI5doYE/hqdefault.jpg" width="100%" />
+                                    <img src="https://img.youtube.com/vi/CZh4bI5doYE/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -650,9 +650,9 @@
                         <div class="youtube-video">
                             <div style="position: relative;">
                                 <a href="https://www.youtube.com/watch?v=5hwCij6bZoU" target="_blank">
-                                    <img loading="lazy" src="https://img.youtube.com/vi/5hwCij6bZoU/hqdefault.jpg" width="100%" />
+                                    <img src="https://img.youtube.com/vi/5hwCij6bZoU/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -708,24 +708,24 @@
                             <div class="cover">
                                 <label for="checkbox-cover"></label>
 
-                                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
+                                <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
                             </div>
 
                             <?php foreach ($pageDetails as $page) : ?>
                                 <div class="page" id="<?= $page['id'] ?>">
                                     <div class="front-page">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                        <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
                                         <label class="next" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
                                     </div>
                                     <div class="back-page">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                        <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
                                         <label class="prev" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
 
                             <div class="back-cover">
-                                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
+                                <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
                             </div>
                         </div>
                     </div>
@@ -765,24 +765,24 @@
                             <div class="cover_mobile">
                                 <label for="checkbox-cover_mobile"></label>
 
-                                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
+                                <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
                             </div>
 
                             <?php foreach ($pageDetails_mobile as $page_mobile) : ?>
                                 <div class="page_mobile" id="<?= $page_mobile['id'] ?>">
                                     <div class="front-page_mobile">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page_mobile['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                        <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page_mobile['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
                                         <label class="next_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
                                     </div>
                                     <div class="back-page_mobile">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page_mobile['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                        <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page_mobile['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
                                         <label class="prev_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
 
                             <div class="back-cover_mobile">
-                                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
+                                <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
                             </div>
                         </div>
                     </div>
@@ -812,7 +812,7 @@
                                     <img class="img-shadow" src="<?= base_url() ?>public/img/news.png" style="width: 100%;" alt="YouTube Thumbnail">
 
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                                     </div>
                                 </div>
                             </a>

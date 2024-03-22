@@ -155,4 +155,4 @@
     </section>
 </main>
 
-<iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.211777926766!2d121.05697287415265!3d14.757095373227926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b01faeafe71d%3A0x6df429917a6fbfe3!2sSt.%20Vincent%20de%20Ferrer%20College%20of%20Camarin%2C%20Inc.!5e0!3m2!1sen!2sph!4v1707917693362!5m2!1sen!2sph" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.211777926766!2d121.05697287415265!3d14.757095373227926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b01faeafe71d%3A0x6df429917a6fbfe3!2sSt.%20Vincent%20de%20Ferrer%20College%20of%20Camarin%2C%20Inc.!5e0!3m2!1sen!2sph!4v1707917693362!5m2!1sen!2sph" height="400" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
