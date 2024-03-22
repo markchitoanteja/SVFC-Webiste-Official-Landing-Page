@@ -37,5 +37,5 @@ $routes->post('/submit_message', 'Contact_Us::submit_message');
 /* ========== End Contact Us ========== */
 
 /* ========== Start Admin ========== */
-$routes->get('/admin', 'Admin::index');
+$routes->get('/admin/list_of_messages', 'Admin::list_of_messages');
 /* ========== End Admin ========== */

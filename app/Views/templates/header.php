@@ -20,7 +20,7 @@ $current_sub_page = session()->get("current_sub_page");
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    
+
     <!-- Vendor CSS Files -->
     <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -66,6 +66,7 @@ $current_sub_page = session()->get("current_sub_page");
                             <li><a class="nav-link <?= $current_tab == "about/college_seal" ? "active" : null ?>" href="<?= base_url() ?>about/college_seal">College Seal</a></li>
                             <li><a class="nav-link <?= $current_tab == "about/philosophy_mission_and_vision" ? "active" : null ?>" href="<?= base_url() ?>about/philosophy_mission_and_vision">Philosophy, Mission, and Vision</a></li>
                             <li><a class="nav-link <?= $current_tab == "about/goals_and_objectives" ? "active" : null ?>" href="<?= base_url() ?>about/goals_and_objectives">Goals and Objectives</a></li>
+                            <li><a class="nav-link no_function" href="javascript:void(0)">Facilities</a></li>
                             <li><a class="nav-link <?= $current_tab == "about/svfc_hymn" ? "active" : null ?>" href="<?= base_url() ?>about/svfc_hymn">SVFC Hymn</a></li>
                         </ul>
                     </li>
@@ -96,6 +97,32 @@ $current_sub_page = session()->get("current_sub_page");
                     </li>
                     <!-- Contact Us -->
                     <li><a class="nav-link <?= $current_tab == "contact_us" ? "active" : null ?>" href="<?= base_url() ?>contact_us">Contact Us</a></li>
+                    <!-- Portal -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <span>Portal</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <ul>
+                            <li><a class="nav-link" href="https://portal.svfc-edu.com/login" target="_blank" rel="noopener noreferrer">Student Portal</a></li>
+                            <li><a class="nav-link" href="https://portal.svfc-edu.com/admin/login" target="_blank" rel="noopener noreferrer">Administrator Portal</a></li>
+                        </ul>
+                    </li>
+                    <!-- Login -->
+                    <?php if (session()->get("user_id")) : ?>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)">
+                                <span><?= $admin_name ?></span>
+                                <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul>
+                                <li><a class="nav-link <?= $current_tab == "admin/list_of_messages" ? "active" : null ?>" href="<?= base_url() ?>admin/list_of_messages">List of Messages</a></li>
+                                <li><a class="nav-link" href="<?= base_url() ?>admin/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    <?php else : ?>
+                        <li><a class="nav-link" id="btn_login" href="javascript:void(0)">Login</a></li>
+                    <?php endif ?>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>

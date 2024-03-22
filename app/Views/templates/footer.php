@@ -65,23 +65,6 @@
         </div>
     </footer>
 
-    <?php if (session()->get("current_tab") == "home") : ?>
-        <!-- News Modal -->
-        <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Video Player</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/uTpRy4ySaCs" frameborder="0" allowfullscreen id="videoIframe"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <?php endif ?>
-
     <?php if (session()->get("current_tab") == "about/svfc_hymn") : ?>
         <!-- SVFC Hymn Modal -->
         <div class="modal fade" id="svfcHymnModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
@@ -124,7 +107,7 @@
     <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.js"></script>
     <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.bootstrap5.js"></script>
     <script src="<?= base_url() ?>public/vendor/sweetalert/sweetalert2@11.js"></script>
-    
+
     <!-- Template Main JS File -->
     <script src="<?= base_url() ?>public/js/main.js"></script>
 
@@ -136,6 +119,9 @@
             var container_width = $("#body_container").width();
             var second_navbar = $('#header');
             var offset = second_navbar.offset().top;
+            var img_1 = new Image();
+            var img_2 = new Image();
+            var img_3 = new Image();
 
             check_mobile();
 
@@ -148,7 +134,25 @@
             }
 
             if (current_tab == "home") {
-                announcement();
+                img_1.src = "public/img/poster.gif";
+                img_2.src = "public/img/process.png";
+                img_3.src = "public/img/announcement.gif";
+
+                if ($(window).width() <= 768) {
+                    backdrop_image = "none";
+                } else {
+                    backdrop_image = "url('" + img_3.src + "') left top no-repeat";
+                }
+
+                img_1.onload = img_2.onload = img_3.onload = function() {
+                    announcement(backdrop_image);
+                };
+            }
+
+            if (current_tab == "about/svfc_hymn") {
+                $('#svfcHymnModal').on('hidend.bs.modal', function() {
+                    $('#video_player').get(0).pause();
+                })
             }
 
             $('#data_table').DataTable({
@@ -161,22 +165,12 @@
                 "responsive": true,
             })
 
-            $("#newsModal").on('hidden.bs.modal', function() {
-                var iframeSrc = $('#videoIframe').attr('src');
-
-                $('#videoIframe').attr('src', iframeSrc);
-            })
-
             $(".no_function").click(function() {
                 Swal.fire({
                     title: "Sorry...",
                     text: "This feature is under maintenance!",
                     icon: "error"
                 });
-            })
-
-            $('#svfcHymnModal').on('hidend.bs.modal', function() {
-                $('#video_player').get(0).pause();
             })
 
             $("#contact_us_message").on("focus", function() {
@@ -306,21 +300,88 @@
                 }
             }
 
-            function announcement() {
+            function announcement(backdrop_image) {
                 Swal.fire({
                     html: `
-                        <div class="card">
-                            <img src="<?= base_url() ?>public/img/poster.gif" class="card-img-top mb-3" alt="...">
-                            
-                            <button class="btn btn-primary py-2 w-100" id="btn_message_us">Message Us</button>
+                        <style>
+                            @keyframes blink {
+                                0% {
+                                opacity: 1;
+                                }
+                                50% {
+                                opacity: 0;
+                                }
+                                100% {
+                                opacity: 1;
+                                }
+                            }
 
-                            <button class="text-danger" id="closeBtn" style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; font-size: 24px;">&times;</button>
+                            @keyframes fall {
+                                0% {
+                                transform: translateY(-200px) rotateZ(0deg);
+                                opacity: 1;
+                                }
+                                100% {
+                                transform: translateY(1000px) rotateZ(720deg);
+                                opacity: 0;
+                                }
+                            }
+
+                            .confetti {
+                                position: absolute;
+                                width: 10px;
+                                height: 10px;
+                                background-color: #ff00ff;
+                                border-radius: 10px;
+                                animation: fall linear infinite;
+                                opacity: 0;
+                                pointer-events: none;
+                            }
+                        </style>
+
+                        <div class="container">
+                            <?php for ($i = 0; $i <= 100; $i = $i + 5) : ?>
+                                <?php
+                                $top = rand(-1000, -100);
+                                $left = rand(0, 100);
+                                $duration = rand(5, 10);
+                                ?>
+                                <div class="confetti" style="top: <?= $top ?>px; left: <?= $left ?>%; animation-duration: <?= $duration ?>s;"></div>
+                            <?php endfor ?>
+
+                            <h1 style="text-align: center; animation: blink 2s infinite; color: #ff00ff;">Special Announcement</h1>
+                            <hr>
+                            <div class="card w-100 border-0">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <img src="${img_1.src}" class="card-img-top mb-3 w-100 h-100" alt="...">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <img src="${img_2.src}" class="card-img-top mb-3 w-100 h-100" alt="...">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-12 mb-md-0 mb-2">
+                                        <button class="btn btn-primary py-3 w-100" id="btn_message_us">Enroll Now</button>
+                                    </div>
+                                    <div class="col-12 d-md-none d-block">
+                                        <button class="btn btn-danger py-3 w-100" id="closeBtn">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="text-danger d-md-block d-none" id="closeBtn_2" style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; font-size: 30px;">
+                                &times;
+                            </button>
                         </div>
                     `,
+                    width: 1000,
                     showConfirmButton: false,
                     allowOutsideClick: false,
                     allowEscapeKey: false,
                     allowEnterKey: false,
+                    backdrop: `rgba(255, 192, 203, 0.4) ${backdrop_image}`
                 });
 
                 document.getElementById('btn_message_us').addEventListener('click', () => {
@@ -330,10 +391,13 @@
                 document.getElementById('closeBtn').addEventListener('click', () => {
                     Swal.close();
                 });
+
+                document.getElementById('closeBtn_2').addEventListener('click', () => {
+                    Swal.close();
+                });
             }
         })
     </script>
-
     </body>
 
     </html>

@@ -9,10 +9,12 @@ class Contact_Us_Model extends Model
     protected $table = "tbl_messages";
     protected $primary_key = "id";
     protected $allowedFields = [
+        'date_created',
         'name',
         'email',
         'facebook_account',
         'mobile_number',
         'message',
+        'status',
     ];
 }

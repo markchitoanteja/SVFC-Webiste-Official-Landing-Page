@@ -1635,7 +1635,6 @@ section {
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
   overflow: hidden;
 }
 
@@ -1674,6 +1673,7 @@ section {
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+/* School Paper CSS */
 .centered-image {
   width: 250px;
   height: 250px;
@@ -1683,9 +1683,7 @@ section {
   transform: translate(-50%, -50%);
 }
 
-/* School Paper CSS */
 .flip-book {
-  /* height: 100vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1697,6 +1695,27 @@ section {
   position: relative;
   transition-duration: 1s;
   perspective: 1500;
+}
+
+.page {
+  position: absolute;
+  background-color: white;
+  width: 330px;
+  height: 430px;
+  border-radius: 0 15px 15px 0;
+  margin-top: 10px;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition-duration: 1.5s;
+}
+
+#checkbox-cover:checked~.book {
+  transform: translateX(170px);
+}
+
+#checkbox-cover:checked~.book .page {
+  box-shadow: 0 0 3px rgb(99, 98, 98);
 }
 
 .flip-book-input {
@@ -1725,19 +1744,6 @@ section {
 .back-cover {
   position: relative;
   z-index: -1;
-}
-
-.page {
-  position: absolute;
-  background-color: white;
-  width: 330px;
-  height: 430px;
-  border-radius: 0 15px 15px 0;
-  margin-top: 10px;
-  transform-origin: left;
-  transform-style: preserve-3d;
-  transform: rotateY(0deg);
-  transition-duration: 1.5s;
 }
 
 .page img {
@@ -1777,81 +1783,6 @@ section {
 
 .prev {
   left: 1em;
-}
-
-#checkbox-cover:checked~.book {
-  transform: translateX(200px);
-}
-
-#checkbox-cover:checked~.book .page {
-  box-shadow: 0 0 3px rgb(99, 98, 98);
-}
-
-#page1 {
-  z-index: 17;
-}
-
-#page2 {
-  z-index: 16;
-}
-
-#page3 {
-  z-index: 15;
-}
-
-#page4 {
-  z-index: 14;
-}
-
-#page5 {
-  z-index: 13;
-}
-
-#page6 {
-  z-index: 12;
-}
-#page7 {
-  z-index: 11;
-}
-
-#page8 {
-  z-index: 10;
-}
-
-#page9 {
-  z-index: 9;
-}
-
-#page10 {
-  z-index: 8;
-}
-
-#page11 {
-  z-index: 7;
-}
-
-#page12 {
-  z-index: 6;
-}
-
-#page13 {
-  z-index: 5;
-}
-
-#page14 {
-  z-index: 4;
-}
-
-#page15 {
-  z-index: 3;
-}
-
-#page16 {
-  z-index: 2;
-}
-
-#page17 {
-  z-index: 1;
 }
 
 #checkbox-cover:checked~.book .cover {
@@ -1966,4 +1897,366 @@ section {
   position: absolute;
   z-index: 18;
   transition: transform 1s;
+}
+
+#page1 {
+  z-index: 17;
+}
+
+#page2 {
+  z-index: 16;
+}
+
+#page3 {
+  z-index: 15;
+}
+
+#page4 {
+  z-index: 14;
+}
+
+#page5 {
+  z-index: 13;
+}
+
+#page6 {
+  z-index: 12;
+}
+
+#page7 {
+  z-index: 11;
+}
+
+#page8 {
+  z-index: 10;
+}
+
+#page9 {
+  z-index: 9;
+}
+
+#page10 {
+  z-index: 8;
+}
+
+#page11 {
+  z-index: 7;
+}
+
+#page12 {
+  z-index: 6;
+}
+
+#page13 {
+  z-index: 5;
+}
+
+#page14 {
+  z-index: 4;
+}
+
+#page15 {
+  z-index: 3;
+}
+
+#page16 {
+  z-index: 2;
+}
+
+#page17 {
+  z-index: 1;
+}
+
+/* School Paper CSS Mobile */
+.centered-image_mobile {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flip-book_mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book_mobile {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  transition-duration: 1s;
+  perspective: 1500;
+}
+
+.page_mobile {
+  position: absolute;
+  background-color: white;
+  width: 190px;
+  height: 290px;
+  border-radius: 0 15px 15px 0;
+  margin-top: 10px;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition-duration: 1.5s;
+}
+
+#checkbox-cover_mobile:checked~.book_mobile {
+  transform: translateX(100px);
+}
+
+#checkbox-cover_mobile:checked~.book_mobile .page_mobile {
+  box-shadow: 0 0 3px rgb(99, 98, 98);
+}
+
+.flip-book-input_mobile {
+  display: none;
+}
+
+.cover_mobile,
+.back-cover_mobile {
+  background-color: #ff00ff;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 15px 15px 0;
+  box-shadow: 0 0 5px rgb(41, 41, 41);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center left;
+}
+
+.cover_mobile label {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.back-cover_mobile {
+  position: relative;
+  z-index: -1;
+}
+
+.page_mobile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 0 0 15px;
+}
+
+.front-page_mobile {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.back-page_mobile {
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  z-index: 99;
+}
+
+.next_mobile,
+.prev_mobile {
+  position: absolute;
+  bottom: 1em;
+  cursor: pointer;
+}
+
+.next_mobile {
+  right: 1em;
+}
+
+.prev_mobile {
+  left: 1em;
+}
+
+#checkbox-cover_mobile:checked~.book_mobile .cover_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+
+#checkbox-page1_mobile:checked~.book_mobile #page1_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 2;
+}
+
+#checkbox-page2_mobile:checked~.book_mobile #page2_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 3;
+}
+
+#checkbox-page3_mobile:checked~.book_mobile #page3_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 4;
+}
+
+#checkbox-page4_mobile:checked~.book_mobile #page4_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 5;
+}
+
+#checkbox-page5_mobile:checked~.book_mobile #page5_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 6;
+}
+
+#checkbox-page6_mobile:checked~.book_mobile #page6_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 7;
+}
+
+#checkbox-page7_mobile:checked~.book_mobile #page7_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 8;
+}
+
+#checkbox-page8_mobile:checked~.book_mobile #page8_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 9;
+}
+
+#checkbox-page9_mobile:checked~.book_mobile #page9_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 10;
+}
+
+#checkbox-page10_mobile:checked~.book_mobile #page10_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 11;
+}
+
+#checkbox-page11_mobile:checked~.book_mobile #page11_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 12;
+}
+
+#checkbox-page12_mobile:checked~.book_mobile #page12_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 13;
+}
+
+#checkbox-page13_mobile:checked~.book_mobile #page13_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 14;
+}
+
+#checkbox-page14_mobile:checked~.book_mobile #page14_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 15;
+}
+
+#checkbox-page15_mobile:checked~.book_mobile #page15_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 16;
+}
+
+#checkbox-page16_mobile:checked~.book_mobile #page16_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 17;
+}
+
+#checkbox-page17_mobile:checked~.book_mobile #page17_mobile {
+  transition: transform 1.5s, z-index 0.5s 0.5s;
+  transform: rotateY(-180deg);
+  z-index: 18;
+}
+
+.cover_mobile {
+  position: absolute;
+  z-index: 18;
+  transition: transform 1s;
+}
+
+#page1_mobile {
+  z-index: 17;
+}
+
+#page2_mobile {
+  z-index: 16;
+}
+
+#page3_mobile {
+  z-index: 15;
+}
+
+#page4_mobile {
+  z-index: 14;
+}
+
+#page5_mobile {
+  z-index: 13;
+}
+
+#page6_mobile {
+  z-index: 12;
+}
+
+#page7_mobile {
+  z-index: 11;
+}
+
+#page8_mobile {
+  z-index: 10;
+}
+
+#page9_mobile {
+  z-index: 9;
+}
+
+#page10_mobile {
+  z-index: 8;
+}
+
+#page11_mobile {
+  z-index: 7;
+}
+
+#page12_mobile {
+  z-index: 6;
+}
+
+#page13_mobile {
+  z-index: 5;
+}
+
+#page14_mobile {
+  z-index: 4;
+}
+
+#page15_mobile {
+  z-index: 3;
+}
+
+#page16_mobile {
+  z-index: 2;
+}
+
+#page17_mobile {
+  z-index: 1;
 }

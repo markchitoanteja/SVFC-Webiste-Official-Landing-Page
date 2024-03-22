@@ -33,7 +33,7 @@
     <header id="header" class="d-flex align-items-center mx-auto">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="logo" style="display: flex; align-items: center;">
-                <img src="<?= base_url() ?>public/img/logo.png" alt="" style="margin-right: 10px;">
+                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="" style="margin-right: 10px;">
                 <div class="logo-content" style="display: flex; flex-direction: column;">
                     <a href="#hero" class="scrollto">
                         <span class="school-name" style="font-size: 20px;" id="full_sn">St. Vincent de Ferrer College of Camarin, Inc.</span>
@@ -57,6 +57,7 @@
                             <li><a class="nav-link" href="<?= base_url() ?>about/college_seal">College Seal</a></li>
                             <li><a class="nav-link" href="<?= base_url() ?>about/philosophy_mission_and_vision">Philosophy, Mission, and Vision</a></li>
                             <li><a class="nav-link" href="<?= base_url() ?>about/goals_and_objectives">Goals and Objectives</a></li>
+                            <li><a class="nav-link no_function" href="javascript:void(0)">Facilities</a></li>
                             <li><a class="nav-link" href="<?= base_url() ?>about/svfc_hymn">SVFC Hymn</a></li>
                         </ul>
                     </li>
@@ -85,6 +86,32 @@
                     </li>
                     <!-- Contact Us -->
                     <li><a class="nav-link" href="<?= base_url() ?>contact_us">Contact Us</a></li>
+                    <!-- Portal -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">
+                            <span>Portal</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </a>
+                        <ul>
+                            <li><a class="nav-link" href="https://portal.svfc-edu.com/login" target="_blank" rel="noopener noreferrer">Student Portal</a></li>
+                            <li><a class="nav-link" href="https://portal.svfc-edu.com/admin/login" target="_blank" rel="noopener noreferrer">Administrator Portal</a></li>
+                        </ul>
+                    </li>
+                    <!-- Login -->
+                    <?php if (session()->get("user_id")) : ?>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)">
+                                <span><?= $admin_name ?></span>
+                                <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul>
+                                <li><a class="nav-link <?= $current_tab == "admin/list_of_messages" ? "active" : null ?>" href="<?= base_url() ?>admin/list_of_messages">List of Messages</a></li>
+                                <li><a class="nav-link" href="<?= base_url() ?>admin/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    <?php else : ?>
+                        <li><a class="nav-link" id="btn_login" href="javascript:void(0)">Login</a></li>
+                    <?php endif ?>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
@@ -103,7 +130,7 @@
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <div class="home-wrapper">
-                                    <img src="<?= base_url() ?>public/img/logo.png" alt="Logo" class="mb-2" style="max-width: 150px;">
+                                    <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Logo" class="mb-2" style="max-width: 150px;">
                                     <h2 class="animate__animated animate__fadeInDown display-4 school-name" style="color: black;">St. Vincent de Ferrer College of Camarin, Inc.</h2>
                                     <p class="animate__animated animate__fadeInUp" style="color: black;">The Home of Quality and Innovative Education</p>
                                     <a href="#main" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="color: black;">Get Started</a>
@@ -231,7 +258,7 @@
                 <div class="section-title">
                     <h2>College Courses Offered</h2>
                 </div>
-                
+
                 <div class="mb-5">
                     <h4 class="text-center mb-4">INSTITUTE OF EDUCATION</h4>
 
@@ -349,7 +376,7 @@
                             <i class="bi bi-trophy card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
-                                <h5 class="card-title text-center">Varsity</h5>
+                                <h5 class="card-title text-center mb-3">Varsity</h5>
                                 <ul>
                                     <li>Badminton - Table Tennis</li>
                                     <li>Basketball - Chess</li>
@@ -364,7 +391,7 @@
                             <i class="bi bi-palette card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
-                                <h5 class="card-title text-center">Languages / Arts</h5>
+                                <h5 class="card-title text-center mb-3">Languages / Arts</h5>
                                 <ul>
                                     <li>Journalism and Broadcasting - Korean</li>
                                     <li>Commercial Painting Club - Nihonggo</li>
@@ -381,7 +408,7 @@
                             <i class="bi bi-music-note card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
-                                <h5 class="card-title text-center">CESCCA</h5>
+                                <h5 class="card-title text-center mb-3">CESCCA</h5>
                                 <ul>
                                     <li>Single Voice Club - Himig Musika Chorale</li>
                                     <li>Cultural Dance Troupe - Modern Dance Troupe</li>
@@ -395,7 +422,7 @@
                             <i class="bi bi-puzzle card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
-                                <h5 class="card-title text-center">Special Skills</h5>
+                                <h5 class="card-title text-center mb-3">Special Skills</h5>
                                 <ul>
                                     <li>Handicraft</li>
                                     <li>Sewing Club</li>
@@ -429,8 +456,13 @@
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <div class="video-container">
-                                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/B8gBq0k31S0" title="Video 1" allowfullscreen></iframe>
+                                            <div style="position: relative;">
+                                                <a href="https://www.youtube.com/watch?v=B8gBq0k31S0" target="_blank">
+                                                    <img loading="lazy" src="https://img.youtube.com/vi/B8gBq0k31S0/hqdefault.jpg" width="100%" />
+                                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                    </div>
+                                                </a>
                                             </div>
                                             <div class="video-info">
                                                 <h5>Bahay Kubo Covered by Rheyven Vermug</h5>
@@ -438,8 +470,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="video-container">
-                                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/nyglb4l-bYI" title="Video 2" allowfullscreen></iframe>
+                                            <div style="position: relative;">
+                                                <a href="https://www.youtube.com/watch?v=nyglb4l-bYI" target="_blank">
+                                                    <img loading="lazy" src="https://img.youtube.com/vi/nyglb4l-bYI/hqdefault.jpg" width="100%" />
+                                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                    </div>
+                                                </a>
                                             </div>
                                             <div class="video-info">
                                                 <h5>EHU GIRL Covered By Gerald</h5>
@@ -447,8 +484,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="video-container">
-                                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/7ToPoNaUNHE" title="Video 3" allowfullscreen></iframe>
+                                            <div style="position: relative;">
+                                                <a href="https://www.youtube.com/watch?v=7ToPoNaUNHE" target="_blank">
+                                                    <img loading="lazy" src="https://img.youtube.com/vi/7ToPoNaUNHE/hqdefault.jpg" width="100%" />
+                                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                    </div>
+                                                </a>
                                             </div>
                                             <div class="video-info">
                                                 <h5>Chitchat with Sweet Ellen</h5>
@@ -460,8 +502,13 @@
                                 <div class="carousel-item">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <div class="video-container">
-                                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/uTpRy4ySaCs" title="Video 1" allowfullscreen></iframe>
+                                            <div style="position: relative;">
+                                                <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs" target="_blank">
+                                                    <img loading="lazy" src="https://img.youtube.com/vi/uTpRy4ySaCs/hqdefault.jpg" width="100%" />
+                                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                    </div>
+                                                </a>
                                             </div>
                                             <div class="video-info">
                                                 <h5>RADYO VINCENTIAN SEASON 1 EP. #4</h5>
@@ -469,8 +516,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="video-container">
-                                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/CZh4bI5doYE" title="Video 2" allowfullscreen></iframe>
+                                            <div style="position: relative;">
+                                                <a href="https://www.youtube.com/watch?v=CZh4bI5doYE" target="_blank">
+                                                    <img loading="lazy" src="https://img.youtube.com/vi/CZh4bI5doYE/hqdefault.jpg" width="100%" />
+                                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                    </div>
+                                                </a>
                                             </div>
                                             <div class="video-info">
                                                 <h5>RADYO VINCENTIAN SEASON 1 EP. #2 "Vincentian Ohana"</h5>
@@ -478,8 +530,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="video-container">
-                                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/5hwCij6bZoU" title="Video 3" allowfullscreen></iframe>
+                                            <div style="position: relative;">
+                                                <a href="https://www.youtube.com/watch?v=5hwCij6bZoU" target="_blank">
+                                                    <img loading="lazy" src="https://img.youtube.com/vi/5hwCij6bZoU/hqdefault.jpg" width="100%" />
+                                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                    </div>
+                                                </a>
                                             </div>
                                             <div class="video-info">
                                                 <h5>RADYO VINCENTIAN BEST OF 2023 COMPILATION PART 1</h5>
@@ -503,60 +560,105 @@
 
                 <!-- Mobile Screen -->
                 <div id="mobile_screen" class="d-lg-none d-block container">
-                    <h4>Latest Videos</h4>
+                    <div class="row">
+                        <div class="col-6">
+                            <h4>Latest Videos</h4>
+                        </div>
+                        <div class="col-6">
+                            <a href="https://www.youtube.com/@svfcmultimedia" target="_blank" rel="noopener noreferrer">
+                                <span class="float-end">See all on YouTube</span>
+                            </a>
+                        </div>
+                    </div>
 
                     <div class="video-container-mobile">
                         <div class="youtube-video">
-                            <iframe width="100%" height="210" src="https://www.youtube.com/embed/B8gBq0k31S0" allowfullscreen></iframe>
-                            <div class="video-info">
-                                <a href="https://www.youtube.com/embed/B8gBq0k31S0" target="_blank" rel="noopener noreferrer">
-                                    <h5 class="truncate-text">Bahay Kubo Covered by Rheyven Vermug</h5>
+                            <div style="position: relative;">
+                                <a href="https://www.youtube.com/watch?v=B8gBq0k31S0" target="_blank">
+                                    <img loading="lazy" src="https://img.youtube.com/vi/B8gBq0k31S0/hqdefault.jpg" width="100%" />
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                    </div>
                                 </a>
+                            </div>
+
+                            <div class="video-info">
+                                <h5 class="truncate-text">Bahay Kubo Covered by Rheyven Vermug</h5>
                                 <p>January 30, 2024</p>
                             </div>
                         </div>
                         <div class="youtube-video">
-                            <iframe width="100%" height="210" src="https://www.youtube.com/embed/nyglb4l-bYI" allowfullscreen></iframe>
-                            <div class="video-info">
-                                <a href="https://www.youtube.com/embed/nyglb4l-bYI" target="_blank" rel="noopener noreferrer">
-                                    <h5 class="truncate-text">EHU GIRL Covered By Gerald</h5>
+                            <div style="position: relative;">
+                                <a href="https://www.youtube.com/watch?v=nyglb4l-bYI" target="_blank">
+                                    <img loading="lazy" src="https://img.youtube.com/vi/nyglb4l-bYI/hqdefault.jpg" width="100%" />
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                    </div>
                                 </a>
+                            </div>
+
+                            <div class="video-info">
+                                <h5 class="truncate-text">EHU GIRL Covered By Gerald</h5>
                                 <p>January 30, 2024</p>
                             </div>
                         </div>
                         <div class="youtube-video">
-                            <iframe width="100%" height="210" src="https://www.youtube.com/embed/7ToPoNaUNHE" allowfullscreen></iframe>
-                            <div class="video-info">
-                                <a href="https://www.youtube.com/embed/7ToPoNaUNHE" target="_blank" rel="noopener noreferrer">
-                                    <h5>Chitchat with Sweet Ellen</h5>
+                            <div style="position: relative;">
+                                <a href="https://www.youtube.com/watch?v=7ToPoNaUNHE" target="_blank">
+                                    <img loading="lazy" src="https://img.youtube.com/vi/7ToPoNaUNHE/hqdefault.jpg" width="100%" />
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                    </div>
                                 </a>
+                            </div>
+
+                            <div class="video-info">
+                                <h5>Chitchat with Sweet Ellen</h5>
                                 <p>January 30, 2024</p>
                             </div>
                         </div>
                         <div class="youtube-video">
-                            <iframe width="100%" height="210" src="https://www.youtube.com/embed/uTpRy4ySaCs" allowfullscreen></iframe>
-                            <div class="video-info">
-                                <a href="https://www.youtube.com/embed/uTpRy4ySaCs" target="_blank" rel="noopener noreferrer">
-                                    <h5 class="truncate-text">RADYO VINCENTIAN SEASON 1 EP. #4</h5>
+                            <div style="position: relative;">
+                                <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs" target="_blank">
+                                    <img loading="lazy" src="https://img.youtube.com/vi/uTpRy4ySaCs/hqdefault.jpg" width="100%" />
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                    </div>
                                 </a>
+                            </div>
+
+                            <div class="video-info">
+                                <h5 class="truncate-text">RADYO VINCENTIAN SEASON 1 EP. #4</h5>
                                 <p>January 30, 2024</p>
                             </div>
                         </div>
                         <div class="youtube-video">
-                            <iframe width="100%" height="210" src="https://www.youtube.com/embed/CZh4bI5doYE" allowfullscreen></iframe>
-                            <div class="video-info">
-                                <a href="https://www.youtube.com/embed/CZh4bI5doYE" target="_blank" rel="noopener noreferrer">
-                                    <h5 class="truncate-text">RADYO VINCENTIAN SEASON 1 EP. #2 "Vincentian Ohana"</h5>
+                            <div style="position: relative;">
+                                <a href="https://www.youtube.com/watch?v=CZh4bI5doYE" target="_blank">
+                                    <img loading="lazy" src="https://img.youtube.com/vi/CZh4bI5doYE/hqdefault.jpg" width="100%" />
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                    </div>
                                 </a>
+                            </div>
+
+                            <div class="video-info">
+                                <h5 class="truncate-text">RADYO VINCENTIAN SEASON 1 EP. #2 "Vincentian Ohana"</h5>
                                 <p>January 17, 2024</p>
                             </div>
                         </div>
                         <div class="youtube-video">
-                            <iframe width="100%" height="210" src="https://www.youtube.com/embed/5hwCij6bZoU" allowfullscreen></iframe>
-                            <div class="video-info">
-                                <a href="https://www.youtube.com/embed/5hwCij6bZoU" target="_blank" rel="noopener noreferrer">
-                                    <h5 class="truncate-text">RADYO VINCENTIAN BEST OF 2023 COMPILATION PART 1</h5>
+                            <div style="position: relative;">
+                                <a href="https://www.youtube.com/watch?v=5hwCij6bZoU" target="_blank">
+                                    <img loading="lazy" src="https://img.youtube.com/vi/5hwCij6bZoU/hqdefault.jpg" width="100%" />
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                    </div>
                                 </a>
+                            </div>
+
+                            <div class="video-info">
+                                <h5 class="truncate-text">RADYO VINCENTIAN BEST OF 2023 COMPILATION PART 1</h5>
                                 <p>December 29, 2023</p>
                             </div>
                         </div>
@@ -594,35 +696,94 @@
                 );
                 ?>
 
-                <div class="flip-book">
-                    <input type="checkbox" id="checkbox-cover" class="flip-book-input">
+                <div class="d-lg-block d-none">
+                    <div class="flip-book">
+                        <input type="checkbox" id="checkbox-cover" class="flip-book-input">
 
-                    <?php for ($i = 0; $i < count($pageDetails) + 1; $i++) : ?>
-                        <input type="checkbox" id="checkbox-page<?= $i ?>" class="flip-book-input">
-                    <?php endfor; ?>
+                        <?php for ($i = 0; $i < count($pageDetails) + 1; $i++) : ?>
+                            <input type="checkbox" id="checkbox-page<?= $i ?>" class="flip-book-input">
+                        <?php endfor; ?>
 
-                    <div class="book">
-                        <div class="cover">
-                            <label for="checkbox-cover"></label>
+                        <div class="book">
+                            <div class="cover">
+                                <label for="checkbox-cover"></label>
 
-                            <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
-                        </div>
-
-                        <?php foreach ($pageDetails as $page) : ?>
-                            <div class="page" id="<?= $page['id'] ?>">
-                                <div class="front-page">
-                                    <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
-                                    <label class="next" for="<?= $page['checkbox'] ?>"><i class="fas fa-chevron-right"></i></label>
-                                </div>
-                                <div class="back-page">
-                                    <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
-                                    <label class="prev" for="<?= $page['checkbox'] ?>"><i class="fas fa-chevron-left"></i></label>
-                                </div>
+                                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
                             </div>
-                        <?php endforeach; ?>
 
-                        <div class="back-cover">
-                            <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
+                            <?php foreach ($pageDetails as $page) : ?>
+                                <div class="page" id="<?= $page['id'] ?>">
+                                    <div class="front-page">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                        <label class="next" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
+                                    </div>
+                                    <div class="back-page">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                        <label class="prev" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+
+                            <div class="back-cover">
+                                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
+                $pageDetails_mobile = array(
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0001.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0002.jpg", "id" => "page1_mobile", "checkbox" => "checkbox-page1_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0003.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0004.jpg", "id" => "page2_mobile", "checkbox" => "checkbox-page2_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0005.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0006.jpg", "id" => "page3_mobile", "checkbox" => "checkbox-page3_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0007.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0008.jpg", "id" => "page4_mobile", "checkbox" => "checkbox-page4_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0009.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0010.jpg", "id" => "page5_mobile", "checkbox" => "checkbox-page5_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0011.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0012.jpg", "id" => "page6_mobile", "checkbox" => "checkbox-page6_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0013.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0014.jpg", "id" => "page7_mobile", "checkbox" => "checkbox-page7_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0015.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0016.jpg", "id" => "page8_mobile", "checkbox" => "checkbox-page8_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0017.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0018.jpg", "id" => "page9_mobile", "checkbox" => "checkbox-page9_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0019.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0020.jpg", "id" => "page10_mobile", "checkbox" => "checkbox-page10_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0021.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0022.jpg", "id" => "page11_mobile", "checkbox" => "checkbox-page11_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0023.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0024.jpg", "id" => "page12_mobile", "checkbox" => "checkbox-page12_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0025.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0026.jpg", "id" => "page13_mobile", "checkbox" => "checkbox-page13_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0027.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0028.jpg", "id" => "page14_mobile", "checkbox" => "checkbox-page14_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0029.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0030.jpg", "id" => "page15_mobile", "checkbox" => "checkbox-page15_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0031.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0032.jpg", "id" => "page16_mobile", "checkbox" => "checkbox-page16_mobile"),
+                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0033.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0034.jpg", "id" => "page17_mobile", "checkbox" => "checkbox-page17_mobile")
+                );
+                ?>
+
+                <div class="d-lg-none d-block">
+                    <div class="flip-book_mobile">
+                        <input type="checkbox" id="checkbox-cover_mobile" class="flip-book-input_mobile">
+
+                        <?php for ($i = 0; $i < count($pageDetails_mobile) + 1; $i++) : ?>
+                            <input type="checkbox" id="checkbox-page<?= $i ?>_mobile" class="flip-book-input_mobile">
+                        <?php endfor; ?>
+
+                        <div class="book_mobile">
+                            <div class="cover_mobile">
+                                <label for="checkbox-cover_mobile"></label>
+
+                                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
+                            </div>
+
+                            <?php foreach ($pageDetails_mobile as $page_mobile) : ?>
+                                <div class="page_mobile" id="<?= $page_mobile['id'] ?>">
+                                    <div class="front-page_mobile">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page_mobile['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                        <label class="next_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
+                                    </div>
+                                    <div class="back-page_mobile">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page_mobile['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                        <label class="prev_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+
+                            <div class="back-cover_mobile">
+                                <img loading="lazy" src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -637,15 +798,24 @@
                         <div class="text-center">
                             <p><b>Visit RADYO VINCENTIAN:</b></p>
                             <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs&list=PLVStl2mrcNzXvebOTOYwi7bOyq_0ZqHej" target="_blank" rel="noopener noreferrer">
-                                <img class="img-shadow" loading="lazy" src="<?= base_url() ?>public/img/news_banner.png" style="width: 100%;" alt="">
+                                <img class="img-shadow" src="<?= base_url() ?>public/img/news_banner.png" style="width: 100%;" alt="">
                             </a>
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-12 mb-lg-0 mb-3 d-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#newsModal" data-video-url="https://www.youtube.com/watch?v=uTpRy4ySaCs">
+                    <div class="col-lg-6 col-12 mb-lg-0 mb-3 d-flex align-items-center justify-content-center">
                         <div class="text-center">
                             <p style="font-size: 22px;"><b>RADYO VINCENTIAN Season 1 Episode 4: "Vincentian Ohana"</b></p>
-                            <img class="img-shadow" loading="lazy" src="<?= base_url() ?>public/img/news.png" style="width: 100%; cursor: pointer;" alt="YouTube Thumbnail" id="news">
+
+                            <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs" target="_blank">
+                                <div style="position: relative;">
+                                    <img class="img-shadow" src="<?= base_url() ?>public/img/news.png" style="width: 100%;" alt="YouTube Thumbnail">
+
+                                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                        <img loading="lazy" src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>

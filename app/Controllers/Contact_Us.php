@@ -54,6 +54,7 @@ class Contact_Us extends BaseController
     {
         $Contact_Us_Model = new Contact_Us_Model();
 
+        $date_created = date("Y-m-d H:i:s");
         $name = $this->request->getPost("name");
         $email = $this->request->getPost("email");
         $facebook_account = $this->request->getPost("facebook_account");
@@ -61,11 +62,13 @@ class Contact_Us extends BaseController
         $message = $this->request->getPost("message");
 
         $data = [
+            'date_created' => $date_created,
             'name' => $name,
             'email' => $email,
             'facebook_account' => $facebook_account,
             'mobile_number' => $mobile_number,
             'message' => $message,
+            'status' => "unprocessed",
         ];
 
         $Contact_Us_Model->save($data);
