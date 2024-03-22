@@ -38,4 +38,6 @@ $routes->post('/submit_message', 'Contact_Us::submit_message');
 
 /* ========== Start Admin ========== */
 $routes->get('/admin/list_of_messages', 'Admin::list_of_messages');
+$routes->get('/admin/logout', 'Admin::logout');
+$routes->post('/admin/login', 'Admin::login');
 /* ========== End Admin ========== */

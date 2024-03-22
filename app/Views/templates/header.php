@@ -112,7 +112,7 @@ $current_sub_page = session()->get("current_sub_page");
                     <?php if (session()->get("user_id")) : ?>
                         <li class="dropdown">
                             <a href="javascript:void(0)">
-                                <span><?= $admin_name ?></span>
+                                <span><?= session()->get("user_name") ?></span>
                                 <i class="bi bi-chevron-down"></i>
                             </a>
                             <ul>
@@ -121,7 +121,7 @@ $current_sub_page = session()->get("current_sub_page");
                             </ul>
                         </li>
                     <?php else : ?>
-                        <li><a class="nav-link" id="btn_login" href="javascript:void(0)">Login</a></li>
+                        <li><a class="nav-link" id="btn_login" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#login_modal">Login</a></li>
                     <?php endif ?>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>

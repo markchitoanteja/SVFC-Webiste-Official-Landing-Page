@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Contact_Us_Model;
+use App\Models\User_Model;
 
 class Admin extends BaseController
 {
@@ -21,5 +22,46 @@ class Admin extends BaseController
         $footer = view('templates/footer');
 
         return $header . $body . $footer;
+    }
+
+    public function login()
+    {
+        $username = $this->request->getPost("username");
+        $password = $this->request->getPost("password");
+
+        $response = false;
+
+        $User_Model = new User_Model();
+
+        $user = $User_Model->where('username', $username)->first();
+
+        if ($user && password_verify(strval($password), $user["password"])) {
+            session()->set('user_id', $user["id"]);
+            session()->set('user_name', $user["name"]);
+
+            session()->set("notification", array(
+                "title" => "Success!",
+                "message" => "Login Successful! You are now an Admin.",
+                "icon" => "success",
+            ));
+
+            $response = true;
+        } else {
+            session()->set("notification", array(
+                "title" => "Login Failed!",
+                "message" => "Invalid Username or Password!",
+                "icon" => "error",
+            ));
+        }
+
+        echo json_encode($response);
+    }
+
+    public function logout()
+    {
+        session()->remove("user_id");
+        session()->remove("user_name");
+
+        return redirect()->to(base_url());
     }
 }

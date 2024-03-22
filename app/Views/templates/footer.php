@@ -95,6 +95,34 @@
         </div>
     </div>
 
+    <!-- Login Modal -->
+    <div class="modal fade" id="login_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login as Administrator</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="javascript:void(0)" method="post" id="login_form">
+                    <div class="modal-body">
+                        <div class="form-group mb-3">
+                            <label for="login_username">Username</label>
+                            <input type="text" id="login_username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login_password">Password</label>
+                            <input type="password" id="login_password" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="login_submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Vendor JS Files -->
     <script src="<?= base_url() ?>public/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="<?= base_url() ?>public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -114,6 +142,7 @@
     <script>
         $(document).ready(function() {
             var current_tab = "<?= session()->get("current_tab"); ?>";
+            var base_url = "<?= base_url() ?>";
             var notification = <?= session()->get("notification") ? json_encode(session()->get("notification")) : json_encode(null); ?>;
             var container_width = $("#body_container").width();
             var second_navbar = $('#header');
@@ -276,6 +305,37 @@
                 $("#image_container").attr("src", src);
 
                 $("#view_image_modal").modal("show");
+            })
+
+            $("#login_modal").submit(function(){
+                const username = $("#login_username").val();
+                const password = $("#login_password").val();
+
+                $("#login_username").attr("disabled", true);
+                $("#login_password").attr("disabled", true);
+
+                $("#login_submit").attr("disabled", true);
+                $("#login_submit").text("Processing...");
+
+                var formData = new FormData();
+                
+                formData.append('username', username);
+                formData.append('password', password);
+                
+                $.ajax({
+                    url: base_url + 'admin/login',
+                    data: formData,
+                    type: 'POST',
+                    dataType: 'JSON',
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        location.href = base_url + current_tab;
+                    },
+                    error: function(_, _, error) {
+                        console.error(error);
+                    }
+                });
             })
 
             function isValidEmail(email) {
