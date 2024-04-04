@@ -153,20 +153,18 @@
         </div>
     </div>
 
-    <!-- Vendor JS Files -->
-    <script src="<?= base_url() ?>public/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="<?= base_url() ?>public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url() ?>public/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="<?= base_url() ?>public/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="<?= base_url() ?>public/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="<?= base_url() ?>public/vendor/jquery/jquery-3.5.1.slim.min.js"></script>
-    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.js"></script>
-    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.bootstrap5.js"></script>
-    <script src="<?= base_url() ?>public/vendor/sweetalert/sweetalert2@11.js"></script>
+    <script src="<?= base_url() ?>public/vendor/purecounter/purecounter_vanilla.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/bootstrap/js/bootstrap.bundle.min.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/glightbox/js/glightbox.min.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/isotope-layout/isotope.pkgd.min.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/waypoints/noframework.waypoints.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/jquery/jquery-3.5.1.slim.min.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.bootstrap5.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/sweetalert/sweetalert2@11.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/js/main.js?v=1.0"></script>
 
-    <!-- Template Main JS File -->
-    <script src="<?= base_url() ?>public/js/main.js"></script>
 
     <!-- Custom JavaScript -->
     <script>
@@ -198,13 +196,15 @@
 
                 if ($(window).width() <= 768) {
                     backdrop_image = "none";
+
+                    announcement(backdrop_image);
                 } else {
                     backdrop_image = "url('" + img_3.src + "') left top no-repeat";
-                }
 
-                window.onload = function() {
-                    announcement(backdrop_image);
-                };
+                    window.onload = function() {
+                        announcement(backdrop_image);
+                    };
+                }
             }
 
             if (current_tab == "about/svfc_hymn") {
@@ -569,6 +569,7 @@
             }
         })
     </script>
+
     </body>
 
     </html>

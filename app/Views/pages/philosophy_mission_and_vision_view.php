@@ -43,8 +43,8 @@
                                             Mission
                                             <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
                                         </a>
-                                        <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                                            <p style="text-indent: 24px;">To achieve its vision, St. Vincent de Ferrer College of Camarin, Inc. shall pursue and commit to develop highly competent, creative and competitive professionals and skilled workers from the children of poor Camarin residents by providing accessible and holistic quality education and standard of instruction. It also commits to provide a Center for Excellence and Development in research and technology in Caloocan and its neighboring localities; and to offer a haven for inculcating active citizenship with integrity for the fulfillment of the nation's hopes and dreams for a progressive future for all.</p>
+                                        <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list" style="text-align: justify;">
+                                            <p style="text-indent: 24px;">To achieve its vision, <b class="school-name">St. Vincent de Ferrer College of Camarin, Inc.</b> shall pursue and commit to develop highly competent, creative and competitive professionals and skilled workers from the children of poor Camarin residents by providing accessible and holistic quality education and standard of instruction. It also commits to provide a Center for Excellence and Development in research and technology in Caloocan and its neighboring localities; and to offer a haven for inculcating active citizenship with integrity for the fulfillment of the nation's hopes and dreams for a progressive future for all.</p>
                                         </div>
                                     </li>
                                 </ul>

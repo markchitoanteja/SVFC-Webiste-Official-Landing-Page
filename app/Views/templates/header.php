@@ -18,21 +18,16 @@ $current_sub_page = session()->get("current_sub_page");
     <!-- Favicons -->
     <link href="<?= base_url() ?>favicon.png" rel="icon">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="<?= base_url() ?>public/vendor/datatables/css/dataTables.bootstrap5.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="<?= base_url() ?>public/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&amp;v=1.0" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css?v=1.0" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/bootstrap/css/bootstrap.min.css?v=1.0" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/bootstrap-icons/bootstrap-icons.css?v=1.0" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css?v=1.0" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css?v=1.0" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css?v=1.0" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css?v=1.0" rel="stylesheet" />
+    <link href="<?= base_url() ?>public/vendor/datatables/css/dataTables.bootstrap5.css?v=1.0" rel="stylesheet">
+    <link href="<?= base_url() ?>public/css/style.css?v=1.0" rel="stylesheet">
 </head>
 
 <body class="container bg-light" id="body_container">
@@ -105,7 +100,7 @@ $current_sub_page = session()->get("current_sub_page");
                         </a>
                         <ul>
                             <li><a class="nav-link" href="https://portal.svfc-edu.com/login" target="_blank" rel="noopener noreferrer">Student Portal</a></li>
-                            <li><a class="nav-link" href="https://portal.svfc-edu.com/admin/login" target="_blank" rel="noopener noreferrer">Administrator Portal</a></li>
+                            <li><a class="nav-link" href="https://portal.svfc-edu.com/faculty/login" target="_blank" rel="noopener noreferrer">Faculty Portal</a></li>
                         </ul>
                     </li>
                     <!-- Login -->
