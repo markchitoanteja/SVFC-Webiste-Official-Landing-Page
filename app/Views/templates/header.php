@@ -16,18 +16,18 @@ $current_sub_page = session()->get("current_sub_page");
     <title><?= $current_sub_page ? $current_sub_page : $current_main_page ?> - St. Vincent de Ferrer College of Camarin, Inc.</title>
 
     <!-- Favicons -->
-    <link href="<?= base_url() ?>favicon.png" rel="icon">
+    <link href="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986018/SVFC%20Website/favicon.png" rel="icon">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&amp;v=1.0" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css?v=1.0" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/bootstrap/css/bootstrap.min.css?v=1.0" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/bootstrap-icons/bootstrap-icons.css?v=1.0" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css?v=1.0" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css?v=1.0" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css?v=1.0" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css?v=1.0" rel="stylesheet" />
-    <link href="<?= base_url() ?>public/vendor/datatables/css/dataTables.bootstrap5.css?v=1.0" rel="stylesheet">
-    <link href="<?= base_url() ?>public/css/style.css?v=1.0" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/bootstrap/css/bootstrap.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/bootstrap-icons/bootstrap-icons.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css?v=1.15" rel="stylesheet" />
+    <link href="<?= base_url() ?>public/vendor/datatables/css/dataTables.bootstrap5.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/css/style.css?v=1.15" rel="stylesheet">
 </head>
 
 <body class="container bg-light" id="body_container">
@@ -36,7 +36,7 @@ $current_sub_page = session()->get("current_sub_page");
         <div class="container d-flex align-items-center justify-content-between">
             <!-- Logo -->
             <div class="logo" style="display: flex; align-items: center;">
-                <img src="<?= base_url() ?>public/img/logo.png" alt="" class="img-fluid" style="margin-right: 10px;">
+                <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/rtaqnkmqwpgzi9spin8w.png" alt="" class="img-fluid" style="margin-right: 10px;">
                 <div class="logo-content" style="display: flex; flex-direction: column;">
                     <a href="<?= base_url() ?>" class="scrollto">
                         <span class="school-name" style="font-size: 20px;" id="full_sn">St. Vincent de Ferrer College of Camarin, Inc.</span>
@@ -125,7 +125,7 @@ $current_sub_page = session()->get("current_sub_page");
     </header>
 
     <!-- ======= Hero Section ======= -->
-    <div class="w-100 inner-page-header" style="background-image: url(<?= base_url() ?>public/img/bg_pink.png);">
+    <div class="w-100 inner-page-header" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/uogg1fonprkypry9s6qw.png);">
         <div class="text-center text-white">
             <h3><?= $current_main_page ?></h3>
             <h1><?= $current_sub_page ?></h1>

@@ -31,7 +31,7 @@
                         <p style="text-indent: 24px">By June of the same year, the enrollment reached its peak with more than two thousand populace when the school participated in the decongestion scheme of the government through the Education Voucher System (EVS) program of President Gloria Macapagal Arroyo.</p>
                     </div>
                 </div>
-                <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style="background-image: url(<?= base_url() ?>public/img/bg.png);">&nbsp;</div>
+                <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986365/SVFC%20Website/xjhozntncmkazfzaljeh.png);">&nbsp;</div>
             </div>
         </div>
     </section>
@@ -39,7 +39,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 d-flex align-items-center">
-                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/4lG8VfSTVy8?si=dlCsLT0Cjtjc10K3" frameborder="0" allowfullscreen></iframe>
+                    <a href="https://www.youtube.com/watch?v=4lG8VfSTVy8&ab_channel=SVFCMULTIMEDIA" target="_blank">
+                        <div style="position: relative;">
+                            <img src="https://i3.ytimg.com/vi/4lG8VfSTVy8/maxresdefault.jpg" style="width: 100%;" alt="YouTube Thumbnail">
+
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-lg-6 pt-4 pt-lg-0 content" style="text-align: justify;">
                     <h5>Expanding Horizons: St. Vincent de Ferrer Academy's Evolution into Tertiary Education</h5>

@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-9 mx-auto">
                     <div class="mb-5" id="contact_us_form_div">
-                        <p class="text-center mb-4" style="font-size: 22px;">Message us to get your student number!</p>
+                        <p class="text-center mb-4" style="font-size: 22px;">For further inquiries, please send us a message.</p>
 
                         <form action="javascript:void(0)" class="mb-4" id="contact_us_form">
                             <div class="row">
@@ -40,7 +40,10 @@
                             </div>
 
                             <div class="mb-3">
-                                <textarea id="contact_us_message" rows="5" class="form-control" required>Message</textarea>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="contact_us_message" style="height: 100px" required></textarea>
+                                    <label for="contact_us_message">Message</label>
+                                </div>
                             </div>
 
                             <div class="row">

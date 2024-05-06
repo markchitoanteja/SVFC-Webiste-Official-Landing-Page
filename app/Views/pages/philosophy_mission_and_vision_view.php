@@ -50,7 +50,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style="background-image: url(<?= base_url() ?>public/img/bg_5.jpg);">&nbsp;</div>
+                        <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986388/SVFC%20Website/wtlmxpfpcystdyfqtcax.jpg);">&nbsp;</div>
                     </div>
                 </div>
             </section>

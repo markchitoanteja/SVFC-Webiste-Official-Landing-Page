@@ -1,58 +1,60 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 footer-info">
-                        <p><span class="school-name" style="font-size: 24px;">St. Vincent de Ferrer College of Camarin, Inc.</span></p>
-                        <br>
-                        <strong><u>School Address</u></strong>
-                        <p>
-                            SVFC Compound, San Vicente Ferrer Road, Area D, Brgy. 178, Camarin, Caloocan City
-                            <br><br>
-                            <strong><u>Admission/Concierge Numbers</u></strong>
+        <div class="d-flex justify-content-center">
+            <div class="footer-top" style="background-color: transparent;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 footer-info">
+                            <p><span class="school-name" style="font-size: 24px;">St. Vincent de Ferrer College of Camarin, Inc.</span></p>
                             <br>
-                            SMART 0968-729-2593<br>
-                            SMART 0969-597-2577<br>
-                            SMART 0908-658-1680<br>
-                            SMART 0969-597-2586
-                        </p>
-                    </div>
-                    <!-- Programs -->
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Programs</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Preparatory</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Elementary</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Junior High</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Senior High</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">College</a></li>
-                        </ul>
-                    </div>
-                    <!-- Admissions -->
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Admissions</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Special Education Program Department (SEPD)</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Homeschooling</a></li>
-                        </ul>
-
-                        <p class="mt-5"><i>Follow Us:</i></p>
-                        <div class="social-links mt-3">
-                            <a href="https://www.facebook.com/SVFCofCamarinOfficialPage/" target="_blank" rel="noopener noreferrer" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="https://www.youtube.com/@svfcmultimedia" target="_blank" rel="noopener noreferrer" class="youtube"><i class="bx bxl-youtube"></i></a>
+                            <strong><u>School Address</u></strong>
+                            <p>
+                                SVFC Compound, San Vicente Ferrer Road, Area D, Brgy. 178, Camarin, Caloocan City
+                                <br><br>
+                                <strong><u>Admission/Concierge Numbers</u></strong>
+                                <br>
+                                SMART 0968-729-2593<br>
+                                SMART 0969-597-2577<br>
+                                SMART 0908-658-1680<br>
+                                SMART 0969-597-2586
+                            </p>
                         </div>
-                    </div>
-                    <!-- Useful Links -->
-                    <div class="col-lg-4 col-md-6 footer-links">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/svfc_history">SVFC History</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/college_seal">College Seal</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/philosophy_mission_and_vision">Philosophy, Mission, and Vision</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/goals_and_objectives">Goals and Objectives</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/svfc_hymn">SVFC Hymn</a></li>
-                        </ul>
+                        <!-- Programs -->
+                        <div class="col-md-2 footer-links">
+                            <h4>Programs</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Preparatory</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Elementary</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Junior High</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Senior High</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">College</a></li>
+                            </ul>
+                        </div>
+                        <!-- Admissions -->
+                        <div class="col-auto footer-links">
+                            <h4>Admissions</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Special Education Program Department (SEPD)</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Homeschooling</a></li>
+                            </ul>
+
+                            <p class="mt-5"><i>Follow Us:</i></p>
+                            <div class="social-links mt-3">
+                                <a href="https://www.facebook.com/SVFCofCamarinOfficialPage/" target="_blank" rel="noopener noreferrer" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="https://www.youtube.com/@svfcmultimedia" target="_blank" rel="noopener noreferrer" class="youtube"><i class="bx bxl-youtube"></i></a>
+                            </div>
+                        </div>
+                        <!-- Useful Links -->
+                        <div class="col-auto footer-links">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/svfc_history">SVFC History</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/college_seal">College Seal</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/philosophy_mission_and_vision">Philosophy, Mission, and Vision</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/goals_and_objectives">Goals and Objectives</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/svfc_hymn">SVFC Hymn</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,7 +107,7 @@
                             <p><strong>Message:</strong> <span id="view_message_message"></span></p>
                         </div>
                         <div class="d-flex justify-content-center py-5 loading">
-                            <img src="<?= base_url() ?>public/img/loading.gif" class="w-50" alt="Loading Image">
+                            <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986366/SVFC%20Website/l8z09wsvyfc2bsemzyyt.gif" class="w-50" alt="Loading Image">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -153,17 +155,17 @@
         </div>
     </div>
 
-    <script src="<?= base_url() ?>public/vendor/purecounter/purecounter_vanilla.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/vendor/bootstrap/js/bootstrap.bundle.min.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/vendor/glightbox/js/glightbox.min.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/vendor/isotope-layout/isotope.pkgd.min.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/vendor/waypoints/noframework.waypoints.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/vendor/jquery/jquery-3.5.1.slim.min.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.bootstrap5.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/vendor/sweetalert/sweetalert2@11.js?v=1.0"></script>
-    <script src="<?= base_url() ?>public/js/main.js?v=1.0"></script>
+    <script src="<?= base_url() ?>public/vendor/purecounter/purecounter_vanilla.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/bootstrap/js/bootstrap.bundle.min.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/glightbox/js/glightbox.min.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/isotope-layout/isotope.pkgd.min.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/waypoints/noframework.waypoints.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/jquery/jquery-3.5.1.slim.min.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.bootstrap5.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/sweetalert/sweetalert2@11.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/js/main.js?v=1.15"></script>
 
 
     <!-- Custom JavaScript -->
@@ -190,9 +192,9 @@
             }
 
             if (current_tab == "home") {
-                img_1.src = "public/img/poster.gif";
-                img_2.src = "public/img/process.png";
-                img_3.src = "public/img/announcement.gif";
+                img_1.src = "https://res.cloudinary.com/dovvgfevi/image/upload/v1714986375/SVFC%20Website/aoknebicfsenmyc3xrbd.gif";
+                img_2.src = "https://res.cloudinary.com/dovvgfevi/image/upload/v1714986375/SVFC%20Website/md1pyizccse2jjgajzli.png";
+                img_3.src = "https://res.cloudinary.com/dovvgfevi/image/upload/v1714986364/SVFC%20Website/ikq8ch2uwk8ljgz7p1cj.gif";
 
                 if ($(window).width() <= 768) {
                     backdrop_image = "none";
@@ -229,22 +231,6 @@
                     text: "This feature is under maintenance!",
                     icon: "error"
                 });
-            })
-
-            $("#contact_us_message").on("focus", function() {
-                var contact_us_message = $(this).val();
-
-                if (contact_us_message == "Message") {
-                    $(this).val("");
-                }
-            })
-
-            $("#contact_us_message").on("blur", function() {
-                var contact_us_message = $(this).val();
-
-                if (contact_us_message == "") {
-                    $(this).val("Message");
-                }
             })
 
             $('#contact_us_email').on('blur', function() {
@@ -534,7 +520,7 @@
                                 
                                 <div class="row">
                                     <div class="col-12 mb-md-0 mb-2">
-                                        <button class="btn btn-primary py-3 w-100" id="btn_message_us">Enroll Now</button>
+                                        <button class="btn btn-primary py-3 w-100" id="btn_message_us">Contact Us</button>
                                     </div>
                                     <div class="col-12 d-md-none d-block">
                                         <button class="btn btn-danger py-3 w-100" id="closeBtn">Close</button>

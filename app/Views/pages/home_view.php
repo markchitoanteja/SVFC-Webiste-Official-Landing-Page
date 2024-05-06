@@ -2,6 +2,20 @@
 $current_tab = session()->get("current_tab");
 $current_main_page = session()->get("current_main_page");
 $current_sub_page = session()->get("current_sub_page");
+
+function isMobileDevice()
+{
+    $userAgent = $_SERVER['HTTP_USER_AGENT'];
+    $mobileKeywords = array('Android', 'iPhone', 'iPad', 'Windows Phone', 'BlackBerry', 'Opera Mini', 'Mobile', 'Tablet');
+
+    foreach ($mobileKeywords as $keyword) {
+        if (stripos($userAgent, $keyword) !== false) {
+            return true;
+        }
+    }
+
+    return false;
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,22 +30,22 @@ $current_sub_page = session()->get("current_sub_page");
     <title>St. Vincent de Ferrer College of Camarin, Inc.</title>
 
     <!-- Favicons -->
-    <link href="<?= base_url() ?>favicon.png" rel="icon">
+    <link href="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986018/SVFC%20Website/favicon.png" rel="icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/bootstrap/css/bootstrap.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/bootstrap-icons/bootstrap-icons.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css?v=1.15" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
-    <link href="<?= base_url() ?>public/css/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>public/css/style.css?v=1.15" rel="stylesheet">
 </head>
 
 <body class="container bg-light" id="body_container">
@@ -39,7 +53,7 @@ $current_sub_page = session()->get("current_sub_page");
     <header id="header" class="d-flex align-items-center mx-auto">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="logo" style="display: flex; align-items: center;">
-                <img src="<?= base_url() ?>public/img/logo.png" alt="" style="margin-right: 10px;">
+                <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/rtaqnkmqwpgzi9spin8w.png" alt="" style="margin-right: 10px;">
                 <div class="logo-content" style="display: flex; flex-direction: column;">
                     <a href="#hero" class="scrollto">
                         <span class="school-name" style="font-size: 20px;" id="full_sn">St. Vincent de Ferrer College of Camarin, Inc.</span>
@@ -132,11 +146,11 @@ $current_sub_page = session()->get("current_sub_page");
                 <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
                 <div class="carousel-inner" role="listbox">
                     <!-- Slide 1 -->
-                    <div class="carousel-item carousel-item_2 active" style="background-image: url(<?= base_url() ?>public/img/bg_pink.png);">
+                    <div class="carousel-item carousel-item_2 active" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/uogg1fonprkypry9s6qw.png);">
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <div class="home-wrapper">
-                                    <img src="<?= base_url() ?>public/img/logo.png" alt="Logo" class="mb-2" style="max-width: 150px;">
+                                    <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/rtaqnkmqwpgzi9spin8w.png" alt="Logo" class="mb-2" style="max-width: 150px;">
                                     <h2 class="animate__animated animate__fadeInDown display-4 school-name" style="color: black;">St. Vincent de Ferrer College of Camarin, Inc.</h2>
                                     <p class="animate__animated animate__fadeInUp" style="color: black;">The Home of Quality and Innovative Education</p>
                                     <a href="#main" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="color: black;">Get Started</a>
@@ -146,7 +160,7 @@ $current_sub_page = session()->get("current_sub_page");
                     </div>
 
                     <!-- Slide 2 -->
-                    <div class="carousel-item" style="background-image: url(<?= base_url() ?>public/img/bg_2.jpg);">
+                    <div class="carousel-item" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986383/SVFC%20Website/wbl4fpybgtmvzbb2d3yz.jpg);">
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <h2 class="animate__animated animate__fadeInDown display-4 school-name">St. Vincent de Ferrer College of Camarin, Inc.</h2>
@@ -157,7 +171,7 @@ $current_sub_page = session()->get("current_sub_page");
                     </div>
 
                     <!-- Slide 3 -->
-                    <div class="carousel-item" style="background-image: url(<?= base_url() ?>public/img/bg_3.jpg);">
+                    <div class="carousel-item" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986371/SVFC%20Website/quercfezargiizxlvmrn.jpg);">
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <h2 class="animate__animated animate__fadeInDown display-4 school-name">St. Vincent de Ferrer College of Camarin, Inc.</h2>
@@ -168,7 +182,7 @@ $current_sub_page = session()->get("current_sub_page");
                     </div>
 
                     <!-- Slide 4 -->
-                    <div class="carousel-item" style="background-image: url(<?= base_url() ?>public/img/bg_4.jpg);">
+                    <div class="carousel-item" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986366/SVFC%20Website/nutp4yrbaxttpdkgh4xt.jpg);">
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <h2 class="animate__animated animate__fadeInDown display-4 school-name">St. Vincent de Ferrer College of Camarin, Inc.</h2>
@@ -201,7 +215,7 @@ $current_sub_page = session()->get("current_sub_page");
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="<?= base_url() ?>public/img/bg_with_logo.png" class="img-fluid" alt="">
+                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986369/SVFC%20Website/kyqoiywfam4b0ci0et7h.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content">
                         <h3><span class="school-name">St. Vincent de Ferrer College of Camarin, Inc.</span> objectives are as follows:</h3>
@@ -378,7 +392,7 @@ $current_sub_page = session()->get("current_sub_page");
                 <div class="row mb-3">
                     <div class="col-lg-6 mb-lg-0 mb-3">
                         <div class="card">
-                            <!-- <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt=""> -->
+                            <!-- <img class="card-img-top" src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/fffgtcnxi8kuqotz2bdc.png" alt=""> -->
                             <i class="bi bi-trophy card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
@@ -393,7 +407,7 @@ $current_sub_page = session()->get("current_sub_page");
                     </div>
                     <div class="col-lg-6 mb-lg-0">
                         <div class="card">
-                            <!-- <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt=""> -->
+                            <!-- <img class="card-img-top" src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/fffgtcnxi8kuqotz2bdc.png" alt=""> -->
                             <i class="bi bi-palette card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
@@ -410,7 +424,7 @@ $current_sub_page = session()->get("current_sub_page");
                 <div class="row">
                     <div class="col-lg-6 mb-lg-0 mb-3">
                         <div class="card">
-                            <!-- <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt=""> -->
+                            <!-- <img class="card-img-top" src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/fffgtcnxi8kuqotz2bdc.png" alt=""> -->
                             <i class="bi bi-music-note card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
@@ -424,7 +438,7 @@ $current_sub_page = session()->get("current_sub_page");
                     </div>
                     <div class="col-lg-6 mb-lg-0">
                         <div class="card">
-                            <!-- <img class="card-img-top" src="<?= base_url() ?>public/img/no_image.png" alt=""> -->
+                            <!-- <img class="card-img-top" src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/fffgtcnxi8kuqotz2bdc.png" alt=""> -->
                             <i class="bi bi-puzzle card-img-top text-center bg-light" style="font-size: 200px"></i>
 
                             <div class="card-body">
@@ -466,7 +480,7 @@ $current_sub_page = session()->get("current_sub_page");
                                                 <a href="https://www.youtube.com/watch?v=B8gBq0k31S0" target="_blank">
                                                     <img src="https://img.youtube.com/vi/B8gBq0k31S0/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -480,7 +494,7 @@ $current_sub_page = session()->get("current_sub_page");
                                                 <a href="https://www.youtube.com/watch?v=nyglb4l-bYI" target="_blank">
                                                     <img src="https://img.youtube.com/vi/nyglb4l-bYI/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -494,7 +508,7 @@ $current_sub_page = session()->get("current_sub_page");
                                                 <a href="https://www.youtube.com/watch?v=7ToPoNaUNHE" target="_blank">
                                                     <img src="https://img.youtube.com/vi/7ToPoNaUNHE/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -512,7 +526,7 @@ $current_sub_page = session()->get("current_sub_page");
                                                 <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs" target="_blank">
                                                     <img src="https://img.youtube.com/vi/uTpRy4ySaCs/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -526,7 +540,7 @@ $current_sub_page = session()->get("current_sub_page");
                                                 <a href="https://www.youtube.com/watch?v=CZh4bI5doYE" target="_blank">
                                                     <img src="https://img.youtube.com/vi/CZh4bI5doYE/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -540,7 +554,7 @@ $current_sub_page = session()->get("current_sub_page");
                                                 <a href="https://www.youtube.com/watch?v=5hwCij6bZoU" target="_blank">
                                                     <img src="https://img.youtube.com/vi/5hwCij6bZoU/hqdefault.jpg" width="100%" />
                                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                                     </div>
                                                 </a>
                                             </div>
@@ -583,7 +597,7 @@ $current_sub_page = session()->get("current_sub_page");
                                 <a href="https://www.youtube.com/watch?v=B8gBq0k31S0" target="_blank">
                                     <img src="https://img.youtube.com/vi/B8gBq0k31S0/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -598,7 +612,7 @@ $current_sub_page = session()->get("current_sub_page");
                                 <a href="https://www.youtube.com/watch?v=nyglb4l-bYI" target="_blank">
                                     <img src="https://img.youtube.com/vi/nyglb4l-bYI/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -613,7 +627,7 @@ $current_sub_page = session()->get("current_sub_page");
                                 <a href="https://www.youtube.com/watch?v=7ToPoNaUNHE" target="_blank">
                                     <img src="https://img.youtube.com/vi/7ToPoNaUNHE/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -628,7 +642,7 @@ $current_sub_page = session()->get("current_sub_page");
                                 <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs" target="_blank">
                                     <img src="https://img.youtube.com/vi/uTpRy4ySaCs/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -643,7 +657,7 @@ $current_sub_page = session()->get("current_sub_page");
                                 <a href="https://www.youtube.com/watch?v=CZh4bI5doYE" target="_blank">
                                     <img src="https://img.youtube.com/vi/CZh4bI5doYE/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -658,7 +672,7 @@ $current_sub_page = session()->get("current_sub_page");
                                 <a href="https://www.youtube.com/watch?v=5hwCij6bZoU" target="_blank">
                                     <img src="https://img.youtube.com/vi/5hwCij6bZoU/hqdefault.jpg" width="100%" />
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                     </div>
                                 </a>
                             </div>
@@ -680,119 +694,121 @@ $current_sub_page = session()->get("current_sub_page");
                     <h2>SVFC School Paper</h2>
                 </div>
 
-                <?php
-                $pageDetails = array(
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0001.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0002.jpg", "id" => "page1", "checkbox" => "checkbox-page1"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0003.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0004.jpg", "id" => "page2", "checkbox" => "checkbox-page2"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0005.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0006.jpg", "id" => "page3", "checkbox" => "checkbox-page3"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0007.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0008.jpg", "id" => "page4", "checkbox" => "checkbox-page4"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0009.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0010.jpg", "id" => "page5", "checkbox" => "checkbox-page5"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0011.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0012.jpg", "id" => "page6", "checkbox" => "checkbox-page6"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0013.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0014.jpg", "id" => "page7", "checkbox" => "checkbox-page7"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0015.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0016.jpg", "id" => "page8", "checkbox" => "checkbox-page8"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0017.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0018.jpg", "id" => "page9", "checkbox" => "checkbox-page9"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0019.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0020.jpg", "id" => "page10", "checkbox" => "checkbox-page10"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0021.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0022.jpg", "id" => "page11", "checkbox" => "checkbox-page11"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0023.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0024.jpg", "id" => "page12", "checkbox" => "checkbox-page12"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0025.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0026.jpg", "id" => "page13", "checkbox" => "checkbox-page13"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0027.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0028.jpg", "id" => "page14", "checkbox" => "checkbox-page14"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0029.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0030.jpg", "id" => "page15", "checkbox" => "checkbox-page15"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0031.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0032.jpg", "id" => "page16", "checkbox" => "checkbox-page16"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0033.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0034.jpg", "id" => "page17", "checkbox" => "checkbox-page17")
-                );
-                ?>
+                <?php if (!isMobileDevice()) : ?>
+                    <?php
+                    $pageDetails = array(
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989741/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0001.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989741/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0002.jpg", "id" => "page1", "checkbox" => "checkbox-page1"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989742/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0003.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989743/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0004.jpg", "id" => "page2", "checkbox" => "checkbox-page2"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989743/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0005.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989744/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0006.jpg", "id" => "page3", "checkbox" => "checkbox-page3"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989744/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0007.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989744/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0008.jpg", "id" => "page4", "checkbox" => "checkbox-page4"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989744/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0009.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989745/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0010.jpg", "id" => "page5", "checkbox" => "checkbox-page5"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989746/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0011.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989745/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0012.jpg", "id" => "page6", "checkbox" => "checkbox-page6"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989747/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0013.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989747/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0014.jpg", "id" => "page7", "checkbox" => "checkbox-page7"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989747/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0015.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989747/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0016.jpg", "id" => "page8", "checkbox" => "checkbox-page8"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989748/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0017.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989750/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0018.jpg", "id" => "page9", "checkbox" => "checkbox-page9"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989749/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0019.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989750/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0020.jpg", "id" => "page10", "checkbox" => "checkbox-page10"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989750/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0021.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989750/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0022.jpg", "id" => "page11", "checkbox" => "checkbox-page11"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989754/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0023.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989779/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0024.jpg", "id" => "page12", "checkbox" => "checkbox-page12"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989779/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0025.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989780/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0026.jpg", "id" => "page13", "checkbox" => "checkbox-page13"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989780/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0027.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989781/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0028.jpg", "id" => "page14", "checkbox" => "checkbox-page14"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989782/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0029.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989783/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0030.jpg", "id" => "page15", "checkbox" => "checkbox-page15"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989791/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0031.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989822/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0032.jpg", "id" => "page16", "checkbox" => "checkbox-page16"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989904/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0033.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989905/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0034.jpg", "id" => "page17", "checkbox" => "checkbox-page17")
+                    );
+                    ?>
 
-                <div class="d-lg-block d-none">
-                    <div class="flip-book">
-                        <input type="checkbox" id="checkbox-cover" class="flip-book-input">
+                    <div class="d-lg-block d-none">
+                        <div class="flip-book">
+                            <input type="checkbox" id="checkbox-cover" class="flip-book-input">
 
-                        <?php for ($i = 0; $i < count($pageDetails) + 1; $i++) : ?>
-                            <input type="checkbox" id="checkbox-page<?= $i ?>" class="flip-book-input">
-                        <?php endfor; ?>
+                            <?php for ($i = 0; $i < count($pageDetails) + 1; $i++) : ?>
+                                <input type="checkbox" id="checkbox-page<?= $i ?>" class="flip-book-input">
+                            <?php endfor; ?>
 
-                        <div class="book">
-                            <div class="cover">
-                                <label for="checkbox-cover"></label>
+                            <div class="book">
+                                <div class="cover">
+                                    <label for="checkbox-cover"></label>
 
-                                <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
-                            </div>
-
-                            <?php foreach ($pageDetails as $page) : ?>
-                                <div class="page" id="<?= $page['id'] ?>">
-                                    <div class="front-page">
-                                        <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
-                                        <label class="next" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
-                                    </div>
-                                    <div class="back-page">
-                                        <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
-                                        <label class="prev" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
-                                    </div>
+                                    <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/rtaqnkmqwpgzi9spin8w.png" alt="Image" class="centered-image">
                                 </div>
-                            <?php endforeach; ?>
 
-                            <div class="back-cover">
-                                <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
+                                <?php foreach ($pageDetails as $page) : ?>
+                                    <div class="page" id="<?= $page['id'] ?>">
+                                        <div class="front-page">
+                                            <img src="<?= $page['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                            <label class="next" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
+                                        </div>
+                                        <div class="back-page">
+                                            <img src="<?= $page['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                            <label class="prev" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+
+                                <div class="back-cover">
+                                    <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/rtaqnkmqwpgzi9spin8w.png" alt="Image" class="centered-image">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php else : ?>
+                    <?php
+                    $pageDetails_mobile = array(
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989741/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0001.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989741/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0002.jpg", "id" => "page1_mobile", "checkbox" => "checkbox-page1_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989742/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0003.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989743/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0004.jpg", "id" => "page2_mobile", "checkbox" => "checkbox-page2_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989743/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0005.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989744/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0006.jpg", "id" => "page3_mobile", "checkbox" => "checkbox-page3_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989744/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0007.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989744/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0008.jpg", "id" => "page4_mobile", "checkbox" => "checkbox-page4_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989744/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0009.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989745/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0010.jpg", "id" => "page5_mobile", "checkbox" => "checkbox-page5_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989746/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0011.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989745/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0012.jpg", "id" => "page6_mobile", "checkbox" => "checkbox-page6_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989747/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0013.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989747/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0014.jpg", "id" => "page7_mobile", "checkbox" => "checkbox-page7_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989747/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0015.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989747/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0016.jpg", "id" => "page8_mobile", "checkbox" => "checkbox-page8_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989748/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0017.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989750/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0018.jpg", "id" => "page9_mobile", "checkbox" => "checkbox-page9_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989749/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0019.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989750/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0020.jpg", "id" => "page10_mobile", "checkbox" => "checkbox-page10_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989750/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0021.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989750/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0022.jpg", "id" => "page11_mobile", "checkbox" => "checkbox-page11_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989754/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0023.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989779/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0024.jpg", "id" => "page12_mobile", "checkbox" => "checkbox-page12_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989779/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0025.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989780/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0026.jpg", "id" => "page13_mobile", "checkbox" => "checkbox-page13_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989780/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0027.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989781/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0028.jpg", "id" => "page14_mobile", "checkbox" => "checkbox-page14_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989782/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0029.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989783/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0030.jpg", "id" => "page15_mobile", "checkbox" => "checkbox-page15_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989791/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0031.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989822/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0032.jpg", "id" => "page16_mobile", "checkbox" => "checkbox-page16_mobile"),
+                        array("front" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989904/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0033.jpg", "back" => "https://res.cloudinary.com/dovvgfevi/image/upload/v1714989905/SVFC%20Website/DHARBINGER-MAGAZINE/DHARBINGER-MAGAZINE-ISSUE-1_page-0034.jpg", "id" => "page17_mobile", "checkbox" => "checkbox-page17_mobile")
+                    );
+                    ?>
 
-                <?php
-                $pageDetails_mobile = array(
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0001.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0002.jpg", "id" => "page1_mobile", "checkbox" => "checkbox-page1_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0003.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0004.jpg", "id" => "page2_mobile", "checkbox" => "checkbox-page2_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0005.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0006.jpg", "id" => "page3_mobile", "checkbox" => "checkbox-page3_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0007.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0008.jpg", "id" => "page4_mobile", "checkbox" => "checkbox-page4_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0009.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0010.jpg", "id" => "page5_mobile", "checkbox" => "checkbox-page5_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0011.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0012.jpg", "id" => "page6_mobile", "checkbox" => "checkbox-page6_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0013.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0014.jpg", "id" => "page7_mobile", "checkbox" => "checkbox-page7_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0015.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0016.jpg", "id" => "page8_mobile", "checkbox" => "checkbox-page8_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0017.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0018.jpg", "id" => "page9_mobile", "checkbox" => "checkbox-page9_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0019.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0020.jpg", "id" => "page10_mobile", "checkbox" => "checkbox-page10_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0021.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0022.jpg", "id" => "page11_mobile", "checkbox" => "checkbox-page11_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0023.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0024.jpg", "id" => "page12_mobile", "checkbox" => "checkbox-page12_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0025.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0026.jpg", "id" => "page13_mobile", "checkbox" => "checkbox-page13_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0027.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0028.jpg", "id" => "page14_mobile", "checkbox" => "checkbox-page14_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0029.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0030.jpg", "id" => "page15_mobile", "checkbox" => "checkbox-page15_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0031.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0032.jpg", "id" => "page16_mobile", "checkbox" => "checkbox-page16_mobile"),
-                    array("front" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0033.jpg", "back" => "DHARBINGER-MAGAZINE-ISSUE-1_page-0034.jpg", "id" => "page17_mobile", "checkbox" => "checkbox-page17_mobile")
-                );
-                ?>
+                    <div class="d-lg-none d-block">
+                        <div class="flip-book_mobile">
+                            <input type="checkbox" id="checkbox-cover_mobile" class="flip-book-input_mobile">
 
-                <div class="d-lg-none d-block">
-                    <div class="flip-book_mobile">
-                        <input type="checkbox" id="checkbox-cover_mobile" class="flip-book-input_mobile">
+                            <?php for ($i = 0; $i < count($pageDetails_mobile) + 1; $i++) : ?>
+                                <input type="checkbox" id="checkbox-page<?= $i ?>_mobile" class="flip-book-input_mobile">
+                            <?php endfor; ?>
 
-                        <?php for ($i = 0; $i < count($pageDetails_mobile) + 1; $i++) : ?>
-                            <input type="checkbox" id="checkbox-page<?= $i ?>_mobile" class="flip-book-input_mobile">
-                        <?php endfor; ?>
+                            <div class="book_mobile">
+                                <div class="cover_mobile">
+                                    <label for="checkbox-cover_mobile"></label>
 
-                        <div class="book_mobile">
-                            <div class="cover_mobile">
-                                <label for="checkbox-cover_mobile"></label>
-
-                                <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
-                            </div>
-
-                            <?php foreach ($pageDetails_mobile as $page_mobile) : ?>
-                                <div class="page_mobile" id="<?= $page_mobile['id'] ?>">
-                                    <div class="front-page_mobile">
-                                        <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page_mobile['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
-                                        <label class="next_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
-                                    </div>
-                                    <div class="back-page_mobile">
-                                        <img src="<?= base_url() ?>public/img/DHARBINGER-MAGAZINE/<?= $page_mobile['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
-                                        <label class="prev_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
-                                    </div>
+                                    <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/rtaqnkmqwpgzi9spin8w.png" alt="Image" class="centered-image_mobile">
                                 </div>
-                            <?php endforeach; ?>
 
-                            <div class="back-cover_mobile">
-                                <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
+                                <?php foreach ($pageDetails_mobile as $page_mobile) : ?>
+                                    <div class="page_mobile" id="<?= $page_mobile['id'] ?>">
+                                        <div class="front-page_mobile">
+                                            <img src="<?= $page_mobile['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                            <label class="next_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
+                                        </div>
+                                        <div class="back-page_mobile">
+                                            <img src="<?= $page_mobile['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                            <label class="prev_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+
+                                <div class="back-cover_mobile">
+                                    <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/rtaqnkmqwpgzi9spin8w.png" alt="Image" class="centered-image_mobile">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php endif ?>
             </div>
         </section>
 
@@ -804,7 +820,7 @@ $current_sub_page = session()->get("current_sub_page");
                         <div class="text-center">
                             <p><b>Visit RADYO VINCENTIAN:</b></p>
                             <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs&list=PLVStl2mrcNzXvebOTOYwi7bOyq_0ZqHej" target="_blank" rel="noopener noreferrer">
-                                <img class="img-shadow" src="<?= base_url() ?>public/img/news_banner.png" style="width: 100%;" alt="">
+                                <img class="img-shadow" src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/oddyw8idr34l7kblgwjd.png" style="width: 100%;" alt="">
                             </a>
                         </div>
                     </div>
@@ -815,10 +831,10 @@ $current_sub_page = session()->get("current_sub_page");
 
                             <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs" target="_blank">
                                 <div style="position: relative;">
-                                    <img class="img-shadow" src="<?= base_url() ?>public/img/news.png" style="width: 100%;" alt="YouTube Thumbnail">
+                                    <img class="img-shadow" src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/wn46zoack2xuxcsy0fgh.png" style="width: 100%;" alt="YouTube Thumbnail">
 
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                        <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
+                                        <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
                                     </div>
                                 </div>
                             </a>

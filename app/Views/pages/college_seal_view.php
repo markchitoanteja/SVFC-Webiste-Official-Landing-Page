@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="text-center mb-4">
                 <h3 class="mb-0">The College Seal</h3>
-                <img src="<?= base_url() ?>public/img/logo.png" alt="The College Seal" style="width: 150px;">
+                <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/rtaqnkmqwpgzi9spin8w.png" alt="The College Seal" style="width: 150px;">
             </div>
             <div class="row">
                 <div class="col-lg-7 mx-auto" style="text-align: center;">
