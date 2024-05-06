@@ -45,7 +45,7 @@ function isMobileDevice()
     <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css?v=1.15" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
-    <link href="<?= base_url() ?>public/css/style.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/css/style.css?v=1.16" rel="stylesheet">
 </head>
 
 <body class="container bg-light" id="body_container">
@@ -126,6 +126,10 @@ function isMobileDevice()
                             </a>
                             <ul>
                                 <li><a class="nav-link <?= $current_tab == "admin/list_of_messages" ? "active" : null ?>" href="<?= base_url() ?>admin/list_of_messages">List of Messages</a></li>
+                                <?php if (session()->get("user_type") == "mis") : ?>
+                                    <li><a class="nav-link <?= $current_tab == "admin/manage_user_accounts" ? "active" : null ?>" href="<?= base_url() ?>admin/manage_user_accounts">Manage User Accounts</a></li>
+                                <?php endif ?>
+                                <li><a class="nav-link" href="javascript:void(0)" id="update_my_account" user_id="<?= session()->get("user_id") ?>">Update My Account</a></li>
                                 <li><a class="nav-link" href="<?= base_url() ?>admin/logout">Logout</a></li>
                             </ul>
                         </li>

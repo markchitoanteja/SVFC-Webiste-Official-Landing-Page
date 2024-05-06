@@ -52,6 +52,7 @@
                                 <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/college_seal">College Seal</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/philosophy_mission_and_vision">Philosophy, Mission, and Vision</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/goals_and_objectives">Goals and Objectives</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="javascript:void(0)" class="no_function">Facilities</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/svfc_hymn">SVFC Hymn</a></li>
                             </ul>
                         </div>
@@ -99,6 +100,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="message-details d-none">
+                            <p><strong>Processed By:</strong> <span id="view_message_processed_by"></span></p>
                             <p><strong>Name:</strong> <span id="view_message_name"></span></p>
                             <p><strong>Date:</strong> <span id="view_message_date_created"></span></p>
                             <p><strong>Email:</strong> <span id="view_message_email"></span></p>
@@ -132,10 +134,10 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Login as Administrator</h5>
+                    <h5 class="modal-title">Login</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="javascript:void(0)" method="post" id="login_form">
+                <form action="javascript:void(0)" id="login_form">
                     <div class="modal-body">
                         <div class="form-group mb-3">
                             <label for="login_username">Username</label>
@@ -149,6 +151,52 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary" id="login_submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update My Account Modal -->
+    <div class="modal fade" id="update_my_account_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update My Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="javascript:void(0)" id="update_my_account_form">
+                    <div class="modal-body">
+                        <div class="update-my-account-form d-none">
+                            <div class="form-group mb-3">
+                                <label for="update_my_account_name">Name</label>
+                                <input type="text" id="update_my_account_name" class="form-control" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="update_my_account_username">Username</label>
+                                <input type="text" id="update_my_account_username" class="form-control" required>
+                                <small class="text-danger d-none" id="error_update_my_account_username">Username is already in use</small>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="update_my_account_password">Password</label>
+                                <input type="password" id="update_my_account_password" class="form-control">
+                                <small class="text-danger d-none" id="error_update_my_account_password">Passwords do not match</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="update_my_account_confirm_password">Confirm Password</label>
+                                <input type="password" id="update_my_account_confirm_password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center py-5 loading">
+                            <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986366/SVFC%20Website/l8z09wsvyfc2bsemzyyt.gif" class="w-50" alt="Loading Image">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" id="update_my_account_id">
+                        <input type="hidden" id="update_my_account_old_username">
+
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="update_my_account_submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -191,7 +239,7 @@
                 });
             }
 
-            if (current_tab == "home") {
+            if (current_tab == "home" && !notification) {
                 img_1.src = "https://res.cloudinary.com/dovvgfevi/image/upload/v1714986375/SVFC%20Website/aoknebicfsenmyc3xrbd.gif";
                 img_2.src = "https://res.cloudinary.com/dovvgfevi/image/upload/v1714986375/SVFC%20Website/md1pyizccse2jjgajzli.png";
                 img_3.src = "https://res.cloudinary.com/dovvgfevi/image/upload/v1714986364/SVFC%20Website/ikq8ch2uwk8ljgz7p1cj.gif";
@@ -354,6 +402,38 @@
                 });
             })
 
+            $("#update_my_account").click(function() {
+                const user_id = $(this).attr("user_id");
+
+                $("#update_my_account_modal").modal("show");
+
+                var formData = new FormData();
+
+                formData.append('user_id', user_id);
+
+                $.ajax({
+                    url: base_url + 'admin/get_user_details',
+                    data: formData,
+                    type: 'POST',
+                    dataType: 'JSON',
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        $("#update_my_account_name").val(response.name);
+                        $("#update_my_account_username").val(response.username);
+
+                        $("#update_my_account_id").val(user_id);
+                        $("#update_my_account_old_username").val(response.username);
+
+                        $(".loading").addClass("d-none");
+                        $(".update-my-account-form").removeClass("d-none");
+                    },
+                    error: function(_, _, error) {
+                        console.error(error);
+                    }
+                });
+            })
+
             $(document).on("click", ".update_status", function() {
                 const message_id = $(this).attr("message_id");
 
@@ -391,6 +471,7 @@
 
             $(document).on("click", ".view_message", function() {
                 const message_id = $(this).attr("message_id");
+                const processed_by = $(this).attr("processed_by");
 
                 $(".loading").removeClass("d-none");
                 $(".message-details").addClass("d-none");
@@ -420,6 +501,7 @@
                             hour12: true
                         });
 
+                        $("#view_message_processed_by").text(processed_by);
                         $("#view_message_name").text(response.name);
                         $("#view_message_date_created").text(date_created);
                         $("#view_message_email").text(response.email);

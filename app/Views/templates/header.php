@@ -25,9 +25,9 @@ $current_sub_page = session()->get("current_sub_page");
     <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css?v=1.15" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css?v=1.15" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css?v=1.15" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css?v=1.15" rel="stylesheet" />
+    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.min.css?v=1.15" rel="stylesheet" />
     <link href="<?= base_url() ?>public/vendor/datatables/css/dataTables.bootstrap5.css?v=1.15" rel="stylesheet">
-    <link href="<?= base_url() ?>public/css/style.css?v=1.15" rel="stylesheet">
+    <link href="<?= base_url() ?>public/css/style.css?v=1.16" rel="stylesheet">
 </head>
 
 <body class="container bg-light" id="body_container">
@@ -112,6 +112,10 @@ $current_sub_page = session()->get("current_sub_page");
                             </a>
                             <ul>
                                 <li><a class="nav-link <?= $current_tab == "admin/list_of_messages" ? "active" : null ?>" href="<?= base_url() ?>admin/list_of_messages">List of Messages</a></li>
+                                <?php if (session()->get("user_type") == "mis") : ?>
+                                    <li><a class="nav-link <?= $current_tab == "admin/manage_user_accounts" ? "active" : null ?>" href="<?= base_url() ?>admin/manage_user_accounts">Manage User Accounts</a></li>
+                                <?php endif ?>
+                                <li><a class="nav-link" href="javascript:void(0)" id="update_my_account" user_id="<?= session()->get("user_id") ?>">Update My Account</a></li>
                                 <li><a class="nav-link" href="<?= base_url() ?>admin/logout">Logout</a></li>
                             </ul>
                         </li>
@@ -126,7 +130,7 @@ $current_sub_page = session()->get("current_sub_page");
 
     <!-- ======= Hero Section ======= -->
     <div class="w-100 inner-page-header" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/uogg1fonprkypry9s6qw.png);">
-        <div class="text-center text-white">
+        <div class="text-center text-white mt-5">
             <h3><?= $current_main_page ?></h3>
             <h1><?= $current_sub_page ?></h1>
         </div>

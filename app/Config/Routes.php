@@ -40,6 +40,8 @@ $routes->post('/get_message_details', 'Contact_Us::get_message_details');
 
 /* ========== Start Admin ========== */
 $routes->get('/admin/list_of_messages', 'Admin::list_of_messages');
+$routes->get('/admin/manage_user_accounts', 'Admin::manage_user_accounts');
+$routes->post('/admin/get_user_details', 'Admin::get_user_details');
 $routes->get('/admin/logout', 'Admin::logout');
 
 $routes->post('/admin/login', 'Admin::login');

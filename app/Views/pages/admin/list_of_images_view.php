@@ -8,25 +8,26 @@
                         <table id="data_table" class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <th>Processed By</th>
                                     <th>Name</th>
                                     <th>Date</th>
                                     <th>Email</th>
-                                    <th>Facebook Account</th>
-                                    <th>Mobile Number</th>
                                     <th class="text-center">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php if ($messages) : ?>
                                     <?php foreach ($messages as $message) : ?>
+                                        <?php $user_data = $User_Model->where('id', $message["processed_by"])->first() ?>
+
                                         <tr style="font-weight: <?= $message["status"] == "unprocessed" ? "bold" : "normal" ?>;">
+                                            <td><?= $message["status"] == "unprocessed" ? "Not Yet Available" : $user_data["name"] ?></td>
                                             <td><?= $message["name"] ?></td>
                                             <td><?= date("F j, Y, g:i a", strtotime($message["date_created"])) ?></td>
                                             <td><?= $message["email"] ?></td>
-                                            <td><?= $message["facebook_account"] ?></td>
-                                            <td><?= $message["mobile_number"] ?></td>
+
                                             <td class="text-center">
-                                                <i role="button" class="fa fa-eye text-primary <?= $message["status"] == "unprocessed" ? "me-1" : null ?> view_message" message_id="<?= $message["id"] ?>" title="View Message"></i>
+                                                <i role="button" class="fa fa-eye text-primary <?= $message["status"] == "unprocessed" ? "me-1" : null ?> view_message" processed_by="<?= $message["status"] == "unprocessed" ? "Not Yet Available" : $user_data["name"] ?>" message_id="<?= $message["id"] ?>" title="View Message"></i>
                                                 <i role="button" class="fa fa-thumbs-up text-success update_status <?= $message["status"] != "unprocessed" ? "d-none" : null ?>" message_id="<?= $message["id"] ?>" title="Set status to Processed"></i>
                                             </td>
                                         </tr>
