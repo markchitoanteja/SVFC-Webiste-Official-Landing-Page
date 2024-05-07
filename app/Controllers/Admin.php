@@ -103,6 +103,89 @@ class Admin extends BaseController
 
         echo json_encode($response);
     }
+    
+    public function update_user_account()
+    {
+        $response = false;
+
+        $id = $this->request->getPost("id");
+        $old_username = $this->request->getPost("old_username");
+        $old_password = $this->request->getPost("old_password");
+        $name = $this->request->getPost("name");
+        $username = $this->request->getPost("username");
+        $password = $this->request->getPost("password");
+        $user_type = $this->request->getPost("user_type");
+
+        $errors = 0;
+
+        $User_Model = new User_Model();
+
+        if (($username != $old_username) && $User_Model->where('username', $username)->first()) {
+            $errors++;
+        }
+
+        if ($errors == 0) {
+            if ($password) {
+                $password = password_hash(strval($password), PASSWORD_BCRYPT);
+            } else {
+                $password = $old_password;
+            }
+
+            $data = [
+                "name" => $name,
+                "username" => $username,
+                "password" => $password,
+                "user_type" => $user_type,
+            ];
+
+            $User_Model->update($id, $data);
+
+            session()->set("notification", array(
+                "title" => "Success!",
+                "message" => "A user account has been updated!",
+                "icon" => "success",
+            ));
+
+            $response = true;
+        }
+
+        echo json_encode($response);
+    }
+
+    public function add_user_account()
+    {
+        $response = false;
+
+        $created_at = date("Y-m-d H:i:s");
+        $name = $this->request->getPost("name");
+        $username = $this->request->getPost("username");
+        $password = $this->request->getPost("password");
+        $user_type = $this->request->getPost("user_type");
+
+        $User_Model = new User_Model();
+
+        if (!$User_Model->where('username', $username)->first()) {
+            $data = [
+                "created_at" => $created_at,
+                "name" => $name,
+                "username" => $username,
+                "password" => password_hash(strval($password), PASSWORD_BCRYPT),
+                "user_type" => $user_type,
+            ];
+
+            $User_Model->save($data);
+
+            session()->set("notification", array(
+                "title" => "Success!",
+                "message" => "A user account has been added!",
+                "icon" => "success",
+            ));
+
+            $response = true;
+        }
+
+        echo json_encode($response);
+    }
 
     public function login()
     {

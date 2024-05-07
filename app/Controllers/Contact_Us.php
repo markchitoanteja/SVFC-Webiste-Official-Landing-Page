@@ -1,8 +1,9 @@
 <?php
-
 namespace App\Controllers;
 
 use App\Models\Contact_Us_Model;
+
+date_default_timezone_set('Asia/Manila');
 
 class Contact_Us extends BaseController
 {

@@ -36,8 +36,7 @@
                                                 <td class="text-muted">Password is hidden for security</td>
                                                 <td><?= strtoupper($user["user_type"]) ?> Level</td>
                                                 <td class="text-center">
-                                                    <i class="fa fa-edit text-primary me-1" role="button"></i>
-                                                    <i class="fa fa-trash text-danger" role="button"></i>
+                                                    <i class="fa fa-edit text-primary update_user_account" user_id="<?= $user["id"] ?>" role="button"></i>
                                                 </td>
                                             </tr>
                                         <?php endif ?>

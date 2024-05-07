@@ -45,6 +45,8 @@ $routes->get('/admin/logout', 'Admin::logout');
 
 $routes->post('/admin/get_user_details', 'Admin::get_user_details');
 $routes->post('/admin/update_my_account', 'Admin::update_my_account');
+$routes->post('/admin/add_user_account', 'Admin::add_user_account');
+$routes->post('/admin/update_user_account', 'Admin::update_user_account');
 
 $routes->post('/admin/login', 'Admin::login');
 /* ========== End Admin ========== */

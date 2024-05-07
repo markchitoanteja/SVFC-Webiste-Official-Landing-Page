@@ -140,11 +140,11 @@
                 <form action="javascript:void(0)" id="login_form">
                     <div class="modal-body">
                         <div class="form-group mb-3">
-                            <label for="login_username" class="fw-bold">Username</label>
+                            <label for="login_username">Username</label>
                             <input type="text" id="login_username" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="login_password" class="fw-bold">Password</label>
+                            <label for="login_password">Password</label>
                             <div class="input-group">
                                 <input type="password" class="form-control" id="login_password">
                                 <span class="input-group-text" role="button" id="login_show_password"><i class="fa fa-eye"></i></span>
@@ -170,18 +170,18 @@
                 </div>
                 <form action="javascript:void(0)" id="update_my_account_form">
                     <div class="modal-body">
-                        <div class="update-my-account-form d-none">
+                        <div class="actual-form d-none">
                             <div class="form-group mb-3">
-                                <label for="update_my_account_name" class="fw-bold">Name</label>
+                                <label for="update_my_account_name">Name</label>
                                 <input type="text" id="update_my_account_name" class="form-control" required>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="update_my_account_username" class="fw-bold">Username</label>
+                                <label for="update_my_account_username">Username</label>
                                 <input type="text" id="update_my_account_username" class="form-control" required>
                                 <small class="text-danger d-none" id="error_update_my_account_username">Username is already in use</small>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="update_my_account_password" class="fw-bold">Password</label>
+                                <label for="update_my_account_password">Password</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="update_my_account_password" placeholder="Password is hidden for security">
                                     <span class="input-group-text" role="button" id="update_my_account_show_password"><i class="fa fa-eye"></i></span>
@@ -189,7 +189,7 @@
                                 <small class="text-danger d-none" id="error_update_my_account_password">Passwords do not match</small>
                             </div>
                             <div class="form-group">
-                                <label for="update_my_account_confirm_password" class="fw-bold">Confirm Password</label>
+                                <label for="update_my_account_confirm_password">Confirm Password</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="update_my_account_confirm_password" placeholder="Password is hidden for security">
                                     <span class="input-group-text" role="button" id="update_my_account_show_confirm_password"><i class="fa fa-eye"></i></span>
@@ -207,6 +207,119 @@
 
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary" id="update_my_account_submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add User Account Modal -->
+    <div class="modal fade" id="add_user_account_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add User Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="javascript:void(0)" id="add_user_account_form">
+                    <div class="modal-body">
+                        <div class="form-group mb-3">
+                            <label for="add_user_account_name">Name</label>
+                            <input type="text" id="add_user_account_name" class="form-control" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="add_user_account_username">Username</label>
+                            <input type="text" id="add_user_account_username" class="form-control" required>
+                            <small class="text-danger d-none" id="error_add_user_account_username">Username is already in use</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="add_user_account_password">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="add_user_account_password" required>
+                                <span class="input-group-text" role="button" id="add_user_account_show_password"><i class="fa fa-eye"></i></span>
+                            </div>
+                            <small class="text-danger d-none" id="error_add_user_account_password">Passwords do not match</small>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="add_user_account_confirm_password">Confirm Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="add_user_account_confirm_password" required>
+                                <span class="input-group-text" role="button" id="add_user_account_show_confirm_password"><i class="fa fa-eye"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_user_account_user_type">Access Level</label>
+                            <select class="form-select" id="add_user_account_user_type" required>
+                                <option value disabled selected></option>
+                                <option value="mis">MIS Level</option>
+                                <option value="admin">Administrator Level</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="add_user_account_submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update User Account Modal -->
+    <div class="modal fade" id="update_user_account_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update User Account</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="javascript:void(0)" id="update_user_account_form">
+                    <div class="modal-body">
+                        <div class="actual-form d-none">
+                            <div class="form-group mb-3">
+                                <label for="update_user_account_name">Name</label>
+                                <input type="text" id="update_user_account_name" class="form-control" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="update_user_account_username">Username</label>
+                                <input type="text" id="update_user_account_username" class="form-control" required>
+                                <small class="text-danger d-none" id="error_update_user_account_username">Username is already in use</small>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="update_user_account_password">Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="update_user_account_password" placeholder="Password is hidden for security">
+                                    <span class="input-group-text" role="button" id="update_user_account_show_password"><i class="fa fa-eye"></i></span>
+                                </div>
+                                <small class="text-danger d-none" id="error_update_user_account_password">Passwords do not match</small>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="update_user_account_confirm_password">Confirm Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="update_user_account_confirm_password" placeholder="Password is hidden for security">
+                                    <span class="input-group-text" role="button" id="update_user_account_show_confirm_password"><i class="fa fa-eye"></i></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="update_user_account_user_type">Access Level</label>
+                                <select class="form-select" id="update_user_account_user_type" required>
+                                    <option value disabled selected></option>
+                                    <option value="mis">MIS Level</option>
+                                    <option value="admin">Administrator Level</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center py-5 loading">
+                            <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986366/SVFC%20Website/l8z09wsvyfc2bsemzyyt.gif" class="w-50" alt="Loading Image">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" id="update_user_account_id">
+                        <input type="hidden" id="update_user_account_old_username">
+                        <input type="hidden" id="update_user_account_old_password">
+
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="update_user_account_submit">Submit</button>
                     </div>
                 </form>
             </div>
@@ -428,6 +541,19 @@
             $("#update_my_account").click(function() {
                 const user_id = $(this).attr("user_id");
 
+                $("#update_my_account_username").removeClass("is-invalid");
+                $("#error_update_my_account_username").addClass("d-none");
+
+                $("#update_my_account_password").removeClass("is-invalid");
+                $("#update_my_account_confirm_password").removeClass("is-invalid");
+                $("#error_update_my_account_password").addClass("d-none");
+
+                $("#update_my_account_password").val("");
+                $("#update_my_account_confirm_password").val("");
+
+                $(".loading").removeClass("d-none");
+                $(".actual-form").addClass("d-none");
+
                 $("#update_my_account_modal").modal("show");
 
                 var formData = new FormData();
@@ -450,7 +576,7 @@
                         $("#update_my_account_old_password").val(response.password);
 
                         $(".loading").addClass("d-none");
-                        $(".update-my-account-form").removeClass("d-none");
+                        $(".actual-form").removeClass("d-none");
                     },
                     error: function(_, _, error) {
                         console.error(error);
@@ -561,6 +687,100 @@
                 }
             })
 
+            $('#add_user_account_show_password').click(function() {
+                var passwordField = $('#add_user_account_password');
+                var passwordFieldType = passwordField.attr('type');
+
+                if (passwordFieldType == 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            })
+
+            $('#add_user_account_show_confirm_password').click(function() {
+                var passwordField = $('#add_user_account_confirm_password');
+                var passwordFieldType = passwordField.attr('type');
+
+                if (passwordFieldType == 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            })
+
+            $("#btn_new_user_account").click(function() {
+                $("#add_user_account_modal").modal("show");
+            })
+
+            $("#add_user_account_form").submit(function() {
+                const name = $("#add_user_account_name").val();
+                const username = $("#add_user_account_username").val();
+                const password = $("#add_user_account_password").val();
+                const confirm_password = $("#add_user_account_confirm_password").val();
+                const user_type = $("#add_user_account_user_type").val();
+
+                if (password != confirm_password) {
+                    $("#add_user_account_password").addClass("is-invalid");
+                    $("#add_user_account_confirm_password").addClass("is-invalid");
+                    $("#error_add_user_account_password").removeClass("d-none");
+                } else {
+                    $("#add_user_account_submit").text("Please wait...");
+                    $("#add_user_account_submit").attr("disabled", true);
+
+                    var formData = new FormData();
+
+                    formData.append('name', name);
+                    formData.append('username', username);
+                    formData.append('password', password);
+                    formData.append('user_type', user_type);
+
+                    $.ajax({
+                        url: base_url + 'admin/add_user_account',
+                        data: formData,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            if (response) {
+                                location.href = base_url + current_tab;
+                            } else {
+                                $("#add_user_account_username").addClass("is-invalid");
+                                $("#error_add_user_account_username").removeClass("d-none");
+
+                                $("#add_user_account_submit").text("Submit");
+                                $("#add_user_account_submit").removeAttr("disabled");
+                            }
+                        },
+                        error: function(_, _, error) {
+                            console.error(error);
+                        }
+                    });
+                }
+            })
+
+            $("#add_user_account_username").keydown(function() {
+                $("#add_user_account_username").removeClass("is-invalid");
+                $("#error_add_user_account_username").addClass("d-none");
+            })
+
+            $("#add_user_account_password").keydown(function() {
+                $("#add_user_account_password").removeClass("is-invalid");
+                $("#add_user_account_confirm_password").removeClass("is-invalid");
+                $("#error_add_user_account_password").addClass("d-none");
+            })
+
+            $("#add_user_account_confirm_password").keydown(function() {
+                $("#add_user_account_password").removeClass("is-invalid");
+                $("#add_user_account_confirm_password").removeClass("is-invalid");
+                $("#error_add_user_account_password").addClass("d-none");
+            })
+
             $(document).on("click", ".update_status", function() {
                 const message_id = $(this).attr("message_id");
                 const user_id = $(this).attr("user_id");
@@ -645,6 +865,158 @@
                         console.error(error);
                     }
                 });
+            })
+
+            $(".update_user_account").click(function() {
+                const user_id = $(this).attr("user_id");
+
+                $(".loading").removeClass("d-none");
+                $(".actual-form").addClass("d-none");
+
+                $("#update_user_account_username").removeClass("is-invalid");
+                $("#error_update_user_account_username").addClass("d-none");
+
+                $("#update_user_account_password").removeClass("is-invalid");
+                $("#update_user_account_confirm_password").removeClass("is-invalid");
+                $("#error_update_user_account_password").addClass("d-none");
+
+                $("#update_user_account_password").val("");
+                $("#update_user_account_confirm_password").val("");
+
+                $("#update_user_account_modal").modal("show");
+
+                var formData = new FormData();
+
+                formData.append('user_id', user_id);
+
+                $.ajax({
+                    url: base_url + 'admin/get_user_details',
+                    data: formData,
+                    type: 'POST',
+                    dataType: 'JSON',
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        $("#update_user_account_name").val(response.name);
+                        $("#update_user_account_username").val(response.username);
+                        $("#update_user_account_user_type").val(response.user_type);
+
+                        $("#update_user_account_id").val(user_id);
+                        $("#update_user_account_old_username").val(response.username);
+                        $("#update_user_account_old_password").val(response.password);
+
+                        $(".loading").addClass("d-none");
+                        $(".actual-form").removeClass("d-none");
+                    },
+                    error: function(_, _, error) {
+                        console.error(error);
+                    }
+                });
+            })
+
+            $("#update_user_account_username").keydown(function() {
+                $("#update_user_account_username").removeClass("is-invalid");
+                $("#error_update_user_account_username").addClass("d-none");
+            })
+
+            $("#update_user_account_password").keydown(function() {
+                $("#update_user_account_password").removeClass("is-invalid");
+                $("#update_user_account_confirm_password").removeClass("is-invalid");
+                $("#error_update_user_account_password").addClass("d-none");
+            })
+
+            $("#update_user_account_confirm_password").keydown(function() {
+                $("#update_user_account_password").removeClass("is-invalid");
+                $("#update_user_account_confirm_password").removeClass("is-invalid");
+                $("#error_update_user_account_password").addClass("d-none");
+            })
+
+            $('#update_user_account_show_password').click(function() {
+                var passwordField = $('#update_user_account_password');
+                var passwordFieldType = passwordField.attr('type');
+
+                if (passwordFieldType == 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            })
+
+            $('#update_user_account_show_confirm_password').click(function() {
+                var passwordField = $('#update_user_account_confirm_password');
+                var passwordFieldType = passwordField.attr('type');
+
+                if (passwordFieldType == 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            })
+
+            $("#update_user_account_form").submit(function() {
+                const name = $("#update_user_account_name").val();
+                const username = $("#update_user_account_username").val();
+                const password = $("#update_user_account_password").val();
+                const confirm_password = $("#update_user_account_confirm_password").val();
+                const user_type = $("#update_user_account_user_type").val();
+
+                const id = $("#update_user_account_id").val();
+                const old_username = $("#update_user_account_old_username").val();
+                const old_password = $("#update_user_account_old_password").val();
+
+                let errors = 0;
+
+                if (password || confirm_password) {
+                    if (password != confirm_password) {
+                        $("#update_user_account_password").addClass("is-invalid");
+                        $("#update_user_account_confirm_password").addClass("is-invalid");
+                        $("#error_update_user_account_password").removeClass("d-none");
+
+                        errors++;
+                    }
+                }
+
+                if (errors == 0) {
+                    $("#update_user_account_submit").text("Please wait...");
+                    $("#update_user_account_submit").attr("disabled", true);
+
+                    var formData = new FormData();
+
+                    formData.append('name', name);
+                    formData.append('username', username);
+                    formData.append('password', password);
+                    formData.append('user_type', user_type);
+                    formData.append('old_username', old_username);
+                    formData.append('old_password', old_password);
+                    formData.append('id', id);
+
+                    $.ajax({
+                        url: base_url + 'admin/update_user_account',
+                        data: formData,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            if (response) {
+                                location.href = base_url + current_tab;
+                            } else {
+                                $("#update_user_account_username").addClass("is-invalid");
+                                $("#error_update_user_account_username").removeClass("d-none");
+
+                                $("#update_user_account_submit").text("Submit");
+                                $("#update_user_account_submit").removeAttr("disabled");
+                            }
+                        },
+                        error: function(_, _, error) {
+                            console.error(error);
+                        }
+                    });
+                }
             })
 
             function isValidEmail(email) {
