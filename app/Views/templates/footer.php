@@ -140,12 +140,15 @@
                 <form action="javascript:void(0)" id="login_form">
                     <div class="modal-body">
                         <div class="form-group mb-3">
-                            <label for="login_username">Username</label>
+                            <label for="login_username" class="fw-bold">Username</label>
                             <input type="text" id="login_username" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="login_password">Password</label>
-                            <input type="password" id="login_password" class="form-control" required>
+                            <label for="login_password" class="fw-bold">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="login_password">
+                                <span class="input-group-text" role="button" id="login_show_password"><i class="fa fa-eye"></i></span>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -169,22 +172,28 @@
                     <div class="modal-body">
                         <div class="update-my-account-form d-none">
                             <div class="form-group mb-3">
-                                <label for="update_my_account_name">Name</label>
+                                <label for="update_my_account_name" class="fw-bold">Name</label>
                                 <input type="text" id="update_my_account_name" class="form-control" required>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="update_my_account_username">Username</label>
+                                <label for="update_my_account_username" class="fw-bold">Username</label>
                                 <input type="text" id="update_my_account_username" class="form-control" required>
                                 <small class="text-danger d-none" id="error_update_my_account_username">Username is already in use</small>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="update_my_account_password">Password</label>
-                                <input type="password" id="update_my_account_password" class="form-control">
+                                <label for="update_my_account_password" class="fw-bold">Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="update_my_account_password" placeholder="Password is hidden for security">
+                                    <span class="input-group-text" role="button" id="update_my_account_show_password"><i class="fa fa-eye"></i></span>
+                                </div>
                                 <small class="text-danger d-none" id="error_update_my_account_password">Passwords do not match</small>
                             </div>
                             <div class="form-group">
-                                <label for="update_my_account_confirm_password">Confirm Password</label>
-                                <input type="password" id="update_my_account_confirm_password" class="form-control">
+                                <label for="update_my_account_confirm_password" class="fw-bold">Confirm Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="update_my_account_confirm_password" placeholder="Password is hidden for security">
+                                    <span class="input-group-text" role="button" id="update_my_account_show_confirm_password"><i class="fa fa-eye"></i></span>
+                                </div>
                             </div>
                         </div>
                         <div class="d-flex justify-content-center py-5 loading">
@@ -194,6 +203,7 @@
                     <div class="modal-footer">
                         <input type="hidden" id="update_my_account_id">
                         <input type="hidden" id="update_my_account_old_username">
+                        <input type="hidden" id="update_my_account_old_password">
 
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary" id="update_my_account_submit">Submit</button>
@@ -271,6 +281,19 @@
                 "info": true,
                 "autoWidth": true,
                 "responsive": true,
+            })
+
+            $('#login_show_password').click(function() {
+                var passwordField = $('#login_password');
+                var passwordFieldType = passwordField.attr('type');
+
+                if (passwordFieldType == 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                }
             })
 
             $(".no_function").click(function() {
@@ -424,6 +447,7 @@
 
                         $("#update_my_account_id").val(user_id);
                         $("#update_my_account_old_username").val(response.username);
+                        $("#update_my_account_old_password").val(response.password);
 
                         $(".loading").addClass("d-none");
                         $(".update-my-account-form").removeClass("d-none");
@@ -434,8 +458,112 @@
                 });
             })
 
+            $("#update_my_account_form").submit(function() {
+                const name = $("#update_my_account_name").val();
+                const username = $("#update_my_account_username").val();
+                const password = $("#update_my_account_password").val();
+                const confirm_password = $("#update_my_account_confirm_password").val();
+
+                const id = $("#update_my_account_id").val();
+                const old_username = $("#update_my_account_old_username").val();
+                const old_password = $("#update_my_account_old_password").val();
+
+                let errors = 0;
+
+                if (password || confirm_password) {
+                    if (password != confirm_password) {
+                        $("#update_my_account_password").addClass("is-invalid");
+                        $("#update_my_account_confirm_password").addClass("is-invalid");
+                        $("#error_update_my_account_password").removeClass("d-none");
+
+                        errors++;
+                    }
+                }
+
+                if (errors == 0) {
+                    $("#update_my_account_submit").text("Please wait...");
+                    $("#update_my_account_submit").attr("disabled", true);
+
+                    var formData = new FormData();
+
+                    formData.append('name', name);
+                    formData.append('username', username);
+                    formData.append('password', password);
+                    formData.append('old_username', old_username);
+                    formData.append('old_password', old_password);
+                    formData.append('id', id);
+
+                    $.ajax({
+                        url: base_url + 'admin/update_my_account',
+                        data: formData,
+                        type: 'POST',
+                        dataType: 'JSON',
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            if (response) {
+                                location.href = base_url + current_tab;
+                            } else {
+                                $("#update_my_account_username").addClass("is-invalid");
+                                $("#error_update_my_account_username").removeClass("d-none");
+
+                                $("#update_my_account_submit").text("Submit");
+                                $("#update_my_account_submit").removeAttr("disabled");
+                            }
+                        },
+                        error: function(_, _, error) {
+                            console.error(error);
+                        }
+                    });
+                }
+            })
+
+            $("#update_my_account_username").keydown(function() {
+                $("#update_my_account_username").removeClass("is-invalid");
+                $("#error_update_my_account_username").addClass("d-none");
+            })
+
+            $("#update_my_account_password").keydown(function() {
+                $("#update_my_account_password").removeClass("is-invalid");
+                $("#update_my_account_confirm_password").removeClass("is-invalid");
+                $("#error_update_my_account_password").addClass("d-none");
+            })
+
+            $("#update_my_account_confirm_password").keydown(function() {
+                $("#update_my_account_password").removeClass("is-invalid");
+                $("#update_my_account_confirm_password").removeClass("is-invalid");
+                $("#error_update_my_account_password").addClass("d-none");
+            })
+
+            $('#update_my_account_show_password').click(function() {
+                var passwordField = $('#update_my_account_password');
+                var passwordFieldType = passwordField.attr('type');
+
+                if (passwordFieldType == 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            })
+
+            $('#update_my_account_show_confirm_password').click(function() {
+                var passwordField = $('#update_my_account_confirm_password');
+                var passwordFieldType = passwordField.attr('type');
+
+                if (passwordFieldType == 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                } else {
+                    passwordField.attr('type', 'password');
+                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                }
+            })
+
             $(document).on("click", ".update_status", function() {
                 const message_id = $(this).attr("message_id");
+                const user_id = $(this).attr("user_id");
 
                 Swal.fire({
                     title: "Are you sure?",
@@ -450,6 +578,7 @@
                         var formData = new FormData();
 
                         formData.append('id', message_id);
+                        formData.append('user_id', user_id);
 
                         $.ajax({
                             url: base_url + 'set_to_processed',
@@ -634,6 +763,34 @@
                 document.getElementById('closeBtn_2').addEventListener('click', () => {
                     Swal.close();
                 });
+            }
+
+            function disable_developer_functions(enabled) {
+                if (enabled) {
+                    $(document).on('contextmenu', function() {
+                        return false;
+                    });
+
+                    $(document).on('keydown', function(event) {
+                        if (event.ctrlKey && event.shiftKey) {
+                            if (event.keyCode === 74) {
+                                return false;
+                            }
+
+                            if (event.keyCode === 67) {
+                                return false;
+                            }
+
+                            if (event.keyCode === 73) {
+                                return false;
+                            }
+                        }
+
+                        if (event.ctrlKey && event.keyCode === 85) {
+                            return false;
+                        }
+                    });
+                }
             }
         })
     </script>

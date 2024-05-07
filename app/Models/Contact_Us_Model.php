@@ -10,6 +10,7 @@ class Contact_Us_Model extends Model
     protected $primary_key = "id";
     protected $allowedFields = [
         'date_created',
+        'processed_by',
         'name',
         'email',
         'facebook_account',

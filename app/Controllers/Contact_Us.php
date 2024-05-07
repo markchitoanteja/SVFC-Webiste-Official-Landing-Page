@@ -106,10 +106,14 @@ class Contact_Us extends BaseController
     public function set_to_processed()
     {
         $id = $this->request->getPost("id");
+        $user_id = $this->request->getPost("user_id");
 
         $Contact_Us_Model = new Contact_Us_Model();
 
-        $data = ["status" => "processed"];
+        $data = [
+            "processed_by" => $user_id,
+            "status" => "processed",
+        ];
 
         $Contact_Us_Model->update($id, $data);
 

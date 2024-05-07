@@ -28,7 +28,7 @@
 
                                             <td class="text-center">
                                                 <i role="button" class="fa fa-eye text-primary <?= $message["status"] == "unprocessed" ? "me-1" : null ?> view_message" processed_by="<?= $message["status"] == "unprocessed" ? "Not Yet Available" : $user_data["name"] ?>" message_id="<?= $message["id"] ?>" title="View Message"></i>
-                                                <i role="button" class="fa fa-thumbs-up text-success update_status <?= $message["status"] != "unprocessed" ? "d-none" : null ?>" message_id="<?= $message["id"] ?>" title="Set status to Processed"></i>
+                                                <i role="button" class="fa fa-thumbs-up text-success update_status <?= $message["status"] != "unprocessed" ? "d-none" : null ?>" message_id="<?= $message["id"] ?>" user_id="<?= session()->get("user_id") ?>" title="Set status to Processed"></i>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
