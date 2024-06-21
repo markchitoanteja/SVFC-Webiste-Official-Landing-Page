@@ -109,7 +109,7 @@
                             <p><strong>Message:</strong> <span id="view_message_message"></span></p>
                         </div>
                         <div class="d-flex justify-content-center py-5 loading">
-                            <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986366/SVFC%20Website/l8z09wsvyfc2bsemzyyt.gif" class="w-50" alt="Loading Image">
+                            <img src="<?= base_url() ?>public/img/loading.gif" class="w-50" alt="Loading Image">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -197,7 +197,7 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center py-5 loading">
-                            <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986366/SVFC%20Website/l8z09wsvyfc2bsemzyyt.gif" class="w-50" alt="Loading Image">
+                            <img src="<?= base_url() ?>public/img/loading.gif" class="w-50" alt="Loading Image">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -310,7 +310,7 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center py-5 loading">
-                            <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986366/SVFC%20Website/l8z09wsvyfc2bsemzyyt.gif" class="w-50" alt="Loading Image">
+                            <img src="<?= base_url() ?>public/img/loading.gif" class="w-50" alt="Loading Image">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -363,9 +363,9 @@
             }
 
             if (current_tab == "home" && !notification) {
-                img_1.src = "https://res.cloudinary.com/dovvgfevi/image/upload/v1714986375/SVFC%20Website/aoknebicfsenmyc3xrbd.gif";
-                img_2.src = "https://res.cloudinary.com/dovvgfevi/image/upload/v1714986375/SVFC%20Website/md1pyizccse2jjgajzli.png";
-                img_3.src = "https://res.cloudinary.com/dovvgfevi/image/upload/v1714986364/SVFC%20Website/ikq8ch2uwk8ljgz7p1cj.gif";
+                img_1.src = "<?= base_url() ?>public/img/poster.gif";
+                img_2.src = "<?= base_url() ?>public/img/process.png";
+                img_3.src = "<?= base_url() ?>public/img/announcement.gif";
 
                 if ($(window).width() <= 768) {
                     backdrop_image = "none";

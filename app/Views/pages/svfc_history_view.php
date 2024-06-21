@@ -31,7 +31,7 @@
                         <p style="text-indent: 24px">By June of the same year, the enrollment reached its peak with more than two thousand populace when the school participated in the decongestion scheme of the government through the Education Voucher System (EVS) program of President Gloria Macapagal Arroyo.</p>
                     </div>
                 </div>
-                <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986365/SVFC%20Website/xjhozntncmkazfzaljeh.png);">&nbsp;</div>
+                <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style="background-image: url(<?= base_url() ?>public/img/bg_5.jpg);">&nbsp;</div>
             </div>
         </div>
     </section>
@@ -44,7 +44,7 @@
                             <img src="https://i3.ytimg.com/vi/4lG8VfSTVy8/maxresdefault.jpg" style="width: 100%;" alt="YouTube Thumbnail">
 
                             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                                <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986367/SVFC%20Website/twzc4ccvzdjfclarilez.svg" width="64" height="64" />
+                                <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />
                             </div>
                         </div>
                     </a>

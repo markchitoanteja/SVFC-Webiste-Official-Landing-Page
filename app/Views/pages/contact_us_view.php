@@ -38,14 +38,16 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="mb-3">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a comment here" id="contact_us_message" style="height: 100px" required></textarea>
-                                    <label for="contact_us_message">Message</label>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a comment here" id="contact_us_message" style="height: 100px" required></textarea>
+                                            <label for="contact_us_message">Message</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-lg-3 col-12 mx-auto">
                                     <button type="submit" class="btn btn-primary py-3 w-100" id="contact_us_submit">SEND</button>

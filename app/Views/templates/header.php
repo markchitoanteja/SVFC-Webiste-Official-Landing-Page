@@ -10,13 +10,13 @@ $current_sub_page = session()->get("current_sub_page");
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta name="description" content="The St. Vincent de Ferrer College of Camarin, Inc. is a private educational institution run by a family of selfless educators and named St. Vincent de Ferrer Academy, Inc. in 2001.">
+    <meta name="keywords" content="SVFC Website, SVFC Landing Page, St. Vincent de Ferrer College, St. Vincent de Ferrer Academy, private educational institution, selfless educators">
 
     <title><?= $current_sub_page ? $current_sub_page : $current_main_page ?> - St. Vincent de Ferrer College of Camarin, Inc.</title>
 
     <!-- Favicons -->
-    <link href="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986018/SVFC%20Website/favicon.png" rel="icon">
+    <link rel="shortcut icon" href="<?= base_url() ?>favicon.ico" type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&amp;v=1.0" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/animate.css/animate.min.css?v=1.15" rel="stylesheet">
@@ -36,7 +36,7 @@ $current_sub_page = session()->get("current_sub_page");
         <div class="container d-flex align-items-center justify-content-between">
             <!-- Logo -->
             <div class="logo" style="display: flex; align-items: center;">
-                <img src="https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/rtaqnkmqwpgzi9spin8w.png" alt="" class="img-fluid" style="margin-right: 10px;">
+                <img src="<?= base_url() ?>public/img/logo.png" alt="" class="img-fluid" style="margin-right: 10px;">
                 <div class="logo-content" style="display: flex; flex-direction: column;">
                     <a href="<?= base_url() ?>" class="scrollto">
                         <span class="school-name" style="font-size: 20px;" id="full_sn">St. Vincent de Ferrer College of Camarin, Inc.</span>
@@ -129,7 +129,7 @@ $current_sub_page = session()->get("current_sub_page");
     </header>
 
     <!-- ======= Hero Section ======= -->
-    <div class="w-100 inner-page-header" style="background-image: url(https://res.cloudinary.com/dovvgfevi/image/upload/v1714986376/SVFC%20Website/uogg1fonprkypry9s6qw.png);">
+    <div class="w-100 inner-page-header" style="background-image: url(<?= base_url() ?>public/img/bg_pink.png);">
         <div class="text-center text-white mt-5">
             <h3><?= $current_main_page ?></h3>
             <h1><?= $current_sub_page ?></h1>
