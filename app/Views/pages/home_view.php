@@ -77,7 +77,7 @@ function isMobileDevice()
                             <li><a class="nav-link" href="<?= base_url() ?>about/college_seal">College Seal</a></li>
                             <li><a class="nav-link" href="<?= base_url() ?>about/philosophy_mission_and_vision">Philosophy, Mission, and Vision</a></li>
                             <li><a class="nav-link" href="<?= base_url() ?>about/goals_and_objectives">Goals and Objectives</a></li>
-                            <li><a class="nav-link no_function" href="javascript:void(0)">Facilities</a></li>
+                            <li><a class="nav-link" href="<?= base_url() ?>about/facilities">Facilities</a></li>
                             <li><a class="nav-link" href="<?= base_url() ?>about/svfc_hymn">SVFC Hymn</a></li>
                         </ul>
                     </li>

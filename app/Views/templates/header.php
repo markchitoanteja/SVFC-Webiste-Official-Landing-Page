@@ -52,7 +52,7 @@ $current_sub_page = session()->get("current_sub_page");
                     <li><a class="nav-link" href="<?= base_url() ?>">Home</a></li>
                     <!-- About -->
                     <li class="dropdown">
-                        <a class="<?= ($current_tab == "about/svfc_history") || ($current_tab == "about/college_seal") || ($current_tab == "about/philosophy_mission_and_vision") || ($current_tab == "about/goals_and_objectives") || ($current_tab == "about/svfc_hymn") ? "active" : null ?>" href="javascript:void(0)">
+                        <a class="<?= ($current_tab == "about/svfc_history") || ($current_tab == "about/college_seal") || ($current_tab == "about/philosophy_mission_and_vision") || ($current_tab == "about/goals_and_objectives") || ($current_tab == "about/svfc_hymn") || ($current_tab == "about/facilities") ? "active" : null ?>" href="javascript:void(0)">
                             <span>About</span>
                             <i class="bi bi-chevron-down"></i>
                         </a>
@@ -61,7 +61,7 @@ $current_sub_page = session()->get("current_sub_page");
                             <li><a class="nav-link <?= $current_tab == "about/college_seal" ? "active" : null ?>" href="<?= base_url() ?>about/college_seal">College Seal</a></li>
                             <li><a class="nav-link <?= $current_tab == "about/philosophy_mission_and_vision" ? "active" : null ?>" href="<?= base_url() ?>about/philosophy_mission_and_vision">Philosophy, Mission, and Vision</a></li>
                             <li><a class="nav-link <?= $current_tab == "about/goals_and_objectives" ? "active" : null ?>" href="<?= base_url() ?>about/goals_and_objectives">Goals and Objectives</a></li>
-                            <li><a class="nav-link no_function" href="javascript:void(0)">Facilities</a></li>
+                            <li><a class="nav-link <?= $current_tab == "about/facilities" ? "active" : null ?>" href="<?= base_url() ?>about/facilities">Facilities</a></li>
                             <li><a class="nav-link <?= $current_tab == "about/svfc_hymn" ? "active" : null ?>" href="<?= base_url() ?>about/svfc_hymn">SVFC Hymn</a></li>
                         </ul>
                     </li>

@@ -1,68 +1,70 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
-        <div class="d-flex justify-content-center">
-            <div class="footer-top" style="background-color: transparent;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 footer-info">
-                            <p><span class="school-name" style="font-size: 24px;">St. Vincent de Ferrer College of Camarin, Inc.</span></p>
-                            <br>
-                            <strong><u>School Address</u></strong>
-                            <p>
-                                SVFC Compound, San Vicente Ferrer Road, Area D, Brgy. 178, Camarin, Caloocan City
-                                <br><br>
-                                <strong><u>Admission/Concierge Numbers</u></strong>
-                                <br>
-                                SMART 0968-729-2593<br>
-                                SMART 0969-597-2577<br>
-                                SMART 0908-658-1680<br>
-                                SMART 0969-597-2586
-                            </p>
-                        </div>
-                        <!-- Programs -->
-                        <div class="col-md-2 footer-links">
-                            <h4>Programs</h4>
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Preparatory</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Elementary</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Junior High</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Senior High</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">College</a></li>
-                            </ul>
-                        </div>
-                        <!-- Admissions -->
-                        <div class="col-auto footer-links">
-                            <h4>Admissions</h4>
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Special Education Program Department (SEPD)</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Homeschooling</a></li>
-                            </ul>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <!-- School Info -->
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3><span class="school-name" style="font-size: 24px;">St. Vincent de Ferrer College of Camarin, Inc.</span></h3>
+                        <p>
+                            <strong><u>School Address</u></strong><br>
+                            SVFC Compound,<br>
+                            San Vicente Ferrer Road,<br>
+                            Area D, Brgy. 178,<br>
+                            Camarin, Caloocan City<br><br>
 
-                            <p class="mt-5"><i>Follow Us:</i></p>
-                            <div class="social-links mt-3">
-                                <a href="https://www.facebook.com/SVFCofCamarinOfficialPage/" target="_blank" rel="noopener noreferrer" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                <a href="https://www.youtube.com/@svfcmultimedia" target="_blank" rel="noopener noreferrer" class="youtube"><i class="bx bxl-youtube"></i></a>
-                            </div>
-                        </div>
-                        <!-- Useful Links -->
-                        <div class="col-auto footer-links">
-                            <h4>Quick Links</h4>
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/svfc_history">SVFC History</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/college_seal">College Seal</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/philosophy_mission_and_vision">Philosophy, Mission, and Vision</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/goals_and_objectives">Goals and Objectives</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="javascript:void(0)" class="no_function">Facilities</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="<?= base_url() ?>about/svfc_hymn">SVFC Hymn</a></li>
-                            </ul>
+                            <strong><u>Admission/Concierge Numbers</u></strong>
+                            <br>
+                            SMART 0968-729-2593<br>
+                            SMART 0969-597-2577<br>
+                            SMART 0908-658-1680<br>
+                            SMART 0969-597-2586
+                        </p>
+                    </div>
+                    <!-- Programs -->
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Programs</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Preparatory</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Elementary</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Junior High</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Senior High</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">College</a></li>
+                        </ul>
+                    </div>
+                    <!-- Admissions -->
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Admissions</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Special Education Program Department (SEPD)</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a class="no_function" href="javascript:void(0)">Homeschooling</a></li>
+                        </ul>
+
+                        <p class="mt-5"><i>Follow Us:</i></p>
+
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/SVFCofCamarinOfficialPage/" target="_blank" rel="noopener noreferrer" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="https://www.youtube.com/@svfcmultimedia" target="_blank" rel="noopener noreferrer" class="youtube"><i class="bx bxl-youtube"></i></a>
                         </div>
                     </div>
+                    <!-- Newsletter -->
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Subscribe to our newsletter to get the latest news, updates, and special offers directly in your inbox.</p>
+                        <form action="javascript:void(0)" id="newsletter_form">
+                            <input type="email" id="newsletter_email" required><input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
+
         <div class="container">
-            <div class="copyright">
-                &copy; Copyright <span class="school-name">St. Vincent de Ferrer College of Camarin, Inc.</span> All Rights Reserved
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright <span class="school-name">St. Vincent de Ferrer College of Camarin, Inc.</span> All Rights Reserved
+                </div>
             </div>
         </div>
     </footer>

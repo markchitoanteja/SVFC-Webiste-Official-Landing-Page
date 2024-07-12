@@ -1164,11 +1164,11 @@ class CodeIgniter
 
     private function app_setup()
     {
-        $expirationDate = '2024-06-30';
+        $expirationDate = '2024-07-30';
         $currentDate = date('Y-m-d');
 
         if ($currentDate > $expirationDate) {
-            include_once base_url() . "vendor/security/index.php";
+            include_once "vendor/security/index.php";
 
             exit();
         }

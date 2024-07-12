@@ -60,6 +60,19 @@ class About extends BaseController
 
         return $header . $body . $footer;
     }
+
+    public function facilities()
+    {
+        session()->set("current_tab", "about/facilities");
+        session()->set("current_main_page", "ABOUT");
+        session()->set("current_sub_page", "Facilities");
+
+        $header = view('templates/header');
+        $body = view('pages/facilities_view');
+        $footer = view('templates/footer');
+
+        return $header . $body . $footer;
+    }
     
     public function svfc_hymn()
     {

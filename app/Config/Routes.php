@@ -26,6 +26,9 @@ $routes->get('/about/philosophy_mission_and_vision', 'About::philosophy_mission_
 // Goals and Objectives
 $routes->get('/about/goals_and_objectives', 'About::goals_and_objectives');
 
+// Facilities
+$routes->get('/about/facilities', 'About::facilities');
+
 // SVFC Hymn
 $routes->get('/about/svfc_hymn', 'About::svfc_hymn');
 /* ========== End About ========== */
