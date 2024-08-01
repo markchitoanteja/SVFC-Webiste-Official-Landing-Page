@@ -42,10 +42,10 @@ function isMobileDevice()
     <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css?v=1.15" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css?v=1.15" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css?v=1.15" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/font-awesome/css/font-awesome.css?v=1.15" rel="stylesheet" />
-
+    <link href="<?= base_url() ?>public/vendor/font-awesome/css/all.min.css?v=1.15" rel="stylesheet" />
+    
     <!-- Template Main CSS File -->
-    <link href="<?= base_url() ?>public/css/style.css?v=1.16" rel="stylesheet">
+    <link href="<?= base_url() ?>public/css/style.css?v=1.19" rel="stylesheet">
 </head>
 
 <body class="container bg-light" id="body_container">

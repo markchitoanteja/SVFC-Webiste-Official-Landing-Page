@@ -55,7 +55,6 @@
                             <input type="email" id="newsletter_email" required><input type="submit" value="Subscribe">
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -328,6 +327,48 @@
         </div>
     </div>
 
+    <!-- Messenger Floating Icon -->
+    <div class="messenger-button" id="messenger_chat">
+        <i class="fab fa-facebook-messenger"></i>
+    </div>
+
+    <!-- Chat Box -->
+    <div class="chat-box card" id="chatBox">
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="col-8">
+                        <img class="img-circle" src="<?= base_url() ?>public/img/logo.png" width="45" height="45" alt="">
+                    </div>
+                    <div class="col-4">
+                        <div class="d-inline">
+                            <i class="fas fa-minus float-end" role="button" id="hide_chatbox" title="Hide Chat Box"></i>
+                            <i class="fas fa-ellipsis float-end me-3" role="button" id="go_to_fb_page" title="Visit Official FB Page"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-12">
+                    <p><b>Chat with St. Vincent de Ferrer College of Camarin Inc.</b></p>
+                </div>
+                <div class="col-12">
+                    <small>Hi! How can we help you?</small>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <button class="btn btn-primary w-100" id="start_chat">Start Chat</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small><b><i class="fab fa-facebook-messenger me-1"></i> Powered by Messenger</b></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="<?= base_url() ?>public/vendor/purecounter/purecounter_vanilla.js?v=1.15"></script>
     <script src="<?= base_url() ?>public/vendor/bootstrap/js/bootstrap.bundle.min.js?v=1.15"></script>
     <script src="<?= base_url() ?>public/vendor/glightbox/js/glightbox.min.js?v=1.15"></script>
@@ -338,6 +379,7 @@
     <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.js?v=1.15"></script>
     <script src="<?= base_url() ?>public/vendor/datatables/js/dataTables.bootstrap5.js?v=1.15"></script>
     <script src="<?= base_url() ?>public/vendor/sweetalert/sweetalert2@11.js?v=1.15"></script>
+    <script src="<?= base_url() ?>public/vendor/font-awesome/js/all.min.js?v=1.15"></script>
     <script src="<?= base_url() ?>public/js/main.js?v=1.15"></script>
 
 
@@ -387,6 +429,42 @@
                     $('#video_player').get(0).pause();
                 })
             }
+
+            $("#messenger_chat").click(function() {
+                let chatBox = document.getElementById('chatBox');
+
+                if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+                    chatBox.classList.remove('bounceOut');
+                    chatBox.style.display = 'block';
+                    chatBox.classList.add('bounceIn');
+                } else {
+                    chatBox.classList.remove('bounceIn');
+                    chatBox.classList.add('bounceOut');
+
+                    setTimeout(function() {
+                        chatBox.style.display = 'none';
+                    }, 500);
+                }
+            })
+
+            $(document).on("click", "#hide_chatbox", function() {
+                let chatBox = document.getElementById('chatBox');
+
+                chatBox.classList.remove('bounceIn');
+                chatBox.classList.add('bounceOut');
+
+                setTimeout(function() {
+                    chatBox.style.display = 'none';
+                }, 500);
+            })
+
+            $(document).on("click", "#go_to_fb_page", function() {
+                window.open("https://www.facebook.com/SVFCofCamarinOfficialPage", "_blank");
+            })
+            
+            $(document).on("click", "#start_chat", function() {
+                window.open("https://www.messenger.com/t/444619029650053/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0", "_blank");
+            })
 
             $('#data_table').DataTable({
                 "paging": true,
