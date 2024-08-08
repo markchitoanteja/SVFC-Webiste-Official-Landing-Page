@@ -27,7 +27,7 @@ $current_sub_page = session()->get("current_sub_page");
     <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css?v=1.15" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/font-awesome/css/all.min.css?v=1.15" rel="stylesheet" />
     <link href="<?= base_url() ?>public/vendor/datatables/css/dataTables.bootstrap5.css?v=1.15" rel="stylesheet">
-    <link href="<?= base_url() ?>public/css/style.css?v=1.19" rel="stylesheet">
+    <link href="<?= base_url() ?>public/css/style.css?v=1.22" rel="stylesheet">
 </head>
 
 <body class="container bg-light" id="body_container">
@@ -36,7 +36,7 @@ $current_sub_page = session()->get("current_sub_page");
         <div class="container d-flex align-items-center justify-content-between">
             <!-- Logo -->
             <div class="logo" style="display: flex; align-items: center;">
-                <img src="<?= base_url() ?>public/img/logo.png" alt="" class="img-fluid" style="margin-right: 10px;">
+                <img src="<?= base_url() ?>public/img/logo-75x75.png" alt="" class="img-fluid" style="margin-right: 10px;">
                 <div class="logo-content" style="display: flex; flex-direction: column;">
                     <a href="<?= base_url() ?>" class="scrollto">
                         <span class="school-name" style="font-size: 20px;" id="full_sn">St. Vincent de Ferrer College of Camarin, Inc.</span>
@@ -129,7 +129,7 @@ $current_sub_page = session()->get("current_sub_page");
     </header>
 
     <!-- ======= Hero Section ======= -->
-    <div class="w-100 inner-page-header" style="background-image: url(<?= base_url() ?>public/img/bg_pink.png);">
+    <div class="w-100 inner-page-header" style="background-image: url(<?= base_url() ?>public/img/bg_pink.webp);">
         <div class="text-center text-white mt-5">
             <h3><?= $current_main_page ?></h3>
             <h1><?= $current_sub_page ?></h1>

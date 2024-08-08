@@ -42,10 +42,10 @@ function isMobileDevice()
     <link href="<?= base_url() ?>public/vendor/boxicons/css/boxicons.min.css?v=1.15" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/glightbox/css/glightbox.min.css?v=1.15" rel="stylesheet">
     <link href="<?= base_url() ?>public/vendor/swiper/swiper-bundle.min.css?v=1.15" rel="stylesheet">
-    <link href="<?= base_url() ?>public/vendor/font-awesome/css/all.min.css?v=1.15" rel="stylesheet" />
+    <link href="<?= base_url() ?>public/vendor/font-awesome/css/all.min.css?v=1.15" rel="stylesheet">
     
     <!-- Template Main CSS File -->
-    <link href="<?= base_url() ?>public/css/style.css?v=1.19" rel="stylesheet">
+    <link href="<?= base_url() ?>public/css/style.css?v=1.22" rel="stylesheet">
 </head>
 
 <body class="container bg-light" id="body_container">
@@ -53,7 +53,7 @@ function isMobileDevice()
     <header id="header" class="d-flex align-items-center mx-auto">
         <div class="container d-flex align-items-center justify-content-between">
             <div class="logo" style="display: flex; align-items: center;">
-                <img src="<?= base_url() ?>public/img/logo.png" alt="" style="margin-right: 10px;">
+                <img src="<?= base_url() ?>public/img/logo-75x75.png" alt="" style="margin-right: 10px;">
                 <div class="logo-content" style="display: flex; flex-direction: column;">
                     <a href="#hero" class="scrollto">
                         <span class="school-name" style="font-size: 20px;" id="full_sn">St. Vincent de Ferrer College of Camarin, Inc.</span>
@@ -150,11 +150,11 @@ function isMobileDevice()
                 <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
                 <div class="carousel-inner" role="listbox">
                     <!-- Slide 1 -->
-                    <div class="carousel-item carousel-item_2 active" style="background-image: url(<?= base_url() ?>public/img/bg_pink.png);">
+                    <div class="carousel-item carousel-item_2 active" style="background-image: url(<?= base_url() ?>public/img/bg_pink.webp);">
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <div class="home-wrapper">
-                                    <img src="<?= base_url() ?>public/img/logo.png" alt="Logo" class="mb-2" style="max-width: 150px;">
+                                    <img src="<?= base_url() ?>public/img/logo-150x150.png" alt="Logo" class="mb-2" style="max-width: 150px;">
                                     <h2 class="animate__animated animate__fadeInDown display-4 school-name" style="color: black;">St. Vincent de Ferrer College of Camarin, Inc.</h2>
                                     <p class="animate__animated animate__fadeInUp" style="color: black;">The Home of Quality and Innovative Education</p>
                                     <a href="#main" class="btn-get-started animate__animated animate__fadeInUp scrollto" style="color: black;">Get Started</a>
@@ -164,7 +164,7 @@ function isMobileDevice()
                     </div>
 
                     <!-- Slide 2 -->
-                    <div class="carousel-item" style="background-image: url(<?= base_url() ?>public/img/bg_2.jpg);">
+                    <div class="carousel-item" style="background-image: url(<?= base_url() ?>public/img/bg_2.webp);">
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <h2 class="animate__animated animate__fadeInDown display-4 school-name">St. Vincent de Ferrer College of Camarin, Inc.</h2>
@@ -175,7 +175,7 @@ function isMobileDevice()
                     </div>
 
                     <!-- Slide 3 -->
-                    <div class="carousel-item" style="background-image: url(<?= base_url() ?>public/img/bg_3.jpg);">
+                    <div class="carousel-item" style="background-image: url(<?= base_url() ?>public/img/bg_3.webp);">
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <h2 class="animate__animated animate__fadeInDown display-4 school-name">St. Vincent de Ferrer College of Camarin, Inc.</h2>
@@ -186,7 +186,7 @@ function isMobileDevice()
                     </div>
 
                     <!-- Slide 4 -->
-                    <div class="carousel-item" style="background-image: url(<?= base_url() ?>public/img/bg_4.jpg);">
+                    <div class="carousel-item" style="background-image: url(<?= base_url() ?>public/img/bg_4.webp);">
                         <div class="carousel-container">
                             <div class="carousel-content">
                                 <h2 class="animate__animated animate__fadeInDown display-4 school-name">St. Vincent de Ferrer College of Camarin, Inc.</h2>
@@ -691,7 +691,8 @@ function isMobileDevice()
         <section class="about section-bg">
             <div class="container">
                 <div class="section-title">
-                    <h2>SVFC School Paper</h2>
+                    <h2 class="mb-1">SVFC School Paper</h2>
+                    <span class="text-muted">(Click the Book to Explore Our Stories)</span>
                 </div>
 
                 <?php if (!isMobileDevice()) : ?>
@@ -729,24 +730,24 @@ function isMobileDevice()
                                 <div class="cover">
                                     <label for="checkbox-cover"></label>
 
-                                    <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
+                                    <img src="<?= base_url() ?>public/img/logo-250x250.png" alt="Image" class="centered-image">
                                 </div>
 
                                 <?php foreach ($pageDetails as $page) : ?>
                                     <div class="page" id="<?= $page['id'] ?>">
                                         <div class="front-page">
-                                            <img src="<?= $page['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                            <img src="<?= $page['front'] ?>" class="fullscreen-image" title="Click to view fullscreen" loading="lazy">
                                             <label class="next" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
                                         </div>
                                         <div class="back-page">
-                                            <img src="<?= $page['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                            <img src="<?= $page['back'] ?>" class="fullscreen-image" title="Click to view fullscreen" loading="lazy">
                                             <label class="prev" for="<?= $page['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
 
                                 <div class="back-cover">
-                                    <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image">
+                                    <img src="<?= base_url() ?>public/img/logo-250x250.png" alt="Image" class="centered-image">
                                 </div>
                             </div>
                         </div>
@@ -780,30 +781,30 @@ function isMobileDevice()
 
                             <?php for ($i = 0; $i < count($pageDetails_mobile) + 1; $i++) : ?>
                                 <input type="checkbox" id="checkbox-page<?= $i ?>_mobile" class="flip-book-input_mobile">
-                            <?php endfor; ?>
+                            <?php endfor ?>
 
                             <div class="book_mobile">
                                 <div class="cover_mobile">
                                     <label for="checkbox-cover_mobile"></label>
 
-                                    <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
+                                    <img src="<?= base_url() ?>public/img/logo-150x150.png" alt="Image" class="centered-image_mobile">
                                 </div>
 
                                 <?php foreach ($pageDetails_mobile as $page_mobile) : ?>
                                     <div class="page_mobile" id="<?= $page_mobile['id'] ?>">
                                         <div class="front-page_mobile">
-                                            <img src="<?= $page_mobile['front'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                            <img src="<?= $page_mobile['front'] ?>" class="fullscreen-image" title="Click to view fullscreen" loading="lazy">
                                             <label class="next_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-right"></i></label>
                                         </div>
                                         <div class="back-page_mobile">
-                                            <img src="<?= $page_mobile['back'] ?>" class="fullscreen-image" title="Click to view fullscreen">
+                                            <img src="<?= $page_mobile['back'] ?>" class="fullscreen-image" title="Click to view fullscreen" loading="lazy">
                                             <label class="prev_mobile" for="<?= $page_mobile['checkbox'] ?>"><i class="fa fa-chevron-left"></i></label>
                                         </div>
                                     </div>
-                                <?php endforeach; ?>
+                                <?php endforeach ?>
 
                                 <div class="back-cover_mobile">
-                                    <img src="<?= base_url() ?>public/img/logo.png" alt="Image" class="centered-image_mobile">
+                                    <img src="<?= base_url() ?>public/img/logo-150x150.png" alt="Image" class="centered-image_mobile">
                                 </div>
                             </div>
                         </div>
@@ -820,7 +821,7 @@ function isMobileDevice()
                         <div class="text-center">
                             <p><b>Visit RADYO VINCENTIAN:</b></p>
                             <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs&list=PLVStl2mrcNzXvebOTOYwi7bOyq_0ZqHej" target="_blank" rel="noopener noreferrer">
-                                <img class="img-shadow" src="<?= base_url() ?>public/img/news_banner.png" style="width: 100%;" alt="">
+                                <img class="img-shadow" src="<?= base_url() ?>public/img/news_banner.webp" style="width: 100%;" alt="">
                             </a>
                         </div>
                     </div>
@@ -831,7 +832,7 @@ function isMobileDevice()
 
                             <a href="https://www.youtube.com/watch?v=uTpRy4ySaCs" target="_blank">
                                 <div style="position: relative;">
-                                    <img class="img-shadow" src="<?= base_url() ?>public/img/news.png" style="width: 100%;" alt="YouTube Thumbnail">
+                                    <img class="img-shadow" src="<?= base_url() ?>public/img/news.webp" style="width: 100%;" alt="YouTube Thumbnail">
 
                                     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
                                         <img src="<?= base_url() ?>public/img/youtube-icon.svg" width="64" height="64" />

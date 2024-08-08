@@ -110,7 +110,7 @@
                             <p><strong>Message:</strong> <span id="view_message_message"></span></p>
                         </div>
                         <div class="d-flex justify-content-center py-5 loading">
-                            <img src="<?= base_url() ?>public/img/loading.gif" class="w-50" alt="Loading Image">
+                            <img src="<?= base_url() ?>public/img/loading.webp" class="w-50" alt="Loading Image">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -148,7 +148,7 @@
                             <label for="login_password">Password</label>
                             <div class="input-group">
                                 <input type="password" class="form-control" id="login_password">
-                                <span class="input-group-text" role="button" id="login_show_password"><i class="fa fa-eye"></i></span>
+                                <span class="input-group-text" role="button" id="login_show_password"><i id="login_show_password_icon" class="fa fa-eye"></i></span>
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,7 @@
                                 <label for="update_my_account_password">Password</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="update_my_account_password" placeholder="Password is hidden for security">
-                                    <span class="input-group-text" role="button" id="update_my_account_show_password"><i class="fa fa-eye"></i></span>
+                                    <span class="input-group-text" role="button" id="update_my_account_show_password"><i id="update_my_account_show_password_icon" class="fa fa-eye"></i></span>
                                 </div>
                                 <small class="text-danger d-none" id="error_update_my_account_password">Passwords do not match</small>
                             </div>
@@ -193,12 +193,12 @@
                                 <label for="update_my_account_confirm_password">Confirm Password</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="update_my_account_confirm_password" placeholder="Password is hidden for security">
-                                    <span class="input-group-text" role="button" id="update_my_account_show_confirm_password"><i class="fa fa-eye"></i></span>
+                                    <span class="input-group-text" role="button" id="update_my_account_show_confirm_password"><i id="update_my_account_show_confirm_password_icon" class="fa fa-eye"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="d-flex justify-content-center py-5 loading">
-                            <img src="<?= base_url() ?>public/img/loading.gif" class="w-50" alt="Loading Image">
+                            <img src="<?= base_url() ?>public/img/loading.webp" class="w-50" alt="Loading Image">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -237,7 +237,7 @@
                             <label for="add_user_account_password">Password</label>
                             <div class="input-group">
                                 <input type="password" class="form-control" id="add_user_account_password" required>
-                                <span class="input-group-text" role="button" id="add_user_account_show_password"><i class="fa fa-eye"></i></span>
+                                <span class="input-group-text" role="button" id="add_user_account_show_password"><i id="add_user_account_show_password_icon" class="fa fa-eye"></i></span>
                             </div>
                             <small class="text-danger d-none" id="error_add_user_account_password">Passwords do not match</small>
                         </div>
@@ -245,7 +245,7 @@
                             <label for="add_user_account_confirm_password">Confirm Password</label>
                             <div class="input-group">
                                 <input type="password" class="form-control" id="add_user_account_confirm_password" required>
-                                <span class="input-group-text" role="button" id="add_user_account_show_confirm_password"><i class="fa fa-eye"></i></span>
+                                <span class="input-group-text" role="button" id="add_user_account_show_confirm_password"><i id="add_user_account_show_confirm_password_icon" class="fa fa-eye"></i></span>
                             </div>
                         </div>
                         <div class="form-group">
@@ -290,7 +290,7 @@
                                 <label for="update_user_account_password">Password</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="update_user_account_password" placeholder="Password is hidden for security">
-                                    <span class="input-group-text" role="button" id="update_user_account_show_password"><i class="fa fa-eye"></i></span>
+                                    <span class="input-group-text" role="button" id="update_user_account_show_password"><i id="update_user_account_show_password_icon" class="fa fa-eye"></i></span>
                                 </div>
                                 <small class="text-danger d-none" id="error_update_user_account_password">Passwords do not match</small>
                             </div>
@@ -298,20 +298,19 @@
                                 <label for="update_user_account_confirm_password">Confirm Password</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="update_user_account_confirm_password" placeholder="Password is hidden for security">
-                                    <span class="input-group-text" role="button" id="update_user_account_show_confirm_password"><i class="fa fa-eye"></i></span>
+                                    <span class="input-group-text" role="button" id="update_user_account_show_confirm_password"><i id="update_user_account_show_confirm_password_icon" class="fa fa-eye"></i></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="update_user_account_user_type">Access Level</label>
                                 <select class="form-select" id="update_user_account_user_type" required>
-                                    <option value disabled selected></option>
                                     <option value="mis">MIS Level</option>
                                     <option value="admin">Administrator Level</option>
                                 </select>
                             </div>
                         </div>
                         <div class="d-flex justify-content-center py-5 loading">
-                            <img src="<?= base_url() ?>public/img/loading.gif" class="w-50" alt="Loading Image">
+                            <img src="<?= base_url() ?>public/img/loading.webp" class="w-50" alt="Loading Image">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -338,7 +337,7 @@
             <div class="row mb-3">
                 <div class="d-flex align-items-center">
                     <div class="col-8">
-                        <img class="img-circle" src="<?= base_url() ?>public/img/logo.png" width="45" height="45" alt="">
+                        <img class="img-circle" src="<?= base_url() ?>public/img/logo-45x45.webp" width="45" height="45" alt="">
                     </div>
                     <div class="col-4">
                         <div class="d-inline">
@@ -396,6 +395,14 @@
             var img_2 = new Image();
             var img_3 = new Image();
 
+            var is_password_shown_1 = false;
+            var is_password_shown_2 = false;
+            var is_password_shown_3 = false;
+            var is_password_shown_4 = false;
+            var is_password_shown_5 = false;
+            var is_password_shown_6 = false;
+            var is_password_shown_7 = false;
+
             check_mobile();
 
             if (notification) {
@@ -407,9 +414,9 @@
             }
 
             if (current_tab == "home" && !notification) {
-                img_1.src = "<?= base_url() ?>public/img/poster.gif";
-                img_2.src = "<?= base_url() ?>public/img/process.png";
-                img_3.src = "<?= base_url() ?>public/img/announcement.gif";
+                img_1.src = "<?= base_url() ?>public/img/poster.webp";
+                img_2.src = "<?= base_url() ?>public/img/process.webp";
+                img_3.src = "<?= base_url() ?>public/img/announcement.webp";
 
                 if ($(window).width() <= 768) {
                     backdrop_image = "none";
@@ -443,7 +450,7 @@
 
                     setTimeout(function() {
                         chatBox.style.display = 'none';
-                    }, 500);
+                    }, 450);
                 }
             })
 
@@ -455,13 +462,13 @@
 
                 setTimeout(function() {
                     chatBox.style.display = 'none';
-                }, 500);
+                }, 450);
             })
 
             $(document).on("click", "#go_to_fb_page", function() {
                 window.open("https://www.facebook.com/SVFCofCamarinOfficialPage", "_blank");
             })
-            
+
             $(document).on("click", "#start_chat", function() {
                 window.open("https://www.messenger.com/t/444619029650053/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0", "_blank");
             })
@@ -477,15 +484,20 @@
             })
 
             $('#login_show_password').click(function() {
-                var passwordField = $('#login_password');
-                var passwordFieldType = passwordField.attr('type');
+                if (!is_password_shown_1) {
+                    $("#login_show_password_icon").removeClass("fa-eye");
+                    $("#login_show_password_icon").addClass("fa-eye-slash");
 
-                if (passwordFieldType == 'password') {
-                    passwordField.attr('type', 'text');
-                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                    $("#login_password").attr("type", "text");
+
+                    is_password_shown_1 = true;
                 } else {
-                    passwordField.attr('type', 'password');
-                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                    $("#login_show_password_icon").addClass("fa-eye");
+                    $("#login_show_password_icon").removeClass("fa-eye-slash");
+
+                    $("#login_password").attr("type", "password");
+
+                    is_password_shown_1 = false;
                 }
             })
 
@@ -742,54 +754,74 @@
             })
 
             $('#update_my_account_show_password').click(function() {
-                var passwordField = $('#update_my_account_password');
-                var passwordFieldType = passwordField.attr('type');
+                if (!is_password_shown_2) {
+                    $("#update_my_account_show_password_icon").removeClass("fa-eye");
+                    $("#update_my_account_show_password_icon").addClass("fa-eye-slash");
 
-                if (passwordFieldType == 'password') {
-                    passwordField.attr('type', 'text');
-                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                    $("#update_my_account_password").attr("type", "text");
+
+                    is_password_shown_2 = true;
                 } else {
-                    passwordField.attr('type', 'password');
-                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                    $("#update_my_account_show_password_icon").addClass("fa-eye");
+                    $("#update_my_account_show_password_icon").removeClass("fa-eye-slash");
+
+                    $("#update_my_account_password").attr("type", "password");
+
+                    is_password_shown_2 = false;
                 }
             })
 
             $('#update_my_account_show_confirm_password').click(function() {
-                var passwordField = $('#update_my_account_confirm_password');
-                var passwordFieldType = passwordField.attr('type');
+                if (!is_password_shown_3) {
+                    $("#update_my_account_show_confirm_password_icon").removeClass("fa-eye");
+                    $("#update_my_account_show_confirm_password_icon").addClass("fa-eye-slash");
 
-                if (passwordFieldType == 'password') {
-                    passwordField.attr('type', 'text');
-                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                    $("#update_my_account_confirm_password").attr("type", "text");
+
+                    is_password_shown_3 = true;
                 } else {
-                    passwordField.attr('type', 'password');
-                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                    $("#update_my_account_show_confirm_password_icon").addClass("fa-eye");
+                    $("#update_my_account_show_confirm_password_icon").removeClass("fa-eye-slash");
+
+                    $("#update_my_account_confirm_password").attr("type", "password");
+
+                    is_password_shown_3 = false;
                 }
             })
 
             $('#add_user_account_show_password').click(function() {
-                var passwordField = $('#add_user_account_password');
-                var passwordFieldType = passwordField.attr('type');
+                if (!is_password_shown_4) {
+                    $("#add_user_account_show_password_icon").removeClass("fa-eye");
+                    $("#add_user_account_show_password_icon").addClass("fa-eye-slash");
 
-                if (passwordFieldType == 'password') {
-                    passwordField.attr('type', 'text');
-                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                    $("#add_user_account_password").attr("type", "text");
+
+                    is_password_shown_4 = true;
                 } else {
-                    passwordField.attr('type', 'password');
-                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                    $("#add_user_account_show_password_icon").addClass("fa-eye");
+                    $("#add_user_account_show_password_icon").removeClass("fa-eye-slash");
+
+                    $("#add_user_account_password").attr("type", "password");
+
+                    is_password_shown_4 = false;
                 }
             })
 
             $('#add_user_account_show_confirm_password').click(function() {
-                var passwordField = $('#add_user_account_confirm_password');
-                var passwordFieldType = passwordField.attr('type');
+                if (!is_password_shown_5) {
+                    $("#add_user_account_show_confirm_password_icon").removeClass("fa-eye");
+                    $("#add_user_account_show_confirm_password_icon").addClass("fa-eye-slash");
 
-                if (passwordFieldType == 'password') {
-                    passwordField.attr('type', 'text');
-                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                    $("#add_user_account_confirm_password").attr("type", "text");
+
+                    is_password_shown_5 = true;
                 } else {
-                    passwordField.attr('type', 'password');
-                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                    $("#add_user_account_show_confirm_password_icon").addClass("fa-eye");
+                    $("#add_user_account_show_confirm_password_icon").removeClass("fa-eye-slash");
+
+                    $("#add_user_account_confirm_password").attr("type", "password");
+
+                    is_password_shown_5 = false;
                 }
             })
 
@@ -950,6 +982,17 @@
             $(".update_user_account").click(function() {
                 const user_id = $(this).attr("user_id");
 
+                is_password_shown_6 = false;
+                is_password_shown_7 = false;
+
+                $("#update_user_account_password").attr("type", "password");
+                $("#update_user_account_confirm_password").attr("type", "password");
+
+                $("#update_user_account_show_password_icon").removeClass("fa-eye-slash");
+                $("#update_user_account_show_password_icon").addClass("fa-eye");
+                $("#update_user_account_show_confirm_password_icon").removeClass("fa-eye-slash");
+                $("#update_user_account_show_confirm_password_icon").addClass("fa-eye");
+
                 $(".loading").removeClass("d-none");
                 $(".actual-form").addClass("d-none");
 
@@ -1012,28 +1055,38 @@
             })
 
             $('#update_user_account_show_password').click(function() {
-                var passwordField = $('#update_user_account_password');
-                var passwordFieldType = passwordField.attr('type');
+                if (!is_password_shown_6) {
+                    $("#update_user_account_show_password_icon").removeClass("fa-eye");
+                    $("#update_user_account_show_password_icon").addClass("fa-eye-slash");
 
-                if (passwordFieldType == 'password') {
-                    passwordField.attr('type', 'text');
-                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                    $("#update_user_account_password").attr("type", "text");
+
+                    is_password_shown_6 = true;
                 } else {
-                    passwordField.attr('type', 'password');
-                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                    $("#update_user_account_show_password_icon").addClass("fa-eye");
+                    $("#update_user_account_show_password_icon").removeClass("fa-eye-slash");
+
+                    $("#update_user_account_password").attr("type", "password");
+
+                    is_password_shown_6 = false;
                 }
             })
 
             $('#update_user_account_show_confirm_password').click(function() {
-                var passwordField = $('#update_user_account_confirm_password');
-                var passwordFieldType = passwordField.attr('type');
+                if (!is_password_shown_7) {
+                    $("#update_user_account_show_confirm_password_icon").removeClass("fa-eye");
+                    $("#update_user_account_show_confirm_password_icon").addClass("fa-eye-slash");
 
-                if (passwordFieldType == 'password') {
-                    passwordField.attr('type', 'text');
-                    $(this).find('i').removeClass('fa-eye').addClass('fa-eye-slash');
+                    $("#update_user_account_confirm_password").attr("type", "text");
+
+                    is_password_shown_7 = true;
                 } else {
-                    passwordField.attr('type', 'password');
-                    $(this).find('i').removeClass('fa-eye-slash').addClass('fa-eye');
+                    $("#update_user_account_show_confirm_password_icon").addClass("fa-eye");
+                    $("#update_user_account_show_confirm_password_icon").removeClass("fa-eye-slash");
+
+                    $("#update_user_account_confirm_password").attr("type", "password");
+
+                    is_password_shown_7 = false;
                 }
             })
 

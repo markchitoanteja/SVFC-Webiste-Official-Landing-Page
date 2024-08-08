@@ -2,7 +2,6 @@
 # General
 --------------------------------------------------------------*/
 body {
-  /* font-family: "Open Sans", sans-serif; */
   font-family: "Rubik", sans-serif;
   color: #334240;
 }
@@ -772,7 +771,7 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(66, 84, 81, 0.5), rgba(43, 56, 54, 0.5)), url("../../public/img/bg_3.jpg") fixed center center;
+  background: linear-gradient(rgba(66, 84, 81, 0.5), rgba(43, 56, 54, 0.5)), url("../../public/img/bg_3.webp") fixed center center;
   background-size: cover;
   padding: 60px 0;
 }
@@ -1624,12 +1623,11 @@ section {
 
 @font-face {
   font-family: "Old English Text MT";
-  src: url("https://db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.eot");
-  src: url("https://db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/f3258385782c4c96aa24fe8b5d5f9782.svg#Old English Text MT")format("svg");
+  src: url("../fonts/f3258385782c4c96aa24fe8b5d5f9782.eot");
+  src: url("../fonts/f3258385782c4c96aa24fe8b5d5f9782.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/f3258385782c4c96aa24fe8b5d5f9782.woff2") format("woff2"),
+    url("../fonts/f3258385782c4c96aa24fe8b5d5f9782.woff") format("woff"),
+    url("../fonts/f3258385782c4c96aa24fe8b5d5f9782.ttf") format("truetype");
 }
 
 .video-container {
@@ -2333,28 +2331,4 @@ section {
 
 .bounceOut {
   animation-name: bounceOut;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 50px;
-  right: 10px;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 1001;
-  padding: 5px;
-}
-
-.dropdown-menu a {
-  display: block;
-  padding: 8px 12px;
-  text-decoration: none;
-  color: #333;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f0f0f0;
 }

@@ -19,7 +19,6 @@
                         <?php
                         $images = [];
 
-                        // Collect all gym images
                         for ($gym = 1; $gym <= 8; $gym++) {
                             $images[] = [
                                 'src' => base_url() . 'public/img/facilities/gym/img_' . $gym . '.jpg',
@@ -29,7 +28,6 @@
                             ];
                         }
 
-                        // Collect all laboratory images
                         for ($laboratory = 1; $laboratory <= 9; $laboratory++) {
                             $images[] = [
                                 'src' => base_url() . 'public/img/facilities/laboratory/img_' . $laboratory . '.jpg',
@@ -39,7 +37,6 @@
                             ];
                         }
 
-                        // Collect all library images
                         for ($library = 1; $library <= 18; $library++) {
                             $images[] = [
                                 'src' => base_url() . 'public/img/facilities/library/img_' . $library . '.jpg',
@@ -49,7 +46,6 @@
                             ];
                         }
 
-                        // Collect all school building images
                         for ($school_building = 1; $school_building <= 3; $school_building++) {
                             $images[] = [
                                 'src' => base_url() . 'public/img/facilities/school_building/img_' . $school_building . '.jpg',
@@ -59,18 +55,18 @@
                             ];
                         }
 
-                        // Shuffle the images array
                         shuffle($images);
 
-                        // Display the images
                         foreach ($images as $image) : ?>
                             <div class="col-lg-4 col-md-6 portfolio-item filter-<?= $image['category'] ?>">
                                 <div class="portfolio-wrap">
-                                    <img loading="lazy" src="<?= $image['src'] ?>" class="img-fluid" alt="<?= $image['alt'] ?>">
+                                    <img src="<?= $image['src'] ?>" class="img-fluid" alt="<?= $image['alt'] ?>">
+
                                     <div class="portfolio-info">
                                         <h4><?= $image['title'] ?></h4>
                                         <p><?= ucfirst($image['category']) ?></p>
                                     </div>
+                                    
                                     <div class="portfolio-links">
                                         <a href="<?= $image['src'] ?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title="<?= $image['title'] ?>"><i class="bx bx-plus"></i></a>
                                     </div>

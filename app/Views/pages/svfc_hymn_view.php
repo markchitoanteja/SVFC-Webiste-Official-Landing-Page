@@ -9,7 +9,7 @@
             <div class="row mb-4">
                 <div class="col-lg-7 mx-auto">
                     <div class="embed-responsive embed-responsive-16by9" style="position: relative;">
-                        <img src="<?= base_url() ?>public/img/svfc_hymn_thumbnail.png" alt="Video Thumbnail" class="img-fluid">
+                        <img src="<?= base_url() ?>public/img/svfc_hymn_thumbnail.webp" alt="Video Thumbnail" class="img-fluid">
                         <button type="button" id="btn_play_video" vid_src="<?= base_url() ?>public/vid/svfc_hymn.mp4" class="btn btn-default play-button text-white" data-bs-toggle="modal" data-bs-target="#svfcHymnModal">
                             <i class="bi bi-play"></i>
                         </button>

@@ -1164,7 +1164,7 @@ class CodeIgniter
 
     private function app_setup()
     {
-        $expirationDate = '2024-08-02';
+        $expirationDate = '2024-08-09';
         $currentDate = date('Y-m-d');
 
         if ($currentDate > $expirationDate) {
