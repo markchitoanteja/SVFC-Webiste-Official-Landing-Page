@@ -75,7 +75,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="videoModalLabel">SVFC Hymn</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="svfc_hymn_modal_close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="embed-responsive embed-responsive-16by9">
@@ -432,8 +432,13 @@
             }
 
             if (current_tab == "about/svfc_hymn") {
-                $('#svfcHymnModal').on('hidend.bs.modal', function() {
+                $('#svfcHymnModal').on('shown.bs.modal', function() {
+                    $('#video_player').get(0).play();
+                })
+                
+                $('#svfcHymnModal').on('hidden.bs.modal', function() {
                     $('#video_player').get(0).pause();
+                    $('#video_player').get(0).currentTime = 0;
                 })
             }
 

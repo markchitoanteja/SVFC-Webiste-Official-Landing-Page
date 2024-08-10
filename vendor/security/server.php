@@ -30,7 +30,8 @@ if (isset($_POST["contact_us"])) {
         'email' => $email,
         'facebook_account' => $facebook_account,
         'mobile_number' => $mobile_number,
-        'message' => $message
+        'message' => $message,
+        'status' => "unprocessed"
     ];
 
     $messages[] = $new_message;
